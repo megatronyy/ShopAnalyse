@@ -1,0 +1,36 @@
+﻿@using ShopAnalyse.OP.Lib
+@{
+	Layout = "~/Views/Shared/_Layout4Dialog.cshtml";
+	ViewBag.Title = "common_cache";
+	string result = string.Empty;
+	if (Model != null)
+	{
+		result = HttpUtility.HtmlDecode(Model);
+	}
+}
+@Html.Hidden("hidderForData", @result)
+<div class="form-group" style="height: 450px;">
+	<input type="button" class="btn green btn-sm" style="outline: none;" value="格式化JSON" id="formatJson" />
+	<textarea class="form-control" rows="20" id="cache-container">
+    </textarea>
+</div>
+@section footer_scripts{
+	<script src=@Url.Content("~/js/common/JsonFormat.js?v="+BUS.JsVersion) type="text/javascript"></script>
+	<script type="text/javascript">
+		$(function () {
+			var result = $("#hidderForData").val();
+			var data = '';
+			if ($.trim(result).length > 0) {
+				data = formatJson(result);
+			}
+			fillData(data);
+
+			$("#formatJson").click(function () {
+				fillData(data);
+			});
+			function fillData() {
+				$("#cache-container").val(data);
+			}
+		});
+	</script>
+}

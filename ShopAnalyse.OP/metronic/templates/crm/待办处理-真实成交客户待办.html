@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<meta charset="utf-8"/>
+<title>电商CRM - 客户管理</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" />
+<!-- END GLOBAL MANDATORY STYLES -->
+    <!--新增。20160722.yangjie5 -->
+    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/select2/select2.css"/>
+<!-- BEGIN THEME STYLES -->
+<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/crm/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+<link id="style_color" href="../../assets/crm/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/crm/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+<!-- END THEME STYLES -->
+<link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
+<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
+<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
+<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
+<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
+<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
+<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
+<body class="page-header-fixed page-quick-sidebar-over-content">
+<!-- BEGIN HEADER -->
+<div class="page-header navbar navbar-fixed-top">
+	<!-- BEGIN HEADER INNER -->
+	<div class="page-header-inner">
+		<!-- BEGIN LOGO -->
+		<div class="page-logo">
+			<a href="index.html">
+			<img src="../../assets/crm/layout/img/logo.png" alt="logo" class="logo-default"/>
+			</a>
+			<div class="menu-toggler sidebar-toggler hide">
+				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+			</div>
+		</div>
+		<!-- END LOGO -->
+		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+		<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+		</a>
+		<!-- END RESPONSIVE MENU TOGGLER -->
+		<!-- BEGIN TOP NAVIGATION MENU -->
+		<div class="top-menu">
+			<ul class="nav navbar-nav pull-right">
+				<!-- BEGIN USER LOGIN DROPDOWN -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+				<li class="dropdown dropdown-user">
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+					<img alt="" class="img-circle" src="../../assets/crm/layout/img/avatar3_small.jpg"/>
+					<span class="username username-hide-on-mobile">
+					王艳梅 </span>
+					<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-default">
+						<li>
+							<a href="login.html">
+							<i class="icon-key"></i> Log Out </a>
+						</li>
+					</ul>
+				</li>
+				<!-- END USER LOGIN DROPDOWN -->
+			</ul>
+		</div>
+		<!-- END TOP NAVIGATION MENU -->
+	</div>
+	<!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container zm-wrap">
+	<!-- BEGIN SIDEBAR -->
+	<div class="page-sidebar-wrapper">
+		<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+		<!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+		<div class="page-sidebar navbar-collapse collapse">
+			<!-- BEGIN SIDEBAR MENU -->
+			<!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+			<!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+			<!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+			<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+			<!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+			<!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+			<ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+				<!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+				<li class="sidebar-toggler-wrapper">
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+					<div class="sidebar-toggler">
+					</div>
+					<!-- END SIDEBAR TOGGLER BUTTON -->
+				</li>
+				<li class="start">
+					<a href="javascript:;">
+					<i class="icon-home"></i>
+					<span class="title">工作台</span>
+					</a>
+				</li>				
+				<li class="active">
+					<a href="javascript:;">
+					<i class="icon-home"></i>
+					<span class="title">客户管理</span>
+					<span class="arrow "></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<a href="index.html">
+							<i class="icon-bar-chart"></i>
+							客户详情页</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="javascript:;">
+					<i class="icon-puzzle"></i>
+					<span class="title">业务管理</span>
+					<span class="arrow "></span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" target="_blank">
+					<i class="icon-paper-plane"></i>
+					<span class="title">
+					任务管理 </span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" target="_blank">
+					<i class="icon-paper-plane"></i>
+					<span class="title">
+					统计报表 </span>
+					</a>
+				</li>
+			</ul>
+			<!-- END SIDEBAR MENU -->
+		</div>
+	</div>
+	<!-- END SIDEBAR -->
+	<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper">
+		<div class="page-content">
+
+
+			<!-- BEGIN PAGE HEADER-->
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="index.html">首页</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#">客户管理</a>
+                        <i class="fa fa-angle-right"></i>
+					</li>
+                    <li>
+                        <a href="#">待办处理页</a>
+                    </li>
+				</ul>
+			</div>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+            <div class="row">
+                <!-- BEGIN 订单基本信息-->
+                <div class="portlet box red">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            订单信息
+                        </div>
+                    </div>
+                    <div class="portlet-body" style="padding-left: 30px;">
+                        <div class="portlet">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    下单人信息
+                                </div>
+                            </div>
+                            <div class="portlet-body" >
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="row r1">
+                                            <div class="col-md-4 col-sm-4">
+                                                <label class="control-label col-md-6 col-sm-6">客户姓名：<span class="s-val"><a href="#">张小娴</a></span> </label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <label class="">
+                                                        男
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4">
+                                                <label class="control-label col-md-12 col-sm-12">手机号码：<span class="s-val">1399265698（北京）</span><a href="##" class="btn zm-btn-1"><i class="fa fa-phone"></i></a></label>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-4">
+                                                <label class="control-label col-md-7">推荐人：<span class="s-val">李斌</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="row r1">
+                                            <div class="col-md-4 col-sm-4">
+                                                <label class="control-label col-md-6 col-sm-6">备注姓名：<span class="s-val">张弦子</span> </label>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4">
+                                                <label class="control-label col-md-12 col-sm-12">备用手机：<span class="s-val">1399265698（北京）</span><a href="##" class="btn zm-btn-1"><i class="fa fa-phone"></i></a></label>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-4">
+                                                <label class="control-label col-md-7">客户来源：<span class="s-val">行圆</span></label>
+                                            </div>
+                                        </div>
+                                        <!--备用信息-->
+                                        <div class="row r1">
+                                            <div class="col-md-12 col-sm-12">
+                                                <label class="control-label col-md-12 col-sm-12">备用手机：<span class="s-val">李老板亲戚，目前客户还处在犹豫期，在多个车型中做对比，没有明确的购车时间及车型。</span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    订单信息
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">订单编号：<span class="s-val"><a href="#">1111111</a></span></span></label>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">订单类型：<span class="s-val">竞价订单</span></label>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">下单时间：<span class="s-val">2016-05-21 09:30:20</span></label>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">订单状态：<span class="s-val">已成交</span></label>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">订金金额：<span class="s-val">499</span></label>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">成交时间：<span class="s-val">2016-05-21 09:30:20</span></label>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">成交商家：<span class="s-val">北京易车互联信息技术有限公司</span></label>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">订金状态：<span class="s-val">已结算</span></label>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">结算时间：<span class="s-val"> 2016-05-21 09:30:20</span></label>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">订单品牌：<span class="s-val">一汽大众</span></label>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">订单车型：<span class="s-val">一汽大一汽大众一汽大众众一汽大众</span></label>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">订单车款：<span class="s-val">一汽大众一汽大众一汽大众一汽大众</span></label>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">成交品牌：<span class="s-val">一汽大众</span></label>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">成交车型：<span class="s-val">一汽大众一汽大众</span></label>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">成交车款：<span class="s-val">一汽大众一汽大众</span></label>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">车主姓名：<span class="s-val">张弦子</span></label>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-12 col-sm-12">成交裸车价：<span class="s-val">12,345.00元</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END 订单基本信息-->
+            </div>
+            <div class="row">
+                <div class="portlet box blue">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            成交信息
+                        </div>
+                    </div>
+                    <div class="portlet-body " style="padding-left: 30px;">
+                        <div class="portlet">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    车辆所有人信息
+                                </div>
+                            </div>
+                            <div class="portlet-body form-horizontal" >
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>车辆所有人：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <input type="text" class="form-control" value="张三" placeholder=""><span id="name-error" class="help-block help-block-error">购车发票/行驶本车辆所有人名称</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4">车主手机：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>购车城市：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <div class="base-form-value">
+                                                <label>北京</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>上牌城市：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <select class="js-select2 form-control" >
+                                                <option value="全部城市">全部城市</option>
+                                                <option value="北京">北京</option>
+                                                <option value="上海">上海</option>
+                                                <option value="杭州">杭州</option>
+                                                <option value="郑州">郑州</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>客户类型：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <select class=" form-control" >
+                                                <option value="请选择">请选择</option>
+                                                <option value="个人">个人</option>
+                                                <option value="企业">企业</option>
+                                                <option value="出租公司">出租公司</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="portlet">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    车辆使用人信息
+                                </div>
+                            </div>
+                            <div class="portlet-body form-horizontal" >
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>使用人姓名：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <input type="text" class="form-control" value="张三" placeholder=""><span id="name-error" class="help-block help-block-error">实际用车人姓名</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>使用人手机：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>使用人性别：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <div class="radio-list">
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optionsRadios3" value="option1" checked="checked"> 男</label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optionsRadios3" value="option2" > 女</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>客户生日：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <div class="c-kj input-icon right">
+                                                <input  type="text" placeholder="客户生日" class="Wdate" onFocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+                                            </div>
+                                            <span id="name-error" class="help-block help-block-error">客户生日用于客户关怀</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>所处行业：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <select class=" form-control" >
+                                                <option value="请选择">请选择</option>
+                                                <option value="金融/保险业">金融/保险业</option>
+                                                <option value="上海">上海</option>
+                                                <option value="杭州">杭州</option>
+                                                <option value="郑州">郑州</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4">职务\职位：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4">公司名称：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    车辆信息
+                                </div>
+                            </div>
+                            <div class="portlet-body form-horizontal" >
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4">经销商全称：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <div class="base-form-value">
+                                                <label>北京易车互联信息技术有限公司</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4">经销商ID：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <div class="base-form-value">
+                                                <label> 50002218</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>成交车辆：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <select class="js-select2 form-control" >
+                                                <option value="全部">全部</option>
+                                                <optgroup label="华北">
+                                                    <option value="北京">北京</option>
+                                                    <option value="上海">上海</option>
+                                                    <option value="杭州">杭州</option>
+                                                    <option value="郑州">郑州</option>
+                                                </optgroup>
+                                                <optgroup label="华南">
+                                                    <option value="北京">北京</option>
+                                                    <option value="上海">上海</option>
+                                                    <option value="杭州">杭州</option>
+                                                    <option value="郑州">郑州</option>
+                                                </optgroup>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 p0">
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <select class=" form-control" >
+                                                <option value="请选择">请选择</option>
+                                                <option value="金融/保险业">金融/保险业</option>
+                                                <option value="上海">上海</option>
+                                                <option value="杭州">杭州</option>
+                                                <option value="郑州">郑州</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>外观颜色：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <select class=" form-control" >
+                                                <option value="请选择">请选择</option>
+                                                <option value="黑">黑</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>裸车价格：</label>
+                                        <div class="col-md-6 col-sm-6 p0">
+                                            <input type="text" class="form-control" placeholder=""><span id="name-error" class="help-block help-block-error">车辆成交的裸车价</span>
+                                        </div>
+                                        <label class="col-md-2 col-sm-2" style="padding-top: 7px">元</label>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>开票日期：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <div class="c-kj input-icon right">
+                                                <input  type="text" placeholder="开票日期" class="Wdate" onFocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>发票价格：</label>
+                                        <div class="col-md-6 col-sm-6 p0">
+                                            <input type="text" class="form-control" placeholder=""><span id="name-error" style="white-space: nowrap" class="help-block help-block-error">购车发票的中的车辆总价，含税</span>
+                                        </div>
+                                        <label class="col-md-2 col-sm-2" style="padding-top: 7px">元</label>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>店内装饰：</label>
+                                        <div class="col-md-6 col-sm-6 p0">
+                                            <input type="text" class="form-control" placeholder=""><span id="name-error" style="white-space: nowrap" class="help-block help-block-error">店内装饰的费用，如无则填“0”</span>
+                                        </div>
+                                        <label class="col-md-2 col-sm-2" style="padding-top: 7px">元</label>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>出库费：</label>
+                                        <div class="col-md-6 col-sm-6 p0">
+                                            <input type="text" class="form-control" placeholder=""><span id="name-error" class="help-block help-block-error">店内的出库费，如无则填“0”</span>
+                                        </div>
+                                        <label class="col-md-2 col-sm-2" style="padding-top: 7px">元</label>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>验车上牌费：</label>
+                                        <div class="col-md-6 col-sm-6 p0">
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                        <label class="col-md-2 col-sm-2" style="padding-top: 7px">元</label>
+                                    </div>
+
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>是否置换：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <div class="radio-list">
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optionsRadios4" value="option1" checked="checked"> 是</label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optionsRadios4" value="option2" > 否</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 ">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>置换补贴：</label>
+                                        <div class="col-md-6 col-sm-6 p0">
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                        <label class="col-md-2 col-sm-2" style="padding-top: 7px">元</label>
+
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>是否店内保险：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <div class="radio-list">
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optionsRadios5" value="option1" checked="checked"> 是</label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optionsRadios5" value="option2" > 否</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>保险公司：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <select class=" form-control" >
+                                                <option value="请选择">请选择</option>
+                                                <option value="银行">银行</option>
+                                                <option value="第三方金融机构">第三方金融机构</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>是否延保：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <div class="radio-list">
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optionsRadios6" value="option1" checked="checked"> 是</label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optionsRadios6" value="option2"> 否</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>延保时长：</label>
+                                        <div class="col-md-6 col-sm-6 p0">
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                        <label class="col-md-2 col-sm-2" style="padding-top: 7px">年</label>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>是否分期：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <div class="radio-list">
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optionsRadios7" value="option1" checked="checked"> 是</label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optionsRadios7" value="option2" > 否</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>分期期限：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <select class=" form-control" >
+                                                <option value="请选择">请选择</option>
+                                                <option value="金融/保险业">金融/保险业</option>
+                                                <option value="上海">上海</option>
+                                                <option value="杭州">杭州</option>
+                                                <option value="郑州">郑州</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row r1">
+                                    <div class="col-md-4 col-sm-4">
+                                        <label class="control-label col-md-4 col-sm-4"><span class="required" aria-required="true">* </span>分期金融机构：</label>
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <select class=" form-control" >
+                                                <option value="请选择">请选择</option>
+                                                <option value="金融/保险业">金融/保险业</option>
+                                                <option value="上海">上海</option>
+                                                <option value="杭州">杭州</option>
+                                                <option value="郑州">郑州</option>
+                                                <option value="上海">上海</option>
+                                                <option value="杭州">杭州</option>
+                                                <option value="郑州">郑州</option>
+                                                <option value="上海">上海</option>
+                                                <option value="杭州">杭州</option>
+                                                <option value="郑州">郑州</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 p0">
+                                        <div class="col-md-8 col-sm-8 p0">
+                                            <input type="text" class="form-control" placeholder="机构名称">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-save col-lg-offset-3 col-md-offset-3 margin-top-20 "><button type="submit" class="btn btn-block green">提交</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+		</div>
+	</div>
+	<!-- END CONTENT -->
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+	<div class="page-footer-inner">
+		 2015 &copy; 易车·行圆
+	</div>
+	<div class="scroll-to-top">
+		<i class="icon-arrow-up"></i>
+	</div>
+</div>
+<!-- END FOOTER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="../../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<!-- END CORE PLUGINS -->
+<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="../../assets/crm/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="../../assets/crm/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="../../assets/crm/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="../../assets/admin/pages/scripts/components-pickers.js"></script>
+
+<!--新增。20160722.yangjie5 -->
+<script type="text/javascript" src="../../assets/global/plugins/select2/select2.min.js"></script>
+<script src="../../assets/crm/layout/scripts/my97datepicker/wdatepicker.js" type="text/javascript"></script>
+<script>
+      jQuery(document).ready(function() {    
+        Metronic.init(); // init metronic core components
+		Layout.init(); // init current layout
+//		ComponentsPickers.init(); //init 日历
+
+          //新增。20160722.yangjie5
+          $(".js-select2").select2();
+      });
+   </script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

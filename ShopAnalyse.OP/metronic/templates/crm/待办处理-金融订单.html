@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<meta charset="utf-8"/>
+<title>电商CRM - 客户管理</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" />
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN THEME STYLES -->
+<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/crm/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+<link id="style_color" href="../../assets/crm/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/crm/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+<!-- END THEME STYLES -->
+<link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
+<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
+<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
+<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
+<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
+<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
+<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
+<body class="page-header-fixed page-quick-sidebar-over-content">
+<!-- BEGIN HEADER -->
+<div class="page-header navbar navbar-fixed-top">
+	<!-- BEGIN HEADER INNER -->
+	<div class="page-header-inner">
+		<!-- BEGIN LOGO -->
+		<div class="page-logo">
+			<a href="index.html">
+			<img src="../../assets/crm/layout/img/logo.png" alt="logo" class="logo-default"/>
+			</a>
+			<div class="menu-toggler sidebar-toggler hide">
+				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+			</div>
+		</div>
+		<!-- END LOGO -->
+		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+		<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+		</a>
+		<!-- END RESPONSIVE MENU TOGGLER -->
+		<!-- BEGIN TOP NAVIGATION MENU -->
+		<div class="top-menu">
+			<ul class="nav navbar-nav pull-right">
+				<!-- BEGIN USER LOGIN DROPDOWN -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+				<li class="dropdown dropdown-user">
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+					<img alt="" class="img-circle" src="../../assets/crm/layout/img/avatar3_small.jpg"/>
+					<span class="username username-hide-on-mobile">
+					王艳梅 </span>
+					<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-default">
+						<li>
+							<a href="login.html">
+							<i class="icon-key"></i> Log Out </a>
+						</li>
+					</ul>
+				</li>
+				<!-- END USER LOGIN DROPDOWN -->
+			</ul>
+		</div>
+		<!-- END TOP NAVIGATION MENU -->
+	</div>
+	<!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container zm-wrap">
+	<!-- BEGIN SIDEBAR -->
+	<div class="page-sidebar-wrapper">
+		<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+		<!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+		<div class="page-sidebar navbar-collapse collapse">
+			<!-- BEGIN SIDEBAR MENU -->
+			<!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+			<!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+			<!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+			<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+			<!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+			<!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+			<ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+				<!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+				<li class="sidebar-toggler-wrapper">
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+					<div class="sidebar-toggler">
+					</div>
+					<!-- END SIDEBAR TOGGLER BUTTON -->
+				</li>
+				<li class="start">
+					<a href="javascript:;">
+					<i class="icon-home"></i>
+					<span class="title">工作台</span>
+					</a>
+				</li>				
+				<li class="active">
+					<a href="javascript:;">
+					<i class="icon-home"></i>
+					<span class="title">客户管理</span>
+					<span class="arrow "></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<a href="index.html">
+							<i class="icon-bar-chart"></i>
+							客户详情页</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="javascript:;">
+					<i class="icon-puzzle"></i>
+					<span class="title">业务管理</span>
+					<span class="arrow "></span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" target="_blank">
+					<i class="icon-paper-plane"></i>
+					<span class="title">
+					任务管理 </span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" target="_blank">
+					<i class="icon-paper-plane"></i>
+					<span class="title">
+					统计报表 </span>
+					</a>
+				</li>
+			</ul>
+			<!-- END SIDEBAR MENU -->
+		</div>
+	</div>
+	<!-- END SIDEBAR -->
+	<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper">
+		<div class="page-content">
+
+
+			<!-- BEGIN PAGE HEADER-->
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="index.html">首页</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#">客户管理</a>
+                        <i class="fa fa-angle-right"></i>
+					</li>
+                    <li>
+                        <a href="#">金融订单待办</a>
+                    </li>
+				</ul>
+			</div>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			<div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <div class="i-img-wrap">
+                        <img src="http://192.168.87.131:92/assets/crm/layout/img/man_100x100.jpg" alt="客户头像">
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-10">
+                    <!--form static label start-->
+                    <div class="row r1">
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-6 col-sm-6 zl-1">客户姓名：<span class="s-val"><a href="##" target="_blank">李四</a></span></label>
+                            <label class="control-label col-md-6 col-sm-6 zl-1">性别：<span class="s-val">男</span></label>
+                        </div>
+                        <!--/span-->
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-6 col-sm-6 zl-1">借贷人姓名：<span class="s-val">张三</span></label>
+                            <label class="control-label col-md-6 col-sm-6 zl-1">性别：<span class="s-val">男</span></label>
+                        </div>
+                        <!--/span-->
+                    </div>
+                    <div class="row r1">
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">手机号码：<span class="s-val">1399265698（北京）</span><a href="##" class="btn zm-btn-1"><i class="fa fa-phone"></i></a><a href="##" class="btn zm-btn-1"><i class="fa  fa-envelope"></i></a></label>
+                        </div>
+                        <!--/span-->
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">手机号码：<span class="s-val">1399265698（北京）</span><a href="##" class="btn zm-btn-1"><i class="fa fa-phone"></i></a><a href="##" class="btn zm-btn-1"><i class="fa  fa-envelope"></i></a></label>
+                        </div>
+                        <!--/span-->
+                    </div>
+                    <div class="row r1">
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">购车订单号：<span class="s-val"><a href="##" target="_blank">123456</a></span></label>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">融资单ID：<span class="s-val"><a href="##" target="_blank">123456</a></span></label>
+                        </div>
+
+                    </div>
+                    <div class="row r1">
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">客户来源：<span class="s-val">行圆</label>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">维保单ID：<span class="s-val"><a href="##" target="_blank">12233</a></span></label>
+                        </div>
+
+                    </div>
+                    <div class="row r1">
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">购车城市：<span class="s-val">石家庄</span></label>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">购买车款：<span class="s-val">一汽大众 高尔夫 2015款1.2TSI 自动舒适型</span></label>
+                        </div>
+                    </div>
+                    <div class="row r1">
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">放款商家：<span class="s-val">北京西苑远大4S店</span></label>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">销售顾问|李四：<span class="s-val">1399265698（北京）</span><a href="##" class="btn zm-btn-1"><i class="fa fa-phone"></i></a><a href="##" class="btn zm-btn-1"><i class="fa  fa-envelope"></i></a></label>
+                        </div>
+                    </div>
+                    <div class="row r1">
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">下单日期：<span class="s-val">2016-02-03 12:12:12</span></label>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">订单状态：<span style="font-size: 20px" class="s-val  font-green ">信审通过</span></label><span style="font-size: 20px" class="s-val  text-red ">信审通过</span></label>
+                        </div>
+                    </div>
+                </div>
+			</div>
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        待办跟进
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tab-pane active" id="tab1">
+                            <table class="c-orderinfo table table-hover table-bordered" cellpadding="0" cellspacing="0" width="100%">
+                                <thead>
+                                <tr class="">
+                                    <th colspan="4">融资单详情：</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="c-order-tbtitle">融资单ID：</td>
+                                    <td>49315452</td>
+                                    <td class="c-order-tbtitle">下单时间：</td>
+                                    <td>2016-05-02 11:12:32</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">借贷人姓名：</td>
+                                    <td>张三</td>
+                                    <td class="c-order-tbtitle">借贷人手机号：</td>
+                                    <td>12388888888</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">申请城市：</td>
+                                    <td>北京</td>
+                                    <td class="c-order-tbtitle">车款名称：</td>
+                                    <td>一汽奥迪  奥迪A6  2014年款</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">车价：</td>
+                                    <td>290000元</td>
+                                    <td class="c-order-tbtitle">车架号：</td>
+                                    <td>3837474</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">经销商名称：</td>
+                                    <td colspan="3">北京西苑远大4S店</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">套餐简称：</td>
+                                    <td>省鑫融******</td>
+                                    <td class="c-order-tbtitle">产品期限：</td>
+                                    <td>23期</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">产品ID：</td>
+                                    <td>1112</td>
+                                    <td class="c-order-tbtitle">还款方式：</td>
+                                    <td>等额本息</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">首付比例：</td>
+                                    <td>30%</td>
+                                    <td class="c-order-tbtitle">首付金额：</td>
+                                    <td>10000元</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">融资额：</td>
+                                    <td>80000元</td>
+                                    <td class="c-order-tbtitle">年利率：</td>
+                                    <td>13.88%</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">总支出：</td>
+                                    <td>888484元</td>
+                                    <td class="c-order-tbtitle">总成本：</td>
+                                    <td>849483元</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">首次支出金额：</td>
+                                    <td>888484元</td>
+                                    <td class="c-order-tbtitle">月供金额：</td>
+                                    <td>500元</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">尾款比例：</td>
+                                    <td>20%</td>
+                                    <td class="c-order-tbtitle">尾款金额：</td>
+                                    <td>34000元</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">最后一次还款金额：</td>
+                                    <td>11333</td>
+                                    <td class="c-order-tbtitle">GPS价格：</td>
+                                    <td>2000</td>
+
+
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">购置税：</td>
+                                    <td>200元</td>
+                                    <td class="c-order-tbtitle">保养费：</td>
+                                    <td>1293元</td>
+
+                                </tr>
+                                <tr>
+
+                                    <td class="c-order-tbtitle">服务费：</td>
+                                    <td>500元</td>
+                                    <td class="c-order-tbtitle">违章押金：</td>
+                                    <td>300元</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">保证金：</td>
+                                    <td>1200</td>
+                                    <td class="c-order-tbtitle">保险：</td>
+                                    <td>1294元（保险可融资显示金额，不融资显示0）</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">放款日期：</td>
+                                    <td>2016-1-3 12:12:45</td>
+                                    <td class="c-order-tbtitle">每月还款日期：</td>
+                                    <td>18号</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="c-orderinfo table table-hover table-bordered" cellpadding="0" cellspacing="0" width="100%">
+                                <thead>
+                                <tr class="">
+                                    <th colspan="4">关联维保单：<a href="##" target="_blank">123456</a></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="c-order-tbtitle">订单原价：</td>
+                                    <td>20000</td>
+                                    <td class="c-order-tbtitle">订单实付价格：</td>
+                                    <td>10000（5折）</td>
+                                </tr>
+                                <tr>
+                                    <td class="c-order-tbtitle">成交时间：</td>
+                                    <td>2016-05-23 12:00:01</td>
+                                    <td class="c-order-tbtitle">到期时间：</td>
+                                    <td>2018-05-23 12:00:01</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="padding-top-25">
+                            <form action="#" class="form-horizontal">
+                                <div class="form-group f1">
+                                        <label class="col-lg-1 col-md-2 control-label">跟进结果：</label>
+                                        <div class="col-md-10">
+                                            <label class="radio-inline r1">
+                                                <input type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option1" checked> 已约客户面签
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="inlineRadioOptions1" id="inlineRadio4" value="option1"> 已约客户安装GPS
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="inlineRadioOptions1" id="inlineRadio5" value="option1"> 已通知客户补充材料
+                                            </label>
+                                        </div>
+                                    </div>
+                                <div class="form-group f1">
+                                        <label class="col-md-2 col-lg-1 control-label">创建下次待办：</label>
+                                        <div class="col-md-10">
+                                            <label class="radio-inline r1">
+                                                <input type="radio" name="inlineRadioOptions2" id="inlineRadio8" value="option1" checked> 是
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="inlineRadioOptions2" id="inlineRadio9" value="option1"> 否
+                                            </label>
+                                        </div>
+                                    </div>
+                                <div class="form-group">
+                                        <label class="col-md-2 col-lg-1 control-label">待办时间：</label>
+                                        <div class="col-lg-10 col-md-10 col-sm-6 col-xs-8">
+                                            <div class="col-md-4 m0">
+                                                <input class="form-control form-control-inline date-picker" size="16" type="text" value="2015-07-01" data-date-format="yyyy-mm-dd">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input type="text" value="2:30 PM" data-format="hh:mm A" class="form-control clockface_1">
+                                            </div>
+                                            <div class="col-md-12 m0">
+                                                <span class="c-cyan-value">该时间段没有客户回访任务</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div class="form-group">
+                                        <label class="col-md-2 col-lg-1 control-label">代办内容：</label>
+                                        <div class="col-md-8"> <textarea class="form-control" rows="3"></textarea></div>
+                                    </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-1 col-md-10">
+                                        <div class="opts-wrap-2">
+                                            <input class="btn green" type="button" value="保存">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                </div>
+                            </form>
+                        </div>
+                 </div>
+                </div>
+            </div>
+			<!-- END PAGE CONTENT-->
+		</div>
+	</div>
+	<!-- END CONTENT -->
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+	<div class="page-footer-inner">
+		 2015 &copy; 易车·行圆
+	</div>
+	<div class="scroll-to-top">
+		<i class="icon-arrow-up"></i>
+	</div>
+</div>
+<!-- END FOOTER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="../../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<!-- END CORE PLUGINS -->
+<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="../../assets/crm/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="../../assets/crm/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="../../assets/crm/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="../../assets/admin/pages/scripts/components-pickers.js"></script>
+<script>
+      jQuery(document).ready(function() {    
+        Metronic.init(); // init metronic core components
+		Layout.init(); // init current layout
+		ComponentsPickers.init(); //init 日历
+      });
+   </script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<meta charset="utf-8"/>
+<title>电商CRM - 线索管理</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<!--<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>-->
+<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/select2/select2.css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/jstree/dist/themes/default/style.min.css"/>
+<!-- END PAGE LEVEL STYLES -->
+<!-- BEGIN THEME STYLES -->
+<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/crm/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+<link id="style_color" href="../../assets/crm/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/crm/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+<!-- END THEME STYLES -->
+<link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
+<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
+<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
+<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
+<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
+<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
+<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
+<body class="page-header-fixed page-quick-sidebar-over-content">
+<!-- BEGIN HEADER -->
+<div class="page-header navbar navbar-fixed-top">
+	<!-- BEGIN HEADER INNER -->
+	<div class="page-header-inner">
+		<!-- BEGIN LOGO -->
+		<div class="page-logo">
+			<a href="index.html">
+			<img src="../../assets/crm/layout/img/logo.png" alt="logo" class="logo-default"/>
+			</a>
+			<div class="menu-toggler sidebar-toggler hide">
+				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+			</div>
+		</div>
+		<!-- END LOGO -->
+		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+		<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+		</a>
+		<!-- END RESPONSIVE MENU TOGGLER -->
+		<!-- BEGIN TOP NAVIGATION MENU -->
+		<div class="top-menu">
+			<ul class="nav navbar-nav pull-right">
+				<!-- BEGIN USER LOGIN DROPDOWN -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+				<li class="dropdown dropdown-user">
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+					<img alt="" class="img-circle" src="../../assets/crm/layout/img/avatar3_small.jpg"/>
+					<span class="username username-hide-on-mobile">
+					王艳梅 </span>
+					<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-default">
+						<li>
+							<a href="login.html">
+							<i class="icon-key"></i> Log Out </a>
+						</li>
+					</ul>
+				</li>
+				<!-- END USER LOGIN DROPDOWN -->
+			</ul>
+		</div>
+		<!-- END TOP NAVIGATION MENU -->
+	</div>
+	<!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+	<!-- BEGIN SIDEBAR -->
+	<div class="page-sidebar-wrapper">
+		<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+		<!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+		<div class="page-sidebar navbar-collapse collapse">
+			<!-- BEGIN SIDEBAR MENU -->
+			<!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+			<!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+			<!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+			<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+			<!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+			<!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+			<ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+				<!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+				<li class="sidebar-toggler-wrapper">
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+					<div class="sidebar-toggler">
+					</div>
+					<!-- END SIDEBAR TOGGLER BUTTON -->
+				</li>
+				<li class="start">
+					<a href="javascript:;">
+					<i class="icon-home"></i>
+					<span class="title">工作台</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+					<i class="fa fa-users"></i>
+					<span class="title">客户管理</span>
+					<span class="arrow "></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<a href="javascript:;">
+							<i class="fa fa-user"></i> 全部客户 <span class="arrow"></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="#"><i class="icon-tag"></i> 客户详情页</a>
+								</li>
+								<li>
+									<a href="#"><i class="icon-pencil"></i> 订单详情页</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+							<i class="fa fa-user"></i> 公共客户</a>
+						</li>
+						<li>
+							<a href="#">
+							<i class="fa fa-user"></i> 超30天未跟进客户</a>
+						</li>
+					</ul>
+				</li>
+				<li class="active">
+					<a href="javascript:;">
+					<i class="fa fa-file-text-o"></i>
+					<span class="title">线索管理</span>
+					<span class="arrow "></span>
+					</a>
+					<ul class="sub-menu">
+						<li class="active">
+							<a href="javascript:;">
+							<i class="fa fa-user"></i> 线索管理 <span class="arrow"></span>
+							</a>
+							<ul class="sub-menu">
+								<li class="active">
+									<a href="#"><i class="icon-tag"></i> 批量导入线索</a>
+								</li>
+								<li>
+									<a href="#"><i class="icon-pencil"></i> 线索导入模板</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:;">
+							<i class="fa fa-user"></i> 线索来源配置 <span class="arrow"></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="#"><i class="icon-settings"></i> 新建/编辑线索来源</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;">
+					<i class="glyphicon glyphicon-briefcase"></i>
+					<span class="title">业务管理</span>
+					<span class="arrow "></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<a href="index.html">
+							<i class="icon-bar-chart"></i>
+							买车顾问管理</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="javascript:;">
+					<i class="icon-puzzle"></i>
+					<span class="title">统计报表</span>
+					<span class="arrow "></span>
+					</a>
+					<ul class="sub-menu">
+						<li><a href="#"><i class="icon-bar-chart"></i> 买顾工作业绩统计</a></li>
+						<li><a href="#"><i class="icon-bar-chart"></i> 买顾新分配客户跟进数据</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" target="_blank">
+					<i class="glyphicon glyphicon-tasks"></i>
+					<span class="title">
+					任务管理 </span>
+					</a>
+				</li>
+			</ul>
+			<!-- END SIDEBAR MENU -->
+		</div>
+	</div>
+	<!-- END SIDEBAR -->
+	<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper">
+		<div class="page-content">
+
+
+			<!-- BEGIN PAGE HEADER-->
+			<h3 class="page-title">
+			客户管理
+			</h3>
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="index.html">首页</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#">线索管理</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#">手工录入线索</a>
+					</li>
+				</ul>
+			</div>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="portlet box green">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-gift"></i> 手工录入线索
+							</div>
+						</div>
+						<div class="portlet-body form">
+							<form class="form-horizontal" role="form">
+								<div class="form-body">
+									<div class="clearfix">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="col-md-3 control-label">来源媒体：</label>
+												<div class="col-md-9">
+													<select class="form-control input-medium">
+														<option>请选择</option>
+														<option>行圆</option>
+														<option>易买车</option>
+														<option>易车商城</option>
+														<option>车展</option>
+														<option>内部推荐</option>
+													</select>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 control-label">线索项目：</label>
+												<div class="col-md-9">
+													<select class="form-control input-medium">
+														<option>请选择</option>
+														<option>2015北京车展</option>
+														<option>2015成都车展</option>
+														<option>易车询底价</option>
+														<option>易车询底价</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="table-scrollable">
+												<table class="table table-bordered table-hover re-td">
+													<thead>
+													<tr>
+														<th>
+															编号
+														</th>
+														<th>
+															客户姓名（必填）
+														</th>
+														<th>
+															手机号（必填）
+														</th>
+														<th class="col-lg-2">
+															购车城市（必填）
+														</th>
+														<th class="col-lg-2">
+															上牌城市
+														</th>
+														<th class="col-lg-2">
+															意向品牌
+														</th>
+														<th class="col-lg-2">
+															意向车型
+														</th>
+													</tr>
+													</thead>
+													<tbody>
+													<tr>
+														<td style="vertical-align: middle;text-align: center">
+															1
+														</td>
+														<td>
+															<input type="text" class="form-control" placeholder="客户姓名">
+														</td>
+														<td>
+															<input type="text" class="form-control" placeholder="手机号">
+														</td>
+														<td>
+                                                            <select class="js-select2 form-control" >
+                                                                <option value="购车城市">购车城市</option>
+                                                                <option value="北京">北京</option>
+                                                                <option value="上海">上海</option>
+                                                                <option value="杭州">杭州</option>
+                                                                <option value="郑州">郑州</option>
+                                                            </select>
+                                                            <i class="fa fa-arrow-circle-down fa-right"></i>
+														</td>
+														<td>
+                                                            <select class="js-select2 form-control " >
+                                                                <option value="上牌城市">上牌城市</option>
+                                                                <option value="上海">上海</option>
+                                                                <option value="杭州">杭州</option>
+                                                                <option value="郑州">郑州</option>
+                                                            </select>
+                                                            <i class="fa fa-arrow-circle-down fa-right"></i>
+														</td>
+														<td>
+                                                            <select class="js-select2 form-control " >
+                                                                <option value="意向品牌">意向品牌</option>
+                                                                <option value="奥迪">奥迪</option>
+                                                                <option value="宝马">宝马</option>
+                                                                <option value="长安">长安</option>
+                                                                <option value="巴拉">巴拉</option>
+                                                            </select>
+                                                            <i class="fa fa-arrow-circle-down fa-right"></i>
+                                                        </td>
+														<td>
+															<select class="select2-Models form-control">
+																<option>奥迪A3</option>
+																<option>奥迪A4L</option>
+																<option>奥迪A6L</option>
+																<option>奥迪A8L</option>
+																<option>奥迪Q7</option>
+															</select>
+														</td>
+													</tr>
+                                                    <tr>
+                                                        <td style="vertical-align: middle;text-align: center">
+                                                            2
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" placeholder="客户姓名">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" placeholder="手机号">
+                                                        </td>
+                                                        <td>
+                                                            <select class="js-select2 form-control input-small" >
+                                                                <option value="购车城市">购车城市</option>
+                                                                <option value="北京">北京</option>
+                                                                <option value="上海">上海</option>
+                                                                <option value="杭州">杭州</option>
+                                                                <option value="郑州">郑州</option>
+                                                            </select>
+                                                            <i class="fa fa-arrow-circle-down fa-right"></i>
+                                                        </td>
+                                                        <td>
+                                                            <select class="js-select2 form-control input-small" >
+                                                                <option value="上牌城市">上牌城市</option>
+                                                                <option value="上海">上海</option>
+                                                                <option value="杭州">杭州</option>
+                                                                <option value="郑州">郑州</option>
+                                                            </select>
+                                                            <i class="fa fa-arrow-circle-down fa-right"></i>
+                                                        </td>
+                                                        <td>
+                                                            <select class="js-select2 form-control input-small" >
+
+                                                            </select>
+                                                            <i class="fa fa-arrow-circle-down fa-right"></i>
+                                                        </td>
+                                                        <td>
+                                                            <select class="select2-Models form-control">
+                                                                    <option>奥迪A3</option>
+                                                                    <option>奥迪A4L</option>
+                                                                    <option>奥迪A6L</option>
+                                                                    <option>奥迪A8L</option>
+                                                                    <option>奥迪Q7</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="col-md-12 padding-top-25">
+											<button type="button" class="btn grey" href="#fenpei" data-toggle="modal"><i class="fa fa-plus"></i>&nbsp;新增行</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-actions">
+									<div class="row">
+										<div class="col-md-offset-3 col-md-9">
+											<a class="btn green" href="#importInfo" data-toggle="modal">提交</a>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- END PAGE CONTENT-->
+		</div>
+	</div>
+	<!-- END CONTENT -->
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+	<div class="page-footer-inner">
+		 2015 &copy; 易车·行圆
+	</div>
+	<div class="scroll-to-top">
+		<i class="icon-arrow-up"></i>
+	</div>
+</div>
+<!-- END FOOTER -->
+
+<!-- 弹出层 -->
+
+	<div class="modal fade in" id="importInfo" tabindex="-1" role="basic" aria-hidden="true">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+					<h4 class="modal-title">手工录入线索</h4>
+				</div>
+				<div class="modal-body clearfix">
+					<div class="col-lg-12 col-md-12">
+						<div class="modal-tips">正在导入线索，请稍候！</div>
+						<div class="progress progress-striped">
+							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+								<span class="sr-only">
+								40% Complete (success) </span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn blue" data-dismiss="modal">确定</button>
+					<button type="button" class="btn default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 	<div class="modal fade in" id="importInfo" tabindex="-1" role="basic" aria-hidden="true">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+					<h4 class="modal-title">批量导入线下线索</h4>
+				</div>
+				<div class="modal-body clearfix">
+					<div class="col-lg-12 col-md-12">
+						<div class="modal-tips">成功导入13条线索！</div>
+					</div>
+				</div>
+				<s="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div> -->
+<!-- /.modal -->
+
+
+
+
+
+<!-- BEGIN JAv class="modal-footer">
+					<button type="button" class="btn blue" data-dismiss="modal">确定</button>
+					<button type="button" class="btn default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div> -->
+<!-- 	<div class="modal fade in" id="importInfo" tabindex="-1" role="basic" aria-hidden="true">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+					<h4 class="modal-title">批量导入线下线索</h4>
+				</div>
+				<div class="modal-body clearfix">
+					<div class="col-lg-12 col-md-12">
+						<div class="modal-tips error">线索导入失败，请修改后重新导入！</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn blue" data-dismiss="modal">确定</button>
+					<button type="button" class="btn default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div> -->
+<!-- /.modal -->
+
+
+
+
+
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script>
+<![endif]-->
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="../../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="../../assets/global/plugins/jstree/dist/jstree.min.js"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<script src="../../assets/admin/pages/scripts/ui-tree.js"></script>
+<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="../../assets/crm/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="../../assets/crm/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="../../assets/crm/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="../../assets/admin/pages/scripts/components-pickers.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/select2/select2.min.js"></script>
+<script>
+      jQuery(document).ready(function() {
+        Metronic.init(); // init metronic core components
+		Layout.init(); // init current layout
+		 $(".js-select2").select2();
+      });
+   </script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

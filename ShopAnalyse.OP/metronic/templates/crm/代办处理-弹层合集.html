@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>电商CRM - 客户管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+    <link href="../../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    <link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+    <link href="../../assets/admin/pages/css/timeline-old.css" rel="stylesheet" type="text/css" />
+    <link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="../../assets/crm/layout/css/layout.css" rel="stylesheet" type="text/css" />
+    <link id="style_color" href="../../assets/crm/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" />
+    <link href="../../assets/crm/layout/css/custom.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME STYLES -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <style>
+    .modal {
+        display: block;
+    }
+    
+    .datepicker-inline {
+        width: 90%;
+        margin: 0 auto;
+        ;
+    }
+    
+    .datepicker table {
+        width: 100%;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    .d-info {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .d-info dl {
+        padding: 6px;
+        border-top: 1px solid #cccccc;
+        margin-bottom: 0px;
+    }
+    
+    .d-info dl dt {
+        float: left;
+        width: 40px;
+        text-align: center;
+        padding-top: 15px;
+    }
+    
+    .d-info dl dd {
+        margin-left: 70px;
+    }
+    
+    .d-info dl dd p {
+        margin-bottom: 5px;
+    }
+    
+    
+
+    </style>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
+<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
+<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
+<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
+<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
+<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
+<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
+
+<body class="page-header-fixed page-quick-sidebar-over-content">
+    <div class="modal fade in" id="fenpei" tabindex="-1" role="basic" aria-hidden="true">
+        <!--弹层 1-->
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">客户转移</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-lg-12 col-md-12">
+                        <form action="#" class="form-horizontal">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">客户姓名：</label>
+                                            <div class="col-md-9">
+                                                <label class="control-label">张小娴（13466364589）</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">转移类型：</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>请选择</option>
+                                                    <option>Country 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="help-block">请选择！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">选择买顾：</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>请选择</option>
+                                                    <option>Country 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="help-block">请选择！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">跟进阶段：</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>请选择</option>
+                                                    <option>Country 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="help-block">请选择！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">上牌城市：</label>
+                                            <div class="col-md-8">
+                                                <div class="col-md-6 m0">
+                                                    <select class="form-control">
+                                                        <option>河北</option>
+                                                        <option>Country 2</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <select class="form-control">
+                                                        <option>秦皇岛</option>
+                                                        <option>Country 2</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">意向车型：</label>
+                                            <div class="col-md-8">
+                                                <div class="col-md-6 m0">
+                                                    <div class="advance-select" id="brandName">
+                                                        <span class="form-control">品牌</span>
+                                                        <div class="advance-select-cot">
+                                                            <a href="#" class="advance-select-reset" data-obj="{'default':'请选择品牌'}">重置选择</a>
+                                                            <address>
+                                                                <p>
+                                                                    <span>A</span>
+                                                                    <span>B</span>
+                                                                    <span>C</span>
+                                                                    <span>D</span>
+                                                                    <span>F</span>
+                                                                    <span>G</span>
+                                                                    <span>H</span>
+                                                                    <span>J</span>
+                                                                    <span>K</span>
+                                                                    <span>L</span>
+                                                                    <span>M</span>
+                                                                    <span>N</span>
+                                                                    <span>O</span>
+                                                                    <span>P</span>
+                                                                    <span>Q</span>
+                                                                    <span>R</span>
+                                                                    <span>S</span>
+                                                                    <span>T</span>
+                                                                    <span>W</span>
+                                                                    <span>X</span>
+                                                                    <span>Y</span>
+                                                                    <span>Z</span>
+                                                                </p>
+                                                                <em></em>
+                                                            </address>
+                                                            <ul>
+                                                                <li data-obj="{}"><em>A</em>奥迪</li>
+                                                                <li data-obj="{}"><em>A</em>奥迪</li>
+                                                                <li data-obj="{}"><em>A</em>奥迪</li>
+                                                                <li data-obj="{}"><em>A</em>奥迪</li>
+                                                                <li data-obj="{}"><em>A</em>奥迪</li>
+                                                                <li data-obj="{}"><em>A</em>奥迪</li>
+                                                                <li data-obj="{'name':'把'}"><em>B</em>宝马1</li>
+                                                                <li data-obj="{}"><em>B</em>宝马</li>
+                                                                <li data-obj="{}"><em>B</em>宝马</li>
+                                                                <li data-obj="{}"><em>B</em>宝马</li>
+                                                                <li data-obj="{}"><em>B</em>宝马</li>
+                                                                <li data-obj="{}"><em>B</em>宝马</li>
+                                                                <li data-obj="{}"><em>C</em>长安</li>
+                                                                <li data-obj="{}"><em>C</em>长安</li>
+                                                                <li data-obj="{}"><em>C</em>长安</li>
+                                                                <li data-obj="{}"><em>C</em>长安</li>
+                                                                <li data-obj="{}"><em>C</em>长安</li>
+                                                                <li data-obj="{}"><em>C</em>长安</li>
+                                                                <li data-obj="{}"><em>C</em>长安</li>
+                                                                <li data-obj="{}"><em>C</em>长安</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <select class="form-control">
+                                                        <optgroup label="一汽奥迪">
+                                                            <option>奥迪A3</option>
+                                                            <option>奥迪A4L</option>
+                                                            <option>奥迪A6L</option>
+                                                            <option>奥迪A8L</option>
+                                                        </optgroup>
+                                                        <optgroup label="奥迪">
+                                                            <option>奥迪Q7</option>
+                                                        </optgroup>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">转移原因：</label>
+                                            <div class="col-md-9">
+                                                <textarea class="form-control" rows="3" placeholder="请输入详细的转移原因，不得少于5个汉字。"></textarea>
+                                                <span class="help-block">请输入转移原因！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                </div>
+                                <!--/row-->
+                            </div>
+                        </form>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn blue" data-dismiss="modal">提交</button>
+                    <button type="button" class="btn default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!--弹层 2-->
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">客户战败</h4>
+                </div>
+                <div class="modal-body clearfix">
+                    <div class="col-lg-12 col-md-12">
+                        <form action="#" class="form-horizontal">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">客户姓名：</label>
+                                            <div class="col-md-9">
+                                                <label class="control-label">张小娴（13466364589）</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">战败原因：</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>请选择</option>
+                                                    <option>Country 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="help-block">请选择！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">其他原因：</label>
+                                            <div class="col-md-9">
+                                                <textarea class="form-control" rows="3" placeholder="请输入其他战败原因，不得少于5个汉字。"></textarea>
+                                                <span class="help-block">请输入战败原因！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                </div>
+                                <!--/row-->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn blue" data-dismiss="modal">提交</button>
+                    <button type="button" class="btn default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!--弹层 3-->
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">发送短息</h4>
+                </div>
+                <div class="modal-body clearfix">
+                    <div class="col-lg-12 col-md-12">
+                        <form action="#" class="form-horizontal">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">客户姓名：</label>
+                                            <div class="col-md-9">
+                                                <label class="control-label">张小娴（13466364589）</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">选择模板：</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>请选择</option>
+                                                    <option>Country 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="help-block">请选择！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">短信内容：</label>
+                                            <div class="col-md-9">
+                                                <textarea class="form-control" rows="3" placeholder="请输入其他战败原因，不得少于5个汉字。"></textarea>
+                                                <span class="help-block">短信已经超过100个汉字！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                </div>
+                                <!--/row-->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn blue" data-dismiss="modal">提交</button>
+                    <button type="button" class="btn default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!--弹层 4-->
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">查看外出计划</h4>
+                </div>
+                <div class="modal-body clearfix">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="date-picker" data-date-format="mm/dd/yyyy">
+                        </div>
+                        <div class="d-info">
+                            <dl>
+                                <dt>13:30</dt>
+                                <dd class="r-content">
+                                    <p class="txt-1">张小娴（13576876567）</p>
+                                    <p class="txt-2">北京大众惠一（北京市海淀区首体南路168号）</p>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>13:30</dt>
+                                <dd class="r-content">
+                                    <p class="txt-1">张小娴（13576876567）</p>
+                                    <p class="txt-2">北京大众惠一（北京市海淀区首体南路168号）</p>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>13:30</dt>
+                                <dd class="r-content">
+                                    <p class="txt-1">张小娴（13576876567）</p>
+                                    <p class="txt-2">北京大众惠一（北京市海淀区首体南路168号）</p>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>13:30</dt>
+                                <dd class="r-content">
+                                    <p class="txt-1">张小娴（13576876567）</p>
+                                    <p class="txt-2">北京大众惠一（北京市海淀区首体南路168号）</p>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!--弹层 5-->
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">查看外出计划</h4>
+                </div>
+                <div class="modal-body clearfix">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>NO.</th>
+                                        <th>优惠券名称</th>
+                                        <th>金额</th>
+                                        <th>有效期</th>
+                                        <th> 适用城市</th>
+                                        <th>适用品牌</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1111易车红包</td>
+                                        <td>1000</td>
+                                        <td>2015-11-11 至 2016-01-31</td>
+                                        <td>北京，上海，广州，深圳</td>
+                                        <td>三菱，日产，东风，荣威，起亚，福特，雪佛兰，大众，奔腾，斯柯达</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>行圆砍价红包</td>
+                                        <td>1000</td>
+                                        <td>2015-11-11 至 2016-01-31</td>
+                                        <td>北京，上海，广州，深圳</td>
+                                        <td>三菱，日产，东风，荣威，起亚，福特，雪佛兰，大众，奔腾，斯柯达</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!--弹层 6-->
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">确认成交</h4>
+                </div>
+                <div class="modal-body clearfix">
+                    <div class="col-lg-12 col-md-12">
+                        <form action="#" class="form-horizontal">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">订单编号：</label>
+                                            <div class="col-md-9">
+                                                <label class="control-label">4000026143</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">选择品牌：</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>请选择</option>
+                                                    <option>Country 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="help-block">请选择！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">选择车型：</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>请选择</option>
+                                                    <option>Country 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="help-block">请选择！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">选择车款：</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>请选择</option>
+                                                    <option>Country 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="help-block">请选择！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">选择商家：</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>请选择</option>
+                                                    <option>Country 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="help-block">请选择！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">优惠券：</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>请选择</option>
+                                                    <option>Country 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="help-block">请选择！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">成交价格：</label>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="价格单位为（元）">
+                                                <span class="help-block">成交价格有误，请重新填写！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">车主姓名：</label>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control">
+                                                <span class="help-block">请填写车主姓名！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                </div>
+                                <!--/row-->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn blue" data-dismiss="modal">提交</button>
+                    <button type="button" class="btn default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!--弹层 7-->
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">标记报价</h4>
+                </div>
+                <div class="modal-body clearfix">
+                    <div class="col-lg-12 col-md-12">
+                        <form action="#" class="form-horizontal">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">订单编号：</label>
+                                            <div class="col-md-9">
+                                                <label class="control-label">4000026143</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">选择品牌：</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>请选择</option>
+                                                    <option>Country 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="help-block">请选择！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">选择车型：</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>请选择</option>
+                                                    <option>Country 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="help-block">请选择！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">选择车款：</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>请选择</option>
+                                                    <option>Country 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="help-block">请选择！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">选择商家：</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>请选择</option>
+                                                    <option>Country 2</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="help-block">请选择！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group has-error">
+                                            <label class="control-label col-md-3">报价：</label>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="价格单位为（元）">
+                                                <span class="help-block">成交价格有误，请重新填写！</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">&nbsp;</label>
+                                            <div class="col-md-10">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" value="option1">给客户发送4S店地址短信
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">短信内容：</label>
+                                            <div class="col-md-9">
+                                                <textarea class="form-control" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/row-->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn blue" data-dismiss="modal">提交</button>
+                    <button type="button" class="btn default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!--弹层 8-->
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">标题</h4>
+                </div>
+                <div class="modal-body clearfix">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>订单状态</th>
+                                        <th>标记报价</th>
+                                        <th>确认成交</th>
+                                        <th>交易关闭</th>
+                                        <th>交易失败</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>待处理</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>已报价</td>
+                                        <td class="center"><i class="fa fa-check"></i></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>待商家确认</td>
+                                        <td class="center"><i class="fa fa-check"></i></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>交易成功</td>
+                                        <td class="center"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            交易失败
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="center"><i class="fa fa-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            交易关闭
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="center"><i class="fa fa-check"></i></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!--弹层 9-->
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">标题</h4>
+                </div>
+                <div class="modal-body clearfix">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="record-new">
+                            <div class="line-search"></div>
+                           <dl>
+                                <dt></dt>
+                                <dd><span> 成功购车</span><span class="name">孙悟空</span>
+                                    <p>在某某经销商完成购车，确认成交</p>
+                                    <span>2014-10-16 14:36</span>
+                                </dd>
+                            </dl>
+                            <dl class="red">
+                                <dt></dt>
+                                <dd><span> 成功购车 </span><span class="name">孙悟空</span>
+                                    <p>约客户到店看车
+                                    </p>
+                                    <span>2014-10-16 14:36</span>
+                                </dd>
+                            </dl>
+                             <dl>
+                                <dt></dt>
+                                <dd><span> 成功购车 </span><span class="name">孙悟空</span>
+                                    <p>在某某经销商完成购车，确认成交</p>
+                                    <span>2014-10-16 14:36</span>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- END FOOTER -->
+    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- BEGIN CORE PLUGINS -->
+    <!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+    <script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+    <script src="../../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <!-- END CORE PLUGINS -->
+    <script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
+    <script src="../../assets/crm/layout/scripts/layout.js" type="text/javascript"></script>
+    <script src="../../assets/crm/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+    <script src="../../assets/crm/layout/scripts/demo.js" type="text/javascript"></script>
+    <script src="../../assets/admin/pages/scripts/components-pickers.js"></script>
+    <script>
+    jQuery(document).ready(function() {
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layout
+        ComponentsPickers.init(); //init 日历
+
+        //调用品牌列表
+        new advanceSelect("brandName", {
+            callback: function(data) {
+                alert(data)
+            }
+        });
+    });
+    </script>
+    <!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+
+</html>

@@ -1,0 +1,76 @@
+﻿@using MUI.Core.HtmlExtension
+@using MUI.Core.Model.Form
+@using MUI.Core.Utils
+@using MUIHelper
+@using ShopAnalyse.OP.Models
+@using ShopAnalyse.OP.Controllers
+@model System.Data.DataTable
+
+@{
+    ViewBag.Title = "商铺列表-商机管理";
+
+    ShopQueryEntity query = ViewBag.Query;
+    var statusList = ViewBag.modifyStatus;
+    var businessList = ViewBag.businessType;
+    string cols = new ToolController().GetCookie("business_shopList");
+    List<string> colList = string.IsNullOrWhiteSpace(cols) ? new List<string>() : cols.Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+}
+@Form.PageTitleTwo("商机管理", "商铺列表")
+
+<style type="text/css">
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none !important;
+        margin: 0;
+    }
+</style>
+<!--搜索区域-->
+@using (Form.BeginSearchContainer())
+{
+    using (Html.BeginForm("list", "business", new { id = "" }, FormMethod.Get, new { @id = "SearchForm" }))
+    {
+        @Form.TextBox("ShopName", query.ShopName, "名称", new { placeholder = "请输入商铺名称" })
+        @Form.DropDownList("ModifyStatus", "处理状态", statusList)
+        @Form.DropDownList("BusinessID", "商铺类型", businessList)
+
+        @Form.BtnGroup(new List<object>()
+        {
+            @Form.ButtonSubmit("btn_submit", "查询", new {@class = "btn-primary"}),
+            @Form.Button("btn_reset", "重置", new {@class = "grey", onclick =
+                "mui.page.resetQueryCondition('ShopID,ShopName');" +
+                "mui.page.resetQueryConditionForDDL('ModifyStatus');" +
+                "mui.page.resetQueryConditionForBS();"})
+        })
+    }
+}
+
+<!--列表数据区域-->
+@using (Form.BeginPortlet(new { role = "abc", id = "p1" }))
+{
+    using (Html.TableBegin(new { id = "list", name = "list" }))
+    {
+        @MUIGrid.SetData(Model).Items(colList,
+        MUIGrid.CustomColumn("ShopTitle", "商铺名称", x=> { return x["shoptitle"].ToString().Length > 12 ? x["shoptitle"].ToString().Substring(0, 12) : x["shoptitle"].ToString(); }),
+         MUIGrid.CustomColumn("BusinessDes", "类型", x => { return x["businessdes"].ToString(); }),
+        MUIGrid.Operation("Action", "操作",
+            MUIGrid.Button("编辑", new { @class = "btn btn-xs blue tooltips", data_container = "body", onclick = "business.edit({ShopID});"  })
+        ),
+        null);
+     }
+ }
+
+<!--分页区域-->
+@{
+    const string formId = "SearchForm";
+    var opt = new PagerOption
+    {
+        CurrentPageIndex = ViewBag.PageIndex ?? 1,
+        TotalItemCount = ViewBag.Count ?? 0,
+        PageSize = ViewBag.CurrPageSize ?? 0
+    };
+    @Form.Pager(opt, formId)
+}
+
+@section head_scripts {
+    <script src="~/js/business.js" type="text/javascript"></script>
+}

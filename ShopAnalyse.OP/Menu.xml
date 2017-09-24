@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menus>
+  <Menu MenuKey="coupon" ResourceKey="coupon" Text="商机管理" IconClass="icon-home" RightIconClass="" ItemClass="" Target="_self">
+    <Menu MenuKey="coupon_couponrule" ResourceKey="coupon_couponrule" Text="商铺列表" IconClass="icon-briefcase" RightIconClass="badge badge-roundless badge-danger" ItemClass="tooltips" LinkUrl="/business/list"  Target="_self"></Menu>
+    <Menu MenuKey="coupon_coupon" ResourceKey="coupon_coupon" Text="用户列表" IconClass="icon-briefcase" RightIconClass="badge badge-roundless badge-danger" ItemClass="tooltips" LinkUrl="/user/list"  Target="_self"></Menu>
+  </Menu>
+</Menus>

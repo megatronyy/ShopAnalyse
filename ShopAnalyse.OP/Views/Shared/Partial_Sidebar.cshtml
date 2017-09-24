@@ -1,0 +1,119 @@
+﻿@using ShopAnalyse.OP.Models
+@model List<ShopAnalyse.OP.Models.MenuItem>
+
+@{
+    List<MenuItem> menuList = Model;
+    string parentMenuKey = MenuHelper.GetParentMenuKey(ViewBag.MenuKey);
+    <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+        @if (menuList != null && menuList.Count > 0)
+        {
+
+            foreach (var item in menuList)
+            {
+                //if (!string.Equals(item.ResourceKey, ViewBag.ResourceKey))
+                //{
+                //    continue;
+                //}
+                string active = parentMenuKey == item.ParentMenuKey ? "active" : "";
+                string open = string.IsNullOrWhiteSpace(active) ? "" : "open";
+                string[] args = { item.ItemClass, active, open };
+                string className = string.Join(" ", args.Where(n => !string.IsNullOrWhiteSpace(n))).ToLower();
+                <li @if (!string.IsNullOrWhiteSpace(className)) { @: class="@className"
+                                                                                                                    }
+                    @if (className.Contains("tooltips")) { @: data-container="body" data-placement="right" data-html="true" data-original-title="@(item.Text)"
+                                                                                                                                                                                                                                                                                                                            }>
+
+                    @{
+bool hasChild = (item.SubMenu != null && item.SubMenu.Count > 0);
+bool hasLink = !string.IsNullOrWhiteSpace(item.LinkUrl);
+if (!hasLink && !hasChild)
+{
+    <h3 class="uppercase">@item.Text</h3>
+}
+else
+{
+    string itemLink = string.IsNullOrWhiteSpace(item.LinkUrl) ? "javascript:;" : item.LinkUrl;
+
+    <a href="@itemLink" target="@item.Target">
+        @if (!string.IsNullOrWhiteSpace(item.IconClass))
+        {
+            <i class="@item.IconClass"></i>
+        }
+        <span class="title">@item.Text</span>
+        @if (!string.IsNullOrWhiteSpace(active))
+        {
+            <span class="selected"></span>
+        }
+        @if (hasChild)
+        {
+            <span class="arrow @open"></span>
+        }
+        @if (!string.IsNullOrWhiteSpace(item.RightIconClass) && !string.IsNullOrWhiteSpace(item.RightInfo))
+        {
+            <span class="@item.RightIconClass">@item.RightInfo</span>
+        }
+    </a>
+
+    if (hasChild)
+    {
+        <ul class="sub-menu">
+            @foreach (var itemSubMenu in item.SubMenu)
+            {
+                //if (!string.Equals(itemSubMenu.ResourceKey, ViewBag.ResourceKey))
+                //{
+                //    continue;
+                //}
+                active = ViewBag.MenuKey == itemSubMenu.MenuKey ? "active" : "";
+                open = "";
+                args = new string[] { itemSubMenu.ItemClass, active, open };
+                className = string.Join(" ", args.Where(n => !string.IsNullOrWhiteSpace(n))).ToLower();
+                <li @if (!string.IsNullOrWhiteSpace(className)) { @: class="@className"
+                                                                                                                        }
+                    @if (className.Contains("tooltips")) {    @: data-container="body" data-placement="right" data-html="true" data-original-title="@(itemSubMenu.Text)"
+                                                                                                                                                                                    }>
+                    @{
+hasChild = (itemSubMenu.SubMenu != null && itemSubMenu.SubMenu.Count > 0);
+hasLink = !string.IsNullOrWhiteSpace(itemSubMenu.LinkUrl);
+if (!hasLink && !hasChild)
+{
+    <h3 class="uppercase">@itemSubMenu.Text</h3>
+}
+else
+{
+    itemLink = string.IsNullOrWhiteSpace(itemSubMenu.LinkUrl) ? "javascript:;" : itemSubMenu.LinkUrl;
+    <a href="@itemLink" target="@itemSubMenu.Target">
+        @if (!string.IsNullOrWhiteSpace(itemSubMenu.IconClass))
+        {
+            <i class="@itemSubMenu.IconClass"></i>
+        }
+        <span class="title">@itemSubMenu.Text</span>
+        @*如果有下级样式则添加到此处
+                                @if (hasChild)
+            {
+                <span class="arrow @open"></span>
+            }
+        *@
+        @if (!string.IsNullOrWhiteSpace(itemSubMenu.RightIconClass) && !string.IsNullOrWhiteSpace(itemSubMenu.RightInfo))
+        {
+            <span class="@itemSubMenu.RightIconClass">@itemSubMenu.RightInfo</span>
+        }
+    </a>
+}
+                    }
+                </li>
+            }
+        </ul>
+    }
+}
+                    }
+                </li>
+            }
+        }
+        @*<li>
+            <a id="linkClose" onclick="mui.page.close()">
+                <i class="icon-power"></i>
+                <span class="title">退出</span>
+            </a>
+        </li>*@
+    </ul>
+}

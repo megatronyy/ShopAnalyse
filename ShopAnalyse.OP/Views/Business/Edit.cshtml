@@ -1,0 +1,122 @@
+﻿@using MUI.Core.HtmlExtension
+@using MUI.Core
+@using MUI.Core.Model.Form
+@using MUI.Core.Utils
+@using MUI.Core.Model.Enum
+@using MUIHelper
+@using ShopAnalyse.OP.Models
+@using ShopAnalyse.OP.Controllers
+
+@model ShopAnalyse.OP.Models.BusinessModel
+@{
+    ViewBag.Title = "编辑-商机管理";
+}
+
+@section head_css{
+    <style>
+        .js-max-input {
+            padding: 0 10px 0 10px;
+            font-size: 20px;
+            color: rgb(245, 50, 0);
+            z-index: 999;
+        }
+    </style>
+}
+
+@using (Form.BeginEditContainer())
+{
+    using (Html.BeginForm("Edit", "Business", FormMethod.Post, new { @class = "form-horizontal", role = "form", @id = "editForm", @name = "editForm" }))
+    {
+        @Html.Hidden("ShopID", Model.ShopID)
+        <div class="form-group editcontrol clearfix">
+            <label class="control-label floatleft">
+                <span style="color: red">*</span>标题：
+            </label>
+            <div class="col-md-7 col6 floatleft">
+                <input autocomplete="off" class="form-control" id="ShopTitle" name="ShopTitle" placeholder="商铺标题" type="text" value="@Model.ShopTitle" />
+            </div>
+        </div>
+
+        <div class="form-group editcontrol clearfix">
+            <label class="control-label floatleft">
+                <span style="color: red">*</span>面积：
+            </label>
+            <div class="col-md-7 col6 floatleft">
+                <input autocomplete="off" class="form-control" id="ShopArea" name="ShopArea" placeholder="商铺面积" type="text" value="@Model.ShopArea" />
+            </div>
+        </div>
+
+        <div class="form-group editcontrol clearfix">
+            <label class="control-label floatleft">
+                <span style="color: red">*</span>价格：
+            </label>
+            <div class="col-md-7 col6 floatleft">
+                <input autocomplete="off" class="form-control" id="ShopPrice" name="ShopPrice" placeholder="商铺价格" type="text" value="@Model.ShopPrice" />
+            </div>
+        </div>
+
+            <div class="form-group editcontrol clearfix">
+                <label class="control-label floatleft">
+                    <span style="color: red">*</span>时间：
+                </label>
+                <div class="col-md-7 col6 floatleft">
+                    <input autocomplete="off" class="form-control" id="PublishTime" name="PublishTime" placeholder="商铺发布时间" type="text" value="@Model.PublishTime" />
+                </div>
+            </div>
+            <div class="form-group editcontrol clearfix">
+                <label class="control-label floatleft">
+                    <span style="color: red">*</span>房东：
+                </label>
+                <div class="col-md-7 col6 floatleft">
+                    <input autocomplete="off" class="form-control" id="UserName" name="UserName" placeholder="商铺发布人" type="text" value="@Model.UserName" />
+                </div>
+            </div>
+            <div class="form-group editcontrol clearfix">
+                <label class="control-label floatleft">
+                    <span style="color: red">*</span>电话：
+                </label>
+                <div class="col-md-7 col6 floatleft">
+                    <input autocomplete="off" class="form-control" id="Mobile" name="Mobile" placeholder="商铺发布人电话" type="text" value="@Model.Mobile" />
+                </div>
+            </div>
+            <div class="form-group editcontrol clearfix">
+                <label class="control-label floatleft">
+                    <span style="color: red">*</span>类型：
+                </label>
+                <div class="col-md-7 col6 floatleft">
+                    <select class="form-control" id="BusinessID" name="BusinessID">
+                        <option @(Model.BusinessID == 0 ? "selected" : "") value="0">全部</option>
+                        <option @(Model.BusinessID == 1 ? "selected" : "") value="1">宾馆酒店</option>
+                        <option @(Model.BusinessID == 2 ? "selected" : "") value="2">餐饮</option>
+                        <option @(Model.BusinessID == 3 ? "selected" : "") value="3">超市</option>
+                        <option @(Model.BusinessID == 4 ? "selected" : "") value="4">成人用品</option>
+                        <option @(Model.BusinessID == 5 ? "selected" : "") value="5">底商</option>
+                        <option @(Model.BusinessID == 6 ? "selected" : "") value="6">服装</option>
+                        <option @(Model.BusinessID == 7 ? "selected" : "") value="7">健身</option>
+                        <option @(Model.BusinessID == 8 ? "selected" : "") value="8">面包</option>
+                        <option @(Model.BusinessID == 9 ? "selected" : "") value="9">汽配</option>
+                        <option @(Model.BusinessID == 10 ? "selected" : "") value="10">医药保健</option>
+                        <option @(Model.BusinessID == 11 ? "selected" : "") value="11">家居</option>
+                        <option @(Model.BusinessID == 12 ? "selected" : "") value="12">电子</option>
+                        <option @(Model.BusinessID == 13 ? "selected" : "") value="13">其它</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group editcontrol clearfix">
+                <label class="control-label floatleft">
+                    <span style="color: red">*</span>简介：
+                </label>
+                <div class="col-md-7 col6 floatleft">
+                    <textarea class="form-control valid" cols="20" id="ShopDisc" name="ShopDisc" rows="3" style="margin: 0px -183.484px 0px 0px; width: 253px; height: 195px;">@Model.ShopDisc</textarea>
+                </div>
+            </div>
+            <div class="form-group editcontrol clearfix" style="margin-top:10px;">
+                <label class="control-label floatleft">
+                </label>
+                <div class="col-md-7 col6" style="text-align:center;">
+                    <button class="btn btn-primary" id="btn_submit" type="submit">查询</button>
+                </div>
+            </div>
+
+    }
+}

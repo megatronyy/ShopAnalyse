@@ -1,0 +1,13 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/xml; charset=utf-8" />
+<title>My97DatePicker</title>
+
+<script type="text/javascript" src="WdatePicker.js"></script>
+</head>
+<body>
+<label for="">
+                            发布时间：</label><input name="txtDateTimeBegin" type="text" id="txtDateTimeBegin" class="Wdate" onFocus="var txtDateTimeEnd=$dp.$(&#39;txtDateTimeEnd&#39;);WdatePicker({onpicked:function(){txtDateTimeEnd.focus();},maxDate:&#39;#F{$dp.$D(\&#39;txtDateTimeEnd\&#39;)}&#39;})" />
+                        <span>到</span><input name="txtDateTimeEnd" type="text" id="txtDateTimeEnd" class="Wdate" onFocus="WdatePicker({minDate:&#39;#F{$dp.$D(\&#39;txtDateTimeBegin\&#39;)}&#39;})" />
+</body>
+</html>

@@ -1,0 +1,452 @@
+﻿@inherits MUI.Core.HelperPage
+@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using System.Web.Services.Description
+@using MUI.Core.HtmlExtension
+@using MUI.Core.Model.Form
+@using MUI.Core.Utils
+
+@*页面标题*@
+@helper PageTitle(string name1, string name2)
+{
+    <h3 class="page-title">
+        @name2
+    </h3>
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li><i class="fa fa-home"></i>@name1 <i class="fa fa-angle-right"></i></li>
+            <li>@name2 </li>
+        </ul>
+    </div>
+}
+
+@helper PageTitleTwo(string name1, string name2)
+{
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li><i class="fa fa-home"></i>@name1 <i class="fa fa-angle-right"></i></li>
+            <li>@name2 </li>
+        </ul>
+    </div>
+}
+
+@helper FormSearchControlBase(SearchControlOption controlOption, object target)
+{
+    controlOption = controlOption ?? new SearchControlOption
+    {
+        ShowLabel = false//如果 传入为null，则不显示Label
+    };
+    <div class="@controlOption.ContainerCss">
+        @{
+            @*如果不显示Label，则控件会占据整个宽度（代表控件的包裹div也不会显示）*@
+            if (controlOption.ShowLabel)
+            {
+                <label class="@controlOption.LabelCss">
+                    @{
+                if (!string.IsNullOrWhiteSpace(controlOption.Tooltips))
+                {
+                    <a class="fa fa-info-circle" title="" style="cursor: pointer; color: orange" data-container="body" data-toggle="popover" data-placement="bottom"
+                       data-content="@controlOption.Tooltips" data-original-title="说明" data-html="true"></a>
+                }
+                var label = !string.IsNullOrWhiteSpace(controlOption.LabelTitle) ? (controlOption.LabelTitle + "：") : "";
+                @Html.Raw(label)
+                    }
+                </label>
+                <div class="@controlOption.BoxCss">
+                    @Html.Raw(target)
+                </div>
+            }
+            else
+            {
+                @Html.Raw(target)
+            }
+        }
+    </div>
+}
+@* 文本框 *@
+@helper TextBox(string name, string value)
+{
+    @TextBox(name, value, null, iconOption: null, htmlAttributes: null)
+}
+@helper TextBox(string name, string value, object htmlAttributes)
+{
+    @TextBox(name, value, null, iconOption: null, htmlAttributes: htmlAttributes)
+}
+@helper TextBox(string name, string value, string labelTitle, object htmlAttributes)
+{
+    @TextBox(name, value, new SearchControlOption
+    {
+        LabelTitle = labelTitle
+    }, null, htmlAttributes)
+}
+@helper TextBox(string name, string value, string labelTitle, string tooltips, object htmlAttributes)
+{
+    @TextBox(name, value, new SearchControlOption
+    {
+        LabelTitle = labelTitle,
+        Tooltips = tooltips
+    }, null, htmlAttributes)
+}
+@helper TextBox(string name, string value, string labelTitle, string tooltips, IconOption iconOption, object htmlAttributes)
+{
+    @TextBox(name, value, new SearchControlOption
+    {
+        LabelTitle = labelTitle,
+        Tooltips = tooltips
+    }, iconOption, htmlAttributes)
+}
+@helper TextBox(string name, string value, IconOption iconOption, object htmlAttributes)
+{
+    @TextBox(name, value, new SearchControlOption
+    {
+        ShowLabel = false
+    }, iconOption, htmlAttributes)
+}
+@helper TextBox(string name, string value, SearchControlOption controlOption, IconOption iconOption, object htmlAttributes)
+{
+    var dic = CommonHelper.AnonymousObjectToHtmlAttributes(htmlAttributes);
+    iconOption = iconOption ?? new IconOption();
+
+    var control = Html.TextBoxWithIcon(iconOption, Html.TextBox(name, value, dic));
+
+    @FormSearchControlBase(controlOption, control)
+}
+@helper TextArea(string name, string value, SearchControlOption controlOption, object htmlAttributes)
+{
+    var dic = CommonHelper.AnonymousObjectToHtmlAttributes(htmlAttributes);
+    var control = Html.TextArea(name, value, dic);
+    @FormSearchControlBase(controlOption, control)
+}
+@*
+    文本框的值可以进行精确/模糊匹配，或者其他匹配
+    matchOption:条件类型列表
+*@
+@helper TextBoxWithCondition(string name, string labelTitle, MatchOption matchOption, object value = null, object htmlAttributes = null, string tooltips = "")
+{
+    var controlOption = new SearchControlOption
+    {
+        LabelTitle = labelTitle,
+        Tooltips = tooltips
+    };
+    @TextBoxWithCondition(name, controlOption, matchOption, value, htmlAttributes)
+}
+
+@helper TextBoxWithCondition(string name, SearchControlOption controlOption, MatchOption matchOption, object value = null, object htmlAttributes = null)
+{
+    var dic = CommonHelper.AnonymousObjectToHtmlAttributes(htmlAttributes);
+
+    var textBox = Html.TextBox(name, value, dic);
+
+    var control = Html.TextBoxWithCondition(matchOption, textBox,
+        Html.Hidden(matchOption.TypeDomName, matchOption.CurrValue));
+        @FormSearchControlBase(controlOption, control)
+}
+
+@*
+    多角色扮演文本框
+    matchOption:条件类型列表
+*@
+@helper ComboTextBox(string name, MatchOption matchOption, IconOption iconOption = null, object value = null, object htmlAttributes = null, string tooltips = "")
+{
+    var controlOption = new SearchControlOption
+    {
+        ShowLabel = false,//该控件不会显示Label
+        Tooltips = tooltips
+    };
+    @ComboTextBox(name, controlOption, matchOption, iconOption, value, htmlAttributes)
+}
+
+@helper ComboTextBox(string name, SearchControlOption controlOption, MatchOption matchOption, IconOption iconOption = null, object value = null, object htmlAttributes = null)
+{
+    var dic = CommonHelper.AnonymousObjectToHtmlAttributes(htmlAttributes);
+    iconOption = iconOption ?? new IconOption();
+    var textBox = Html.TextBoxWithIcon(iconOption, Html.TextBox(name, value, dic));
+
+    var control = Html.ComboTextBox(matchOption, textBox,
+    Html.Hidden(matchOption.TypeDomName, matchOption.CurrValue));
+    @FormSearchControlBase(controlOption, control)
+}
+
+@* CheckBox *@
+@helper CheckBox(string name, string text, bool defaultChecked = false)
+{
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 margin-bottom-10">
+        <label class="col-lg-4 col-md-4 col-sm-6 col-xs-4 control-label"></label>
+        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-8">
+            <div class="input-group">
+                <label class="checkbox-inline hover" style="margin-left: 0; width: 110px; padding-left: 10px;">
+                    @{
+                        var ck = Request.QueryString[name] == null ? defaultChecked : Request.QueryString[name].Equals("1");
+                    }
+                    @Html.CheckBox(name + "_chk", ck, new { onclick = "mui.page.checkedBox(this,'" + name + "');" })
+                    @text
+                </label>
+                @Html.Hidden(name, Request.QueryString[name])
+            </div>
+
+        </div>
+    </div>
+}
+
+@*下拉列表 （单选）*@
+@helper DropDownList(string name, string labelTitle, IEnumerable<MUISelectListItem> dataSource,
+               object htmlAttributes = null, string tooltips = "")
+{
+    var controlOption = new SearchControlOption { LabelTitle = labelTitle, Tooltips = tooltips };
+    @DropDownList(name, controlOption, dataSource, htmlAttributes)
+}
+
+@helper DropDownList(string name, SearchControlOption controlOption, IEnumerable<MUISelectListItem> dataSource,
+               object htmlAttributes = null)
+{
+    var control = Html.MUIDropDownList(name, dataSource, CommonHelper.AnonymousObjectToHtmlAttributes(htmlAttributes));
+    @FormSearchControlBase(controlOption, control)
+}
+
+@*下拉列表（单选+分组）*@
+@helper GroupDropDownList(string name, string labelTitle, Dictionary<string, IEnumerable<MUISelectListItem>> source, object htmlAttributes = null, string tooltips = null)
+{
+    var controlOption = new SearchControlOption { LabelTitle = labelTitle, Tooltips = tooltips };
+    @GroupDropDownList(name, controlOption, source, htmlAttributes)
+}
+@helper GroupDropDownList(string name, SearchControlOption controlOption, Dictionary<string, IEnumerable<MUISelectListItem>> source, object htmlAttributes = null)
+{
+    var control = Html.MUIGroupDropDownList(name, source, CommonHelper.AnonymousObjectToHtmlAttributes(htmlAttributes));
+    @FormSearchControlBase(controlOption, control)
+}
+
+@*下拉列表（多选）
+    多选列表的取值方式与普通的有所差异
+    id:控件ID,按照ID来取值获取的是一个数组，无法直接用于表单请求
+    valueField：MUI会构建出一个id/name为valueField的隐藏域，用于存储多选值。可直接通过该valueField获取多选值或进行form表单提交
+*@
+@helper MultiSelect(string id, string valueField, string labelTitle, IEnumerable<MUISelectListItem> dataSource, object htmlAttributes = null, string tooltips = null)
+{
+    var controlOption = new SearchControlOption { LabelTitle = labelTitle, Tooltips = tooltips };
+    @MultiSelect(id, valueField, controlOption, dataSource, htmlAttributes)
+}
+@helper MultiSelect(string id, string valueField, SearchControlOption controlOption, IEnumerable<MUISelectListItem> dataSource, object htmlAttributes = null)
+{
+    //存储值的控件name
+    if (string.IsNullOrWhiteSpace(valueField))
+    {
+        valueField = "get_" + id;
+    }
+    var dic = CommonHelper.AnonymousObjectToHtmlAttributes(htmlAttributes);
+    if (!dic.ContainsKey("class"))
+    {
+        dic.Add("class", "form-control  bs-st");
+    }
+    else
+    {
+        var classValue = dic["class"].ToString().ToLower();
+        var bs_st = "bs-st";
+        if (classValue.IndexOf(bs_st, StringComparison.CurrentCultureIgnoreCase) < 0)
+        {
+            dic["class"] = string.Concat(bs_st, " ", dic["class"]);
+        }
+        if (classValue.IndexOf(CommonHelper.ControlClassBase, StringComparison.CurrentCultureIgnoreCase) < 0)
+        {
+            dic["class"] = string.Concat(CommonHelper.ControlClassBase, " ", dic["class"]);
+        }
+    }
+
+    if (!dic.ContainsKey("multiple"))
+    {
+        dic.Add("multiple", "multiple");
+    }
+    if (!dic.ContainsKey("data-live-search"))
+    {
+        dic.Add("data-live-search", "true");
+    }
+    if (!dic.ContainsKey("data-size"))
+    {
+        dic.Add("data-size", "6");
+    }
+
+    if (!dic.ContainsKey("onchange"))
+    {
+        dic.Add("onchange", "mui.page.setMultiValues(this,'" + valueField + "')");
+    }
+
+    var control = Html.MUIMultiDropDownList(id, dataSource, dic, valueField);
+    @FormSearchControlBase(controlOption, control)
+}
+
+@helper Button(string id, string text, object htmlAttributes = null)
+{
+    @Html.Button(id, text, "button", htmlAttributes)
+
+}
+@helper ButtonSubmit(string id, string text, object htmlAttributes = null)
+{
+    @Html.Button(id, text, "submit", htmlAttributes)
+}
+
+@helper BtnGroup(List<object> btnList)
+{
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 margin-bottom-10 flr">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 btn-div">
+            @{
+                if (btnList != null)
+                {
+                    foreach (var item in btnList)
+                    {
+                        @item
+                    }
+                }
+            }
+        </div>
+    </div>
+}
+
+@helper DateTimeBox(string name, string labelTitle, object value, object htmlAttributes = null, string tooltips = "")
+{
+    SearchControlOption controlOption = new SearchControlOption
+    {
+        LabelTitle = labelTitle,
+        Tooltips = tooltips
+    };
+    @DateTimeBox(name, controlOption, value, htmlAttributes)
+}
+@helper DateTimeBox(string name, SearchControlOption controlOption, object value, object htmlAttributes = null)
+{
+    //DateOption:format,max,min,changeEvent 等属性放到htmlAttributes
+    var dic = CommonHelper.AnonymousObjectToHtmlAttributes(htmlAttributes);
+    var textBox = Html.DateTimeBox(Html.TextBox(name, value, dic));
+
+    @FormSearchControlBase(controlOption, textBox)
+}
+
+@helper DateRangeBox(string nameFrom, string valueFrom, string nameTo, string valueTo, string labelTitle, string tooltips, object htmlAttributesFrom = null, object htmlAttributesTo = null)
+{
+    SearchControlOption controlOption = new SearchControlOption
+    {
+        LabelTitle = labelTitle,
+        Tooltips = tooltips
+    };
+    @DateRangeBox(nameFrom, valueFrom, nameTo, valueTo, controlOption, htmlAttributesFrom, htmlAttributesTo)
+}
+@helper DateRangeBox(string nameFrom, string valueFrom, string nameTo, string valueTo, SearchControlOption controlOption, object htmlAttributesFrom = null, object htmlAttributesTo = null)
+{
+    //DateOption:format,max,min,changeEvent 等属性放到htmlAttributes
+    var dicFrom = CommonHelper.AnonymousObjectToHtmlAttributes(htmlAttributesFrom);
+    var dicTo = CommonHelper.AnonymousObjectToHtmlAttributes(htmlAttributesTo);
+    var textBoxFrom = Html.TextBox(nameFrom, valueFrom, dicFrom);
+    var textBoxTo = Html.TextBox(nameTo, valueTo, dicTo);
+
+    var control = Html.DateRangeBox(textBoxFrom, textBoxTo);
+    @FormSearchControlBase(controlOption, control)
+}
+@helper DateRangeBox3(string nameFrom, string valueFrom, string nameTo, string valueTo, string labelTitle, string tooltips)
+{
+    SearchControlOption controlOption = new SearchControlOption
+    {
+        LabelTitle = labelTitle,
+        Tooltips = tooltips
+    };
+    @DateRangeBox3(nameFrom, valueFrom, nameTo, valueTo, controlOption)
+}
+@helper DateRangeBox3(string nameFrom, string valueFrom, string nameTo, string valueTo, SearchControlOption controlOption)
+{
+    var hiddenFrom = Html.Hidden(nameFrom, valueFrom, new { data_role = "from" });
+    var hiddenTo = Html.Hidden(nameTo, valueTo, new { data_role = "to" });
+
+    var control = Html.DateRangeBox3(hiddenFrom, hiddenTo);
+    @FormSearchControlBase(controlOption, control)
+}
+
+@helper CustomColumnEdit(CustomColumnEditOption option)
+{
+    if (option != null)
+    {
+           <!--data-role:用于自定义显示列的功能；data-table:自定义显示列的目标表格ID；data-cokname:用于存储自定义显示列数据的Cookie的名称标识；data-cokname:从Cookie中获取到的自定义显示列数据 -->
+        <a href="javascript:;" data-role="coledit" data-table="@option.TargetTable" data-cokname="@option.Key" data-cokvalue="@option.Value">
+            自定义显示列
+        </a>
+    }
+
+}
+
+@helper Pager(PagerOption pagerOption, string formId, IEnumerable<System.Web.Mvc.SelectListItem> pagesizeList = null)
+{
+    if (pagerOption != null)
+    {
+        if (pagesizeList == null)
+        {
+            pagesizeList = CommonHelper.GetPageSize(pagerOption.PageSize.ToString());
+        }
+        <div class="portlet-body clearfix" data-role="pager" data-formid="@formId" data-value="@pagerOption.PageSize">
+            <div style="float: left;">
+                <div class="pager_cl">
+                    <label>
+                        @if (pagerOption.TotalItemCount > 0)
+                        {
+                            <text> 共 @(pagerOption.TotalItemCount.ToString("N0"))
+                            条数据，每页显示
+                            @Html.DropDownList("pagesizeDDL_" + formId, pagesizeList, new { @class = "form-control input-inline", onchange = "mui.page.submitForm(this,'" + formId + "')", style = "width: 55px; padding: 6px 0 6px 3px;" })
+                            条数据
+                            </text>
+                        }
+                    </label>
+                </div>
+                <div class="pager_c50">
+                    @if (pagerOption.TotalItemCount > 0)
+                    {
+                        @Html.InitPager(pagerOption)
+                    }
+                </div>
+                @if (pagerOption.TotalPageCount > 1)
+                {
+                    <div class="pager_cr">
+                        <label>
+                            跳转到第
+                            @Html.TextBox("pageIndexBox", pagerOption.CurrentPageIndex, new { @class = "pager_cb input-inline" }) <strong>/@pagerOption.TotalPageCount</strong>页
+                        </label>
+                    </div>
+                    <div class="pager_cr">
+                        <label>
+                            <input type="button" onclick="mui.page.redirectForm(@pagerOption.CurrentPageIndex, @pagerOption.TotalPageCount, '@pagerOption.SubmitAction')" value="Go" style="margin-top: 15px;" class="pager_cb" />
+                        </label>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+}
+@functions
+{
+    /// <summary>
+    /// 创建查询容器
+    /// </summary>
+    /// <param name="option"></param>
+    /// <returns></returns>
+    public static SearchContainer BeginSearchContainer(SearchContainerOption option = null)
+    {
+        return Html.BeginSearchContainer(option);
+    }
+    /// <summary>
+    /// 创建外围容器，用于包含 操作区域 和 表格
+    /// </summary>
+    /// <returns></returns>
+    public static Portlet BeginPortlet(object htmlAttr = null)
+    {
+        return Html.BeginPortlet(htmlAttr);
+    }
+    /// <summary>
+    /// 创建操作区域
+    /// </summary>
+    /// <returns></returns>
+    public static ActionContainer BeginAcionContainer()
+    {
+        return Html.BeginAcionContainer();
+    }
+    /// <summary>
+    /// 创建编辑容器
+    /// </summary>
+    /// <returns></returns>
+    public static EditContainer BeginEditContainer()
+    {
+        return Html.BeginEditContainer();
+    }
+}

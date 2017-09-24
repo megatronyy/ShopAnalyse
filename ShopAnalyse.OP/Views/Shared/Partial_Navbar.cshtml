@@ -1,0 +1,35 @@
+﻿@using BitAuto.EP.MaiChe.Utils
+@{
+    Dictionary<string, string> dicBars = (Dictionary<string, string>)ViewData["dicBars"];
+    string selectedBar = DataFormat.FormatString(ViewData["selectedBar"]);
+    var url = HttpContext.Current.Request.Url;
+
+    //string controllerName = ViewContext.RouteData.Values["controller"].ToString();
+    //string path = url.Scheme + "://" + url.DnsSafeHost + BUS.AppPath + "/" + controllerName + "/";
+}
+<ul class="nav nav-tabs">
+    @{
+        foreach (var bar in dicBars)
+        {
+            if (string.Equals(bar.Value, selectedBar, StringComparison.CurrentCultureIgnoreCase))
+            {
+                @Html.Raw("<li class='active'>");
+            }
+            else
+            {
+                @Html.Raw("<li>");
+            }
+            var keyArr = bar.Key.Split(':');
+            if (keyArr.Length == 2)
+            {
+                @Html.Raw("<a href='"+Url.Action(bar.Value)+"' >&nbsp;<i class='glyphicon glyphicon-list-alt'></i>&nbsp;" + keyArr[0] + "&nbsp;&nbsp;<span class=\"label label-sm label-danger circle\">" + keyArr[1] + "</span></a>")
+            }
+            else
+            {
+                @Html.Raw("<a href='" + Url.Action(bar.Value) + "' >&nbsp;<i class='glyphicon glyphicon-list-alt'></i>&nbsp;" + keyArr[0] + "&nbsp;&nbsp;</a>")
+            }
+
+            @Html.Raw("</li>");
+        }
+    }
+</ul>

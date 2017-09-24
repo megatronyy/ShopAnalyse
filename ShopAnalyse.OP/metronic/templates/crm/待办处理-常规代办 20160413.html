@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<meta charset="utf-8"/>
+<title>电商CRM - 客户管理</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<!--<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>-->
+<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" />
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN THEME STYLES -->
+<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/crm/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+<link id="style_color" href="../../assets/crm/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/crm/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+<!-- END THEME STYLES -->
+<link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
+<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
+<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
+<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
+<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
+<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
+<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
+<body class="page-header-fixed page-quick-sidebar-over-content">
+<!-- BEGIN HEADER -->
+<div class="page-header navbar navbar-fixed-top">
+	<!-- BEGIN HEADER INNER -->
+	<div class="page-header-inner">
+		<!-- BEGIN LOGO -->
+		<div class="page-logo">
+			<a href="index.html">
+			<img src="../../assets/crm/layout/img/logo.png" alt="logo" class="logo-default"/>
+			</a>
+			<div class="menu-toggler sidebar-toggler hide">
+				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+			</div>
+		</div>
+		<!-- END LOGO -->
+		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+		<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+		</a>
+		<!-- END RESPONSIVE MENU TOGGLER -->
+		<!-- BEGIN TOP NAVIGATION MENU -->
+		<div class="top-menu">
+			<ul class="nav navbar-nav pull-right">
+				<!-- BEGIN USER LOGIN DROPDOWN -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+				<li class="dropdown dropdown-user">
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+					<img alt="" class="img-circle" src="../../assets/crm/layout/img/avatar3_small.jpg"/>
+					<span class="username username-hide-on-mobile">
+					王艳梅 </span>
+					<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-default">
+						<li>
+							<a href="login.html">
+							<i class="icon-key"></i> Log Out </a>
+						</li>
+					</ul>
+				</li>
+				<!-- END USER LOGIN DROPDOWN -->
+			</ul>
+		</div>
+		<!-- END TOP NAVIGATION MENU -->
+	</div>
+	<!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container zm-wrap">
+	<!-- BEGIN SIDEBAR -->
+	<div class="page-sidebar-wrapper">
+		<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+		<!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+		<div class="page-sidebar navbar-collapse collapse">
+			<!-- BEGIN SIDEBAR MENU -->
+			<!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+			<!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+			<!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+			<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+			<!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+			<!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+			<ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+				<!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+				<li class="sidebar-toggler-wrapper">
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+					<div class="sidebar-toggler">
+					</div>
+					<!-- END SIDEBAR TOGGLER BUTTON -->
+				</li>
+				<li class="start">
+					<a href="javascript:;">
+					<i class="icon-home"></i>
+					<span class="title">工作台</span>
+					</a>
+				</li>				
+				<li class="active">
+					<a href="javascript:;">
+					<i class="icon-home"></i>
+					<span class="title">客户管理</span>
+					<span class="arrow "></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<a href="index.html">
+							<i class="icon-bar-chart"></i>
+							客户详情页</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="javascript:;">
+					<i class="icon-puzzle"></i>
+					<span class="title">业务管理</span>
+					<span class="arrow "></span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" target="_blank">
+					<i class="icon-paper-plane"></i>
+					<span class="title">
+					任务管理 </span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" target="_blank">
+					<i class="icon-paper-plane"></i>
+					<span class="title">
+					统计报表 </span>
+					</a>
+				</li>
+			</ul>
+			<!-- END SIDEBAR MENU -->
+		</div>
+	</div>
+	<!-- END SIDEBAR -->
+	<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper">
+		<div class="page-content">
+
+
+			<!-- BEGIN PAGE HEADER-->
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="index.html">首页</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#">客户管理</a>
+                        <i class="fa fa-angle-right"></i>
+					</li>
+                    <li>
+                        <a href="#">待办处理页</a>
+                    </li>
+				</ul>
+			</div>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			<div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <div class="i-img-wrap">
+                        <img src="http://192.168.87.131:92/assets/crm/layout/img/man_100x100.jpg" alt="客户头像">
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-10">
+                    <div class="opts-wrap clearfix">
+                        <div class="pull-left">
+                            <a href="##" class="btn green">免打扰</a>
+                            <a href="##" class="btn green">转移</a>
+                            <a href="##" class="btn green">战败</a>
+                            <a href="##" class="btn green">创建待办</a>
+                            <a href="##" class="btn green">解除免打扰</a>
+                            <a href="##" class="btn green">黑名单</a>
+                        </div>
+                        <div class="pull-right">
+                            <a href="##" class="btn green">查看外出计划</a>
+                            <a href="##" class="btn green">返回</a>
+                        </div>
+                    </div>
+                    <!--form static label start-->
+                    <div class="row r1">
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-4 col-sm-4 zl-1 nowrap">客户姓名：<span class="s-val val-max94" title="张小娴张小娴张小娴">张小娴张小娴张小娴</span><a href="#edituser"><i class="fa fa-edit"></i></a></label>
+                            <div class="col-md-5 col-sm-5">
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked> 男
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 女
+                                </label>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <label title="2016-04-11 13:22:61" class="work-label mian">免</label>
+                                <label class="work-label hei">黑</label>
+                            </div>
+                        </div>
+                        <!--/span-->
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-7">客户来源：<span class="s-val">行圆</span></label>
+                        </div>
+                        <!--/span-->
+                    </div>
+                    <div class="row r1">
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">手机号码：<span class="s-val">1399265698（北京）</span><a href="##" class="btn zm-btn-1"><i class="fa fa-phone"></i></a><a href="##" class="btn zm-btn-1"><i class="fa  fa-envelope"></i></a></label>
+                        </div>
+                        <!--/span-->
+                        <div class="col-md-6 col-sm-6">
+                            <label class="control-label col-md-7">推荐人：<span class="s-val">李斌</span></label>
+                        </div>
+                        <!--/span-->
+                    </div>
+                    <div class="row r1">
+                        <div class="col-md-12 col-sm-12">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">备用手机：<span class="s-val">1399265698（河北石家庄）</span><a href="##" class="btn zm-btn-1"><i class="fa fa-phone"></i></a><a href="##" class="btn zm-btn-1"><i class="fa  fa-envelope"></i></a></label>
+                        </div>
+                    </div>
+                    <!--备用信息-->
+                    <div class="row r1">
+                        <div class="col-md-12 col-sm-12">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">备用手机：<span class="s-val">李老板亲戚，目前客户还处在犹豫期，在多个车型中做对比，没有明确的购车时间及车型。</span></label>
+                        </div>
+                    </div>
+                    <!--客户属性-->
+                    <div class="row r1">
+                        <div class="col-md-12 col-sm-12 clearfix zm-struct-1">
+                           <label class="k1">客户属性：</label>
+                            <div class="rt-block">
+                                <div class="col-md-12 col-sm-12 mb5"><span class="btn blue">异地</span><span class="btn"><i class="glyphicon glyphicon-map-marker"></i>&nbsp;&nbsp;上牌城市：保定</span>
+                                    <span class="btn"><i class="glyphicon glyphicon-map-marker"></i>&nbsp;&nbsp;购车城市：石家庄</span>
+                                    <span class="btn"><i class="glyphicon glyphicon-map-marker"></i>&nbsp;&nbsp;手机归属：北京市</span>
+                                </div>
+                                <div class="col-md-12 col-sm-12 mb5"><span class="btn blue">置换</span>
+                                    <span class="btn">【北京】一汽大众：出售中</span>
+                                    <span class="btn">一汽大众 高尔夫 2015款1.2TSI 自动舒适型</span>
+                                </div>
+                                <div class="col-md-12 col-sm-12 mb5"><span class="btn blue">支付</span>
+                                    <span class="btn">共支付过4笔</span>
+                                </div>
+                                <div class="col-md-12"><span class="btn blue">优惠券</span>
+                                    <a href="##" class="btn zm-link-1">共5个有效优惠券</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--客户标签-->
+                    <div class="row r1">
+                        <div class="col-md-12 col-sm-12">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">客户标签：<span class="s-val">老客户推荐，大客户</span></label>
+                        </div>
+                    </div>
+                    <!--订单类型-->
+                    <div class="row r1">
+                        <div class="col-md-12 col-sm-12">
+                            <label class="control-label col-md-12 col-sm-12 zl-1">订单类型：<span class="btn btn-info">竞</span><span class="btn btn-success">团</span>&nbsp;&nbsp;共12单<a href="#" class="btn zm-link-1">查看全部订单</a> </label>
+
+                        </div>
+                    </div>
+                    <!--订单品牌-->
+                    <div class="row r1">
+                        <div class="col-md-12 col-sm-12 zm-struct-1">
+                            <label>订单品牌：</label>
+                            <div class="rt-block">
+                                <div class="rt-1">
+                                    <img src="../../assets/crm/layout/img/chart.png" alt="">
+                                </div>
+                                <div class="rt-2">
+                                    <img src="../../assets/crm/layout/img/chart.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row r1" style="margin-left: -100px;">
+                        <div class="col-lg-12 col-md-12 col-sm-12 padding-top-25">
+                            <div class="portlet portlet-small box gray">
+                                <div class="portlet-title from-title" data-toggle="collapse-chevron" data-target="#collapse1" >
+                                <table class="c-orderinfo" cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody><tr>
+                                        <td><i class="fa fa-chevron-up"></i>订单编号：<a href="#">8110113</a></td>
+                                        <td>品牌：一汽大众</td>
+                                        <td>车型：2015款 卡罗拉 进取型</td>
+                                        <td>订单状态：待处理</td>
+                                        <td>订单类型：竞价订单</td>
+                                        <td>金融线索：有</td>
+                                        <td><a href="#">查看金融产品</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                                <div  id="collapse1" class="portlet-body collapse in from-body">
+                                <div class="table-responsive">
+                                    <p class="m0"><i class="fa fa-inbox"></i>3家4S店已报价</p>
+                                    <table class="table table-hover table-bordered table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>商家ID</th>
+                                            <th width="30%"> 经销商</th>
+                                            <th>报价时间</th>
+                                            <th>指导价</th>
+                                            <th>优惠金额</th>
+                                            <th>库存</th>
+                                            <th>金融方案</th>
+                                            <th>报价详情</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>12345678</td>
+                                            <td>重庆万有经济发展有限公司</td>
+                                            <td> 2016-04-01 10:00:23</td>
+                                            <td> 519,000</td>
+                                            <td>12,000</td>
+                                            <td>少量库存</td>
+                                            <td>支持</td>
+                                            <td>
+                                                <a href="#">详情</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>12345678</td>
+                                            <td>重庆万有经济发展有限公司</td>
+                                            <td> 2016-04-01 10:00:23</td>
+                                            <td> 519,000</td>
+                                            <td>12,000</td>
+                                            <td>少量库存</td>
+                                            <td>不支持</td>
+                                            <td>
+                                                <a href="#">详情</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>12345678</td>
+                                            <td>重庆万有经济发展有限公司</td>
+                                            <td> 2016-04-01 10:00:23</td>
+                                            <td> 519,000</td>
+                                            <td>12,000</td>
+                                            <td>少量库存</td>
+                                            <td>不支持</td>
+                                            <td>
+                                                <a href="#">详情</a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="table-responsive">
+                                    <p class="m0"><i class="fa fa-inbox"></i>3家4S店尚未报价</p>
+                                    <table class="table table-hover table-bordered table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>商家ID </th>
+                                            <th width="30%"> 经销商</th>
+                                            <th>销售顾问|手机</th>
+                                            <th>销售经理|手机</th>
+                                            <th>外呼</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>12345678</td>
+                                            <td>重庆欣欣经济发展有限公司</td>
+                                            <td>杨丽丽|13581967888</td>
+                                            <td>张爽|135819675555</td>
+                                            <td class="center">
+                                                <a href="#"><i class="fa fa-phone"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>12345678</td>
+                                            <td>重庆欣欣经济发展有限公司</td>
+                                            <td>杨丽丽|13581967888</td>
+                                            <td>张爽|135819675555</td>
+                                            <td class="center">
+                                                <a href="#"><i class="fa fa-phone"></i></a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="portlet portlet-small box gray">
+                                <div class="portlet-title from-title" data-toggle="collapse-chevron" data-target="#collapse2" >
+                                    <table class="c-orderinfo" cellpadding="0" cellspacing="0" width="100%">
+                                        <tbody>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-down"></i><span>订单编号：<a href="#">8110113</a></span></td>
+                                            <td>品牌：一汽大众</td>
+                                            <td>车型：2015款 卡罗拉 进取型</td>
+                                            <td>订单状态：待处理</td>
+                                            <td>订单类型：竞价订单</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div  id="collapse2" class="portlet-body collapse from-body">
+                                    <div class="table-responsive">
+                                        <p class="m0"><i class="fa fa-inbox"></i>3家4S店已报价</p>
+                                        <table class="table table-hover table-bordered table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>商家ID</th>
+                                                <th width="30%"> 经销商</th>
+                                                <th>报价时间</th>
+                                                <th>指导价</th>
+                                                <th>优惠金额</th>
+                                                <th>库存</th>
+                                                <th>报价详情</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>12345678</td>
+                                                <td>重庆万有经济发展有限公司</td>
+                                                <td> 2016-04-01 10:00:23</td>
+                                                <td> 519,000</td>
+                                                <td>12,000</td>
+                                                <td>少量库存</td>
+                                                <td>
+                                                    <a href="#">详情</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>12345678</td>
+                                                <td>重庆万有经济发展有限公司</td>
+                                                <td> 2016-04-01 10:00:23</td>
+                                                <td> 519,000</td>
+                                                <td>12,000</td>
+                                                <td>少量库存</td>
+                                                <td>
+                                                    <a href="#">详情</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>12345678</td>
+                                                <td>重庆万有经济发展有限公司</td>
+                                                <td> 2016-04-01 10:00:23</td>
+                                                <td> 519,000</td>
+                                                <td>12,000</td>
+                                                <td>少量库存</td>
+                                                <td>
+                                                    <a href="#">详情</a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <p class="m0"><i class="fa fa-inbox"></i>3家4S店尚未报价</p>
+                                        <table class="table table-hover table-bordered table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>商家ID </th>
+                                                <th width="30%"> 经销商</th>
+                                                <th>销售顾问|手机</th>
+                                                <th>销售经理|手机</th>
+                                                <th>外呼</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>12345678</td>
+                                                <td>重庆欣欣经济发展有限公司</td>
+                                                <td>杨丽丽|13581967888</td>
+                                                <td>张爽|135819675555</td>
+                                                <td class="center">
+                                                    <a href="#"><i class="fa fa-phone"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>12345678</td>
+                                                <td>重庆欣欣经济发展有限公司</td>
+                                                <td>杨丽丽|13581967888</td>
+                                                <td>张爽|135819675555</td>
+                                                <td class="center">
+                                                    <a href="#"><i class="fa fa-phone"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>12345678</td>
+                                                <td>重庆欣欣经济发展有限公司</td>
+                                                <td>杨丽丽|13581967888</td>
+                                                <td>张爽|135819675555</td>
+                                                <td class="center">
+                                                    <a href="#"><i class="fa fa-phone"></i></a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet portlet-small box gray">
+                                <div class="portlet-title from-title" >
+                                    <table class="c-orderinfo" cellpadding="0" cellspacing="0" width="100%">
+                                        <tbody>
+                                        <tr>
+                                            <td><i class="fa">&emsp;</i><span>订单编号：<a href="#">8110113</a></span></td>
+                                            <td>品牌：一汽大众</td>
+                                            <td>车型：2015款 卡罗拉 进取型</td>
+                                            <td>订单状态：待处理</td>
+                                            <td>订单类型：竞价订单</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+			</div>
+
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        待办跟进
+                    </div>
+                </div>
+                <div class="portlet-body ptb30">
+                    <form action="#" class="form-horizontal">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">待办任务：</label>
+                                <div class="col-md-9">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                            <thead>
+                                            <tr>
+                                                <th class="table-checkbox">
+                                                    <input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes"/>
+                                                </th>
+                                                <th>
+                                                    待办时间
+                                                </th>
+                                                <th>
+                                                    待办类型
+                                                </th>
+                                                <th style="width: 45%;">
+                                                    待办备注
+                                                </th>
+                                                <th>
+                                                    关联订单
+                                                </th>
+                                                <th>
+                                                    待办来源
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="odd gradeX">
+                                                <td>
+                                                    <input type="checkbox" class="checkboxes" value="1"/>
+                                                </td>
+                                                <td>
+                                                    2015/6/18 20:55:47
+                                                </td>
+                                                <td>
+                                                    内部推荐
+                                                </td>
+                                                <td>
+                                                    员工王艳梅推荐客户张小娴，预购上海大众桑塔纳2000，购车时间：7日内，请速联系！
+                                                </td>
+                                                <td class="center">
+                                                    <a href="##">1234504</a>
+                                                </td>
+                                                <td>
+                                                    系统创建
+                                                </td>
+                                            </tr>
+                                            <tr class="odd gradeX">
+                                                <td>
+                                                    <input type="checkbox" class="checkboxes" value="1"/>
+                                                </td>
+                                                <td>
+                                                    2015/6/18 20:55:47
+                                                </td>
+                                                <td>
+                                                    内部推荐
+                                                </td>
+                                                <td>
+                                                    员工王艳梅推荐客户张小娴，预购上海大众桑塔纳2000，购车时间：7日内，请速联系！
+                                                </td>
+                                                <td class="center">
+                                                    <a href="##">1234504</a>
+                                                </td>
+                                                <td>
+                                                    系统创建
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label text-red">跟进阶段：</label>
+                                <div class="col-md-3">
+                                    <select class="form-control">
+                                        <option>初步沟通</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">客户级别：</label>
+                                <div class="col-md-3">
+                                    <select class="form-control">
+                                        <option>A</option>
+                                        <option>B</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">沟通记录：</label>
+                                <div class="col-md-8">
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group f1">
+                                <label class="col-md-2 control-label">跟进结果：</label>
+                                <div class="col-md-10">
+                                    <label class="radio-inline r1">
+                                        <input type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option1" checked> 约定看车时间
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions1" id="inlineRadio4" value="option1"> 继续跟进
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions1" id="inlineRadio5" value="option1"> 不需陪同
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions1" id="inlineRadio6" value="option1"> 不买车了
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions1" id="inlineRadio7" value="option1"> 客户已购车
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">待办时间：</label>
+                                <div class="col-lg-10 col-md-10 col-sm-6 col-xs-8">
+                                    <div class="col-md-4 m0">
+                                        <input class="form-control form-control-inline date-picker" size="16" type="text" value="2015-07-01" data-date-format="yyyy-mm-dd">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" value="2:30 PM" data-format="hh:mm A" class="form-control clockface_1">
+                                    </div>
+                                    <div class="col-md-12 m0">
+                                        <span class="c-cyan-value">该时间段没有客户回访任务</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">客户级别：</label>
+                                <div class="col-md-3">
+                                    <label class="col-md-2 control-label">D</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 col-sm-3 col-xs-6 control-label margin-bottom-10">商家信息：</label>
+                                <div class="col-md-3 margin-bottom-10">
+                                    <select class="form-control">
+                                        <option>请选择品牌</option>
+                                        <option>Option 2</option>
+                                        <option>Option 3</option>
+                                        <option>Option 4</option>
+                                        <option>Option 5</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 margin-bottom-10">
+                                    <select class="form-control">
+                                        <option>请选择商家</option>
+                                        <option>Option 2</option>
+                                        <option>Option 3</option>
+                                        <option>Option 4</option>
+                                        <option>Option 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">代办内容：</label>
+                                <div class="col-md-8"> <textarea class="form-control" rows="3"></textarea></div>
+                            </div>
+                            <div class="form-group f1">
+                                <label class="col-md-2 control-label">是否战败：</label>
+                                <div class="col-md-10">
+                                    <label class="radio-inline r1">
+                                        <input type="radio" name="inlineRadioOptions2" id="inlineRadio8" value="option1" checked> 是
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions2" id="inlineRadio9" value="option1"> 否
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label text-red">战败原因：</label>
+                                <div class="col-md-3">
+                                    <select class="form-control">
+                                        <option>请选择</option>
+                                        <option>价格太高</option>
+                                        <option>取消购车计划</option>
+                                        <option>其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label text-red">其他原因：</label>
+                                <div class="col-md-8"> <textarea class="form-control" rows="3"></textarea></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label text-red">转移类型：</label>
+                                <div class="col-md-3">
+                                    <select class="form-control">
+                                        <option>选择类型</option>
+                                        <option>本地</option>
+                                        <option>外地</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label text-red">选择买顾：</label>
+                                <div class="col-md-3">
+                                    <select class="form-control">
+                                        <option>请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label text-red">购车城市：</label>
+                                <div class="col-md-3">
+                                    <select class="form-control">
+                                        <option>请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 col-sm-3 col-xs-6 control-label margin-bottom-10 text-red">上牌城市：</label>
+                                <div class="col-md-3 margin-bottom-10">
+                                    <select class="form-control">
+                                        <option>请选择</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 margin-bottom-10">
+                                    <select class="form-control">
+                                        <option>请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 col-sm-3 col-xs-6 control-label margin-bottom-10 text-red">意向车型：</label>
+                                <div class="col-md-3 margin-bottom-10">
+                                    <select class="form-control">
+                                        <option>请选择</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 margin-bottom-10">
+                                    <select class="form-control">
+                                        <option>请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label text-red">转移原因：</label>
+                                <div class="col-md-8"> <textarea class="form-control" rows="3"></textarea></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-actions col-xs-12">
+                                    <div class="row">
+                                        <div class="col-md-offset-5 col-md-9">
+                                            <button type="submit" class="btn green">提交</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <a name="edituser"></a>
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        客户基本信息
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="col-md-12">
+                            <div class="c-custominfo">
+                                <table class="c-infotb" width="100%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td width="7%">
+                                            <label class="control-label">备用手机：</label>
+                                        </td>
+                                        <td width="18%">
+                                            <div class="c-kj"><input type="text" class="form-control" placeholder="请输入备用手机"><span id="name-error" class="help-block help-block-error">This field is required.</span></div>
+                                        </td>
+                                        <td width="7%">
+                                            <label class="control-label">备注姓名：</label>
+                                        </td>
+                                        <td width="18%">
+                                            <div class="c-kj"><input type="text" class="form-control" placeholder="请输入备注姓名"><span class="help-block help-block-error">This field is required.</span></div>
+                                        </td>
+                                        <td width="7%">
+                                            <label class="control-label">黑名单客户：</label>
+                                        </td>
+                                        <td width="18%">
+                                            <div class="c-kj">
+                                                <div class="radio-list">
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="optionsRadios" value="option1"> 是</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="optionsRadios" value="option2" checked> 否</label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td width="7%">
+                                            <label class="control-label">客户生日：</label>
+                                        </td>
+                                        <td>
+                                            <div class="c-kj input-icon right">
+                                                <i class="fa fa-calendar tooltips" data-original-title="点击选择客户生日" data-container="body"></i>
+                                                <input type="text" class="form-control date-picker" placeholder="点击选择客户生日">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="control-label">备注信息：</label>
+                                        </td>
+                                        <td colspan="7">
+                                            <div style="padding-top: 10px"><textarea class="b-textarea"></textarea></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="control-label">客户标签：</label>
+                                        </td>
+                                        <td colspan="7">
+                                            <div class="checkbox-list">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" value="option1"> 大客户 </label>
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" value="option2"> 内部推荐 </label>
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" value="option3" disabled> 老客户推荐 </label>
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" value="option3" disabled> 买顾亲友 </label>
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" value="option3" disabled> VIP </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="control-label">购车城市：</label></td>
+                                        <td>
+                                            <div class="c-kj">
+                                                <select class="form-control">
+                                                    <option>北京</option>
+                                                    <option>已战败</option>
+                                                    <option>已成交</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td><label class="control-label">上牌城市：</label></td>
+                                        <td colspan="5">
+                                            <div class="c-kj c-select-city">
+                                                <select class="form-control">
+                                                    <option>北京</option>
+                                                    <option>已战败</option>
+                                                    <option>已成交</option>
+                                                </select>
+                                            </div>
+                                            <div class="c-kj c-select-city">
+                                                <select class="form-control">
+                                                    <option>北京</option>
+                                                    <option>已战败</option>
+                                                    <option>已成交</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="control-label">付款方式：</label></td>
+                                        <td>
+                                            <div class="c-kj">
+                                                <select class="form-control">
+                                                    <option>北京</option>
+                                                    <option>已战败</option>
+                                                    <option>已成交</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td><label class="control-label">购车预算：</label></td>
+                                        <td>
+                                            <div class="c-kj">
+                                                <select class="form-control">
+                                                    <option>北京</option>
+                                                    <option>已战败</option>
+                                                    <option>已成交</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td><label class="control-label">预购时间：</label></td>
+                                        <td>
+                                            <div class="c-kj input-icon right">
+                                                <i class="fa fa-calendar tooltips" data-original-title="点击选择预购时间" data-container="body"></i>
+                                                <input type="text" class="form-control date-picker" placeholder="点击选择预购时间">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table class="c-infotb" width="100%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td width="7%">
+                                            <label class="control-label">主意向车辆：</label>
+                                        </td>
+                                        <td width="70%">
+                                            <div class="c-kj c-fl col-lg-3 col-md-3 col-sm-6 col-xs-8">
+                                                <div class="advance-select" id="brandName">
+                                                    <span class="form-control">品牌</span>
+                                                    <div class="advance-select-cot">
+                                                        <a href="#" class="advance-select-reset" data-obj="{'default':'请选择品牌'}">重置选择</a>
+                                                        <address>
+                                                            <p>
+                                                                <span>A</span>
+                                                                <span>B</span>
+                                                                <span>C</span>
+                                                                <span>D</span>
+                                                                <span>F</span>
+                                                                <span>G</span>
+                                                                <span>H</span>
+                                                                <span>J</span>
+                                                                <span>K</span>
+                                                                <span>L</span>
+                                                                <span>M</span>
+                                                                <span>N</span>
+                                                                <span>O</span>
+                                                                <span>P</span>
+                                                                <span>Q</span>
+                                                                <span>R</span>
+                                                                <span>S</span>
+                                                                <span>T</span>
+                                                                <span>W</span>
+                                                                <span>X</span>
+                                                                <span>Y</span>
+                                                                <span>Z</span>
+                                                            </p>
+                                                            <em></em>
+                                                        </address>
+                                                        <ul>
+                                                            <li data-obj="{}"><em>A</em>奥迪奥迪奥迪奥</li>
+                                                            <li data-obj="{}"><em>A</em>奥迪</li>
+                                                            <li data-obj="{}"><em>A</em>奥迪</li>
+                                                            <li data-obj="{}"><em>A</em>奥迪</li>
+                                                            <li data-obj="{}"><em>A</em>奥迪</li>
+                                                            <li data-obj="{}"><em>A</em>奥迪</li>
+                                                            <li data-obj="{'name':'把'}"><em>B</em>宝马1</li>
+                                                            <li data-obj="{}"><em>B</em>宝马</li>
+                                                            <li data-obj="{}"><em>B</em>宝马</li>
+                                                            <li data-obj="{}"><em>B</em>宝马</li>
+                                                            <li data-obj="{}"><em>B</em>宝马</li>
+                                                            <li data-obj="{}"><em>B</em>宝马</li>
+                                                            <li data-obj="{}"><em>C</em>长安</li>
+                                                            <li data-obj="{}"><em>C</em>长安</li>
+                                                            <li data-obj="{}"><em>C</em>长安</li>
+                                                            <li data-obj="{}"><em>C</em>长安</li>
+                                                            <li data-obj="{}"><em>C</em>长安</li>
+                                                            <li data-obj="{}"><em>C</em>长安</li>
+                                                            <li data-obj="{}"><em>C</em>长安</li>
+                                                            <li data-obj="{}"><em>C</em>长安</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-kj c-fl col-lg-3 col-md-3 col-sm-6 col-xs-8">
+                                                <select class="form-control">
+                                                    <optgroup label="一汽奥迪">
+                                                        <option>奥迪A3</option>
+                                                        <option>奥迪A4L</option>
+                                                        <option>奥迪A6L</option>
+                                                        <option>奥迪A8L</option>
+                                                    </optgroup>
+                                                    <optgroup label="奥迪">
+                                                        <option>奥迪Q7</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-8">
+                                                <select class="form-control">
+                                                    <option>车款</option>
+                                                    <option>速腾2015</option>
+                                                    <option>速腾2014</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="control-label">次意向车辆：</label>
+                                        </td>
+                                        <td>
+                                            <div class="c-kj c-fl">
+                                                <select class="form-control">
+                                                    <option>汽车品牌</option>
+                                                    <option>A 奥迪</option>
+                                                </select>
+                                            </div>
+                                            <div class="c-kj c-fl">
+                                                <select class="form-control">
+                                                    <option>车型</option>
+                                                    <option>速腾</option>
+                                                    <option>迈腾</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-8">
+                                                <select class="form-control">
+                                                    <option>车款</option>
+                                                    <option>速腾2015</option>
+                                                    <option>速腾2014</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                        <td>
+                                            <div class="c-kj c-fl">
+                                                <select class="form-control">
+                                                    <option>汽车品牌</option>
+                                                    <option>A 奥迪</option>
+                                                </select>
+                                            </div>
+                                            <div class="c-kj c-fl">
+                                                <select class="form-control">
+                                                    <option>车型</option>
+                                                    <option>速腾</option>
+                                                    <option>迈腾</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-7 col-md-8 col-sm-6 col-xs-8">
+                                                <select class="form-control">
+                                                    <option>车款</option>
+                                                    <option>速腾2015</option>
+                                                    <option>速腾2014</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </table>
+
+                                <table class="c-infotb" width="100%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td colspan="5"><div class="c-save"><button type="submit" class="btn btn-block green">保存</button></div></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        服务历史
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>服务时间</th>
+                                    <th>角色</th>
+                                    <th>服务人员</th>
+                                    <th>关联订单号</th>
+                                    <th>沟通对象</th>
+                                    <th>沟通内容</th>
+                                    <th>录音</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2015-04-28 23:08:31</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <a href="javascript:;" class="btn default btn-xs black" onclick="showaudio()">
+                                        <i class="fa fa-play-circle"></i> 收听 </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2015-04-28 23:08:31</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <a href="#luyin" class="btn default btn-xs black" data-toggle="modal">
+                                        <i class="fa fa-play-circle"></i> 收听 </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+			<!-- END PAGE CONTENT-->
+		</div>
+	</div>
+	<!-- END CONTENT -->
+</div>
+<!-- END CONTAINER -->
+
+<!--优惠卷弹层-->
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title">客户优惠券</h4>
+        </div>
+        <div class="modal-body clearfix">
+            <div class="col-lg-12 col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th class="">NO.</th>
+                            <th class="">优惠券名称</th>
+                            <th class="col-lg-1 col-md-1">金额</th>
+                            <th class="">有效期</th>
+                            <th class="col-lg-6 col-md-6">适用规则</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1111易车红包</td>
+                            <td>1000</td>
+                            <td>2015-11-11 至 2016-01-31</td>
+                            <td>
+                                <div>
+                                    <dl>
+                                        <dt>适用城市： </dt>
+                                        <dd>北京，上海，广州，深圳</dd>
+                                        <dt> 适用品牌：</dt>
+                                        <dd>三菱，日产，东风，荣威，起亚，福特，雪佛兰，大众，奔腾，斯柯达</dd>
+                                        <dt>适用业务：</dt>
+                                        <dd>竞价订单，买顾订单</dd>
+                                        <dt>特殊说明：</dt>
+                                        <dd>这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，</dd>
+                                    </dl>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>1111易车红包</td>
+                            <td>1000</td>
+                            <td>2015-11-11 至 2016-01-31</td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>1111易车红包</td>
+                            <td>1000</td>
+                            <td>2015-11-11 至 2016-01-31</td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>行圆砍价红包</td>
+                            <td>1000</td>
+                            <td>2015-11-11 至 2016-01-31</td>
+                            <td>
+                                <div>
+                                    <dl>
+                                        <dt>适用城市： </dt>
+                                        <dd>北京，上海，广州，深圳</dd>
+                                        <dt> 适用品牌：</dt>
+                                        <dd>三菱，日产，东风，荣威，起亚，福特，雪佛兰，大众，奔腾，斯柯达</dd>
+                                        <dt>适用业务：</dt>
+                                        <dd>竞价订单，买顾订单</dd>
+                                        <dt>特殊说明：</dt>
+                                        <dd>这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，这是特殊说明，</dd>
+                                    </dl>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal-content -->
+</div>
+
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+	<div class="page-footer-inner">
+		 2015 &copy; 易车·行圆
+	</div>
+	<div class="scroll-to-top">
+		<i class="icon-arrow-up"></i>
+	</div>
+</div>
+
+<!-- END FOOTER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="../../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<!-- END CORE PLUGINS -->
+<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="../../assets/crm/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="../../assets/crm/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="../../assets/crm/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="../../assets/admin/pages/scripts/components-pickers.js"></script>
+<script>
+    jQuery(document).ready(function() {
+        Metronic.init(); // init metronic core components
+		Layout.init(); // init current layout
+		ComponentsPickers.init(); //init 日历
+    });
+    (function(){
+        //仿collapse
+        $(document).on('click.chevron','[data-toggle="collapse-chevron"]',function(){
+            var $this = $(this);
+            var $target = $($this.data("target"));
+            if($target.is(":hidden")){
+               $target.slideDown();
+                $this.find(".fa-chevron-down,.fa-chevron-up").removeClass("fa-chevron-down").addClass("fa-chevron-up");
+            }else {
+                $target.slideUp();
+                $this.find(".fa-chevron-down,.fa-chevron-up").removeClass("fa-chevron-up").addClass("fa-chevron-down");
+            }
+        });
+    })();
+   </script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

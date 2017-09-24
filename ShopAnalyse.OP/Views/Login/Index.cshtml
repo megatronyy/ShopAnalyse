@@ -1,0 +1,34 @@
+﻿@using MUI.Core.HtmlExtension
+@using MUI.Core.Model.Form
+@using MUI.Core.Utils
+@using MUIHelper
+@using ShopAnalyse.OP.Models
+@using ShopAnalyse.OP.Controllers
+
+@{
+    ViewBag.Title = "登录-商机管理";
+}
+
+@using (Form.BeginEditContainer())
+{
+    using (Html.BeginForm("index", "login", new { UserName = "", Password = "" }, FormMethod.Post, new { @id = "SearchForm" }))
+    {
+        @Form.TextBox("UserName", "", "用户名", new { placeholder = "请输入用户名" })
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 searchControl">
+            <label class="col-lg-4 col-md-4 col-sm-6 col-xs-4 control-label">
+                密码：
+            </label>
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-8">
+                <input class="form-control" id="Password" name="Password" placeholder="请输入密码" type="password" value="">
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 searchControl">
+            <label class="col-lg-4 col-md-4 col-sm-6 col-xs-4 control-label">
+            </label>
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-8">
+                @Form.ButtonSubmit("btn_submit", "登录", new { @class = "btn-primary" })
+            </div>
+        </div>
+        
+    }
+}

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8"/>
+    <title>电商CRM - 客户管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <!--<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"-->
+    <!--type="text/css"/>-->
+    <link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="../../assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="../../assets/global/plugins/jquery-multi-select/css/multi-select.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/bootstrap-summernote/summernote.css">
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/jstree/dist/themes/default/style.min.css">
+    <link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/crm/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+    <link id="style_color" href="../../assets/crm/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/crm/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+    <!-- tree-multiselect插件样式.20160519 -->
+    <link href="../../assets/crm/layout/css/jquery.tree-multiselect.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/crm/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+    <!-- END THEME STYLES -->
+    <link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
+<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
+<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
+<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
+<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
+<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
+<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
+<body class="page-header-fixed page-quick-sidebar-over-content">
+<!-- BEGIN HEADER -->
+<div class="page-header navbar navbar-fixed-top">
+    <!-- BEGIN HEADER INNER -->
+    <div class="page-header-inner">
+        <!-- BEGIN LOGO -->
+        <div class="page-logo">
+            <a href="index.html">
+                <img src="../../assets/crm/layout/img/logo.png" alt="logo" class="logo-default"/>
+            </a>
+
+            <div class="menu-toggler sidebar-toggler hide">
+                <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+            </div>
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+           data-target=".navbar-collapse">
+        </a>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <!-- BEGIN TOP NAVIGATION MENU -->
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+                <!-- BEGIN USER LOGIN DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-user">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                       data-close-others="true">
+                        <img alt="" class="img-circle" src="../../assets/crm/layout/img/avatar3_small.jpg"/>
+					<span class="username username-hide-on-mobile">
+					王艳梅 </span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <li>
+                            <a href="login.html">
+                                <i class="icon-key"></i> Log Out </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END USER LOGIN DROPDOWN -->
+            </ul>
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+    </div>
+    <!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+    <!-- BEGIN SIDEBAR -->
+    <div class="page-sidebar-wrapper">
+        <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+        <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+        <div class="page-sidebar navbar-collapse collapse">
+            <!-- BEGIN SIDEBAR MENU -->
+            <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+            <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+            <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+            <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+            <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+            <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+                <li class="sidebar-toggler-wrapper">
+                    <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                    <div class="sidebar-toggler">
+                    </div>
+                    <!-- END SIDEBAR TOGGLER BUTTON -->
+                </li>
+                <li class="start">
+                    <a href="javascript:;">
+                        <i class="icon-home"></i>
+                        <span class="title">工作台</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="fa fa-users"></i>
+                        <span class="title">客户管理</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="javascript:;">
+                                <i class="fa fa-user"></i> 全部客户 <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#"><i class="icon-tag"></i> 客户详情页</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-pencil"></i> 订单详情页</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-user"></i> 公共客户</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-user"></i> 超30天未跟进客户</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="fa fa-file-text-o"></i>
+                        <span class="title">线索管理</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="javascript:;">
+                                <i class="fa fa-user"></i> 线索管理 <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#"><i class="icon-tag"></i> 批量导入线索</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-pencil"></i> 线索导入模板</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="fa fa-user"></i> 线索来源配置 <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#"><i class="icon-settings"></i> 新建/编辑线索来源</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="javascript:;">
+                        <i class="glyphicon glyphicon-briefcase"></i>
+                        <span class="title">业务管理</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="index.html">
+                                <i class="icon-bar-chart"></i>
+                                买车顾问管理</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript:;">
+                        <i class="icon-puzzle"></i>
+                        <span class="title">统计报表</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#"><i class="icon-bar-chart"></i> 买顾工作业绩统计</a></li>
+                        <li><a href="#"><i class="icon-bar-chart"></i> 买顾新分配客户跟进数据</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" target="_blank">
+                        <i class="glyphicon glyphicon-tasks"></i>
+					<span class="title">
+					公告管理 </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" target="_blank">
+                        <i class="icon-envelope"></i>
+                        <span class="title">任务管理 </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class=" icon-envelope"></i>
+                        <span class="title">消息中心</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#"><i class="fa fa-comment-o"></i> 待办提醒<span class="c-red">(100)</span></a></li>
+                        <li><a href="#"><i class="fa fa-comment-o"></i> 订单提醒<span class="c-red">(10)</span></a></li>
+                        <li><a href="#"><i class="fa fa-comment-o"></i> 评价投诉<span class="c-red">(10)</span></a></li>
+                        <li><a href="#"><i class="fa fa-comment-o"></i> 系统公告<span class="c-red">(10)</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- END SIDEBAR MENU -->
+        </div>
+    </div>
+    <!-- END SIDEBAR -->
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <!-- BEGIN PAGE HEADER-->
+            <h3 class="page-title">
+                客户管理
+            </h3>
+
+            <div class="page-bar">
+                <ul class="page-breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="index.html">首页</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="#">客户管理</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="#">发布公告</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- END PAGE HEADER-->
+            <!-- BEGIN PAGE CONTENT-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-gift"></i> 发布公告
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-body">
+                                    <div class="clearfix">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="col-md-1 control-label">公告类型：</label>
+
+                                                <div class="col-md-10">
+                                                    <select class="form-control input-medium">
+                                                        <option>普通公告</option>
+                                                        <option>弹层公告</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-1 control-label">选择系统：</label>
+
+                                                <div class="col-md-10">
+                                                    <div class="checkbox-list">
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" value="CRM平台">CRM平台</label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" value="买顾APP">买顾APP</label>
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" value="CC系统">CC系统</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-offset-1 col-md-5">
+                                                    <p>选择CRM地区：</p>
+
+                                                    <div class="b_tagbox2">
+                                                        <select id="CrmCity2" multiple="multiple" style="margin: 0 auto; margin-bottom: 1em">
+                                                            <option value="哈尔滨"  data-section="全国/东北区">哈尔滨</option>
+                                                            <option value="沈阳"  data-section="全国/东北区">沈阳</option>
+                                                            <option value="大连" data-section="全国/东北区">大连</option>
+                                                            <option value="北京" data-section="全国/华北区">北京</option>
+                                                            <option value="天津" data-section="全国/华北区">天津</option>
+                                                            <option value="上海" data-section="全国/华南区">上海</option>
+                                                            <option value="杭州" data-section="全国/华南区">杭州</option>
+                                                            <option value="天津1" data-section="全国/华北区1">天津1</option>
+                                                            <option value="上海1" data-section="全国/华南区1">上海1</option>
+                                                            <option value="杭州1" data-section="全国/华南区1">杭州1</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <p>选择CRM角色：</p>
+
+                                                    <div class="b_tagbox2">
+                                                        <select id="CrmRole2"
+                                                                style="margin: 0 auto; margin-bottom: 1em">
+                                                            <option value="买车顾问" data-section="所有用户">买车顾问</option>
+                                                            <option value="城市经理" data-section="所有用户">城市经理</option>
+                                                            <option value="大区经理" data-section="所有用户">大区经理</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="position: relative;z-index: 10;" class="form-group">
+                                                <div class="col-md-offset-1 col-md-5">
+                                                    <p id="cc">选择CC地区：</p>
+
+                                                    <div class="b_tagbox2">
+                                                        <select id="CcCity2" style="margin: 0 auto; margin-bottom: 1em">
+                                                            <option value="哈尔滨" data-section="全国/东北区">哈尔滨</option>
+                                                            <option value="沈阳" data-section="全国/东北区">沈阳</option>
+                                                            <option value="大连" data-section="全国/东北区">大连</option>
+                                                            <option value="北京" data-section="全国/华北区">北京</option>
+                                                            <option value="天津" data-section="全国/华北区">天津</option>
+                                                            <option value="上海" data-section="全国/华南区">上海</option>
+                                                            <option value="杭州" data-section="全国/华南区">杭州</option>
+                                                            <option value="天津1" data-section="全国/华北区1">天津1</option>
+                                                            <option value="上海1" data-section="全国/华南区1">上海1</option>
+                                                            <option value="杭州1" data-section="全国/华南区1">杭州1</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <p>选择CC角色：</p>
+
+                                                    <div class="b_tagbox2">
+                                                        <select id="CcRole2" style="margin: 0 auto; margin-bottom: 1em">
+                                                            <option value="买车顾问" data-section="所有用户">买车顾问</option>
+                                                            <option value="城市经理" data-section="所有用户">城市经理</option>
+                                                            <option value="大区经理" data-section="所有用户">大区经理</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="col-md-1 control-label">标题：</label>
+
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control maxlength-handler"
+                                                           name="product[meta_title]" maxlength="10"
+                                                           placeholder="限制10个字符，不能有标点符号和字符">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-1 control-label">摘要：</label>
+
+                                                <div class="col-md-10">
+                                                    <textarea class="form-control" placeholder="限制50个字符"
+                                                              rows="5"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-1 control-label">正文：</label>
+
+                                                <div class="col-md-10">
+                                                    <div name="summernote" id="summernote_1"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-offset-1 col-md-11">
+                                            <div class="form-group">
+                                                <div class="col-md-2">
+                                                    <div class="checkbox-list">
+                                                        <label class="checkbox-inline">
+                                                            <input type="checkbox" value="定时发送">定时发送</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div>
+                                                        <input name="txtDateTimeBegin2" type="text" data-dismiss="datelink" data-target=".datatar" id="txtDateTimeBegin2" placeholder="发送时间"  class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-offset-1 col-md-11">
+                                            <div class="form-group">
+                                                <label class="col-lg-1  col-md-2 col-sm-3 col-xs-6 control-label margin-bottom-10">弹窗时间段：</label>
+                                                <div class="col-md-10">
+                                                    <div>
+                                                        <input name="txtDateTimeBegin" type="text" id="txtDateTimeBegin" placeholder="开始时间" class="Wdate" onFocus="var txtDateTimeEnd=$dp.$(&#39;txtDateTimeEnd&#39;);WdatePicker({onpicked:function(){txtDateTimeEnd.focus();},dateFmt:'yyyy-MM-dd HH:mm',maxDate:&#39;#F{$dp.$D(\&#39;txtDateTimeEnd\&#39;)}&#39;})" />
+                                                        到
+                                                        <input name="txtDateTimeEnd" type="text" id="txtDateTimeEnd" class="Wdate" placeholder="结束时间" onFocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:&#39;#F{$dp.$D(\&#39;txtDateTimeBegin\&#39;)}&#39;})" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-offset-5 col-md-10">
+                                            <a class="btn  blue" href="#importInfo" data-toggle="modal">发布</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT-->
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+    <div class="page-footer-inner">
+        2015 &copy; 易车·行圆
+    </div>
+    <div class="scroll-to-top">
+        <i class="icon-arrow-up"></i>
+    </div>
+</div>
+<!-- END FOOTER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script>
+<![endif]-->
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="../../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"
+        type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="../../assets/crm/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="../../assets/crm/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="../../assets/crm/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="../../assets/admin/pages/scripts/components-pickers.js"></script>
+<!--<script src="../../assets/admin/pages/scripts/components-editors.js"></script>-->
+<script type="text/javascript" src="../../assets/global/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js"></script>
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="../../assets/global/plugins/jstree/dist/jstree.min.js"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<!--文本编辑器-->
+<script src="../../assets/global/plugins/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-summernote/lang/summernote-zh-CN.js" type="text/javascript"></script>
+<!-- 引入tree-multiselect插件.20160519-->
+<script src="../../assets/crm/layout/scripts/jquery.tree-multiselect.min.js"></script>
+<script src="../../assets/crm/layout/scripts/my97datepicker/wdatepicker.js" type="text/javascript"></script>
+<script>
+    jQuery(document).ready(function () {
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layout
+        //文本编辑器
+        $('#summernote_1').summernote({
+            height: 300,
+            lang: "zh-CN"
+        });
+        //tree-multiselect，new20160519.yangjie5
+        var options = {
+            "startCollapsed": true,
+            "sortable": true,
+        };
+        $("#CrmCity2").treeMultiselect(options);
+        $("#CrmRole2").treeMultiselect(options);
+        $("#CcCity2").treeMultiselect(options);
+        $("#CcRole2").treeMultiselect(options);
+    });
+    $("#cc").click(function(){
+        $("#CrmCity2").treeMultiselect();
+    });
+</script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>
