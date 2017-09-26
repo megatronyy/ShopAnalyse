@@ -76,7 +76,7 @@ pre
 #page, .mm-page { height:100%; }
 #page nav { display: none; }
 .mm-menu.mm-front { box-shadow:none !important; }
-body #header { width: 100%; background: url("../img/menu-bg.svg") no-repeat center bottom !important; 
+body #header { width: 100%; background: url("../../Images/menu-bg.svg") no-repeat center bottom !important; 
 	background-size: 100% !important; height: 76px; position:fixed; z-index:3; 
 	-moz-transition: all 0.5s; -webkit-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s;}
 body.p-home #header { height: 83px; }
@@ -218,7 +218,7 @@ a.menu-btn
 #Logo img { }
 
 .bannerPane { text-align:center; overflow: hidden; height:150px; position:relative;
-	background: url("../img/gallery/2.jpg") no-repeat center center; background-size:cover;}
+	background: url("../../Images/gallery/2.jpg") no-repeat center center; background-size:cover;}
 .bannerPane .overlay { background:#000; opacity:0.3;  position:absolute; z-index:1; width:100%; top:0px; left:0px; height:100%; }
 .s-banner-content { position:absolute; bottom:10px; width:100%; text-align:center; z-index:2; color:#fff; font-size:20px; text-transform:uppercase; }
 .bannerPane img {  }
@@ -239,10 +239,10 @@ a.p-link-home i,a.p-link-back i { /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.44
 .p-contact a.p-link-back { color:#c1272d; }
 .p-contact .s-banner-content { color:#555; }
 
-.bannerPane.banner-img1 { background-image: url("../img/gallery/1.jpg"); }
-.bannerPane.banner-img2 { background-image: url("../img/gallery/2.jpg"); }
-.bannerPane.banner-img3 { background-image: url("../img/gallery/3.jpg"); }
-.bannerPane.banner-img4 { background-image: url("../img/gallery/4.jpg"); }
+.bannerPane.banner-img1 { background-image: url("../../Images/gallery/1.jpg"); }
+.bannerPane.banner-img2 { background-image: url("../../Images/gallery/2.jpg"); }
+.bannerPane.banner-img3 { background-image: url("../../Images/gallery/3.jpg"); }
+.bannerPane.banner-img4 { background-image: url("../../Images/gallery/4.jpg"); }
 
 .bannerContent { position: absolute; color: #FFF; height: 50%; width: 100%; bottom: 0px !important;
 visibility: visible; opacity: 1; 
@@ -291,7 +291,7 @@ a.explorePane { text-decoration:none; }
 .block { font-size:14px; font-weight:bold; background-color:#f1f2f4; text-align:center; padding:15px;
 border-top:1px solid #ccd2d8; border-bottom: 1px solid #ccd2d8; color:#EA2424; }
 
-.o-page .mm-ismenu { background: url("../img/menu-bg.svg") no-repeat center top !important;
+.o-page .mm-ismenu { background: url("../../Images/menu-bg.svg") no-repeat center top !important;
 background-size: 100% !important; }
 .o-page .mm-list > li { color: #FFF; }
 .o-page .mm-menu.mm-vertical .mm-list .mm-panel { padding: 0px 0px 0px 40px !important; background-color: #0E1419 !important; }
