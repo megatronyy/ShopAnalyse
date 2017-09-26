@@ -101,6 +101,15 @@
     <Content Include="CSS\photoswipe\photoswipe.css" />
     <Content Include="CSS\style.css" />
     <Content Include="Global.asax" />
+    <Content Include="Html\about.html" />
+    <Content Include="Html\blog-single-post.html" />
+    <Content Include="Html\blog.html" />
+    <Content Include="Html\contact.html" />
+    <Content Include="Html\gallery.html" />
+    <Content Include="Html\index.html" />
+    <Content Include="Html\product-single.html" />
+    <Content Include="Html\products.html" />
+    <Content Include="Html\shortcodes.html" />
     <Content Include="Images\1.png" />
     <Content Include="Images\2.png" />
     <Content Include="Images\3.png" />
