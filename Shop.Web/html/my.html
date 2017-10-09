@@ -1,0 +1,161 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/zepto.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/app.css"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init({
+      		statusBarBackground: '#242d33',
+      	});
+      	mui.plusReady(function(){
+      		plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
+      	});
+      	Zepto(function($){
+      		var subMenu = (function(){
+      			var tplusCls = '.mui-bar.mui-bar-tab .publish',
+      				plus = '.icon-plus',
+      				layerCls = '.publish-action-layer',
+      				$body = mui('body'),
+      				$layer = $(layerCls),
+      				onProgress = false;
+
+      			$('.publish-action-layer .btn-publish').on('transitionend webkitTransitionEnd', function(){
+      				onProgress = false;
+      			});
+      			
+      			$body.on('tap', tplusCls + ',' + layerCls, function(){
+      				if(!onProgress) {
+      					onProgress = true;
+      				} else {
+      					return false;
+      				}
+
+      				var $btnPublish = $('.btn-publish');
+      				$layer.addClass('show');
+      				
+      				$layer.find('a').toggleClass('show');
+      						
+      				$('.mui-content').addClass('blured');
+      				$(plus).toggleClass('rotate');
+      				
+      				if(!$btnPublish.hasClass('show')) {
+						setTimeout(function(){
+							$layer.removeClass('show');
+							$('.mui-content').removeClass('blured');
+						},600);
+      				}
+      			});
+      		}());
+      	});
+    </script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">我的</h1>
+	</header>
+	<nav class="mui-bar mui-bar-tab">
+	    <a class="mui-tab-item">
+	        <span class="icon-home-o"></span>
+	        <span class="mui-tab-label">首页</span>
+	    </a>
+	    <a class="mui-tab-item">
+	        <span class="icon-car-o"></span>
+	        <span class="mui-tab-label">车源市场</span>
+	    </a>
+	    <a class="mui-tab-item">
+	        <span class="icon-plus publish"></span>
+	    </a>
+	    <a class="mui-tab-item">
+	        <span class="icon-search-o"></span>
+	        <span class="mui-tab-label">寻车报价</span>
+	    </a>
+	    <a class="mui-tab-item">
+	    		<span class="icon-head-o"></span>
+	        <span class="mui-tab-label">我的</span>
+	    </a>
+	</nav>
+	<div class="publish-action-layer">
+		<img class="publish-logo" src="../img/publish-logo.png"  width="100%" />
+		<a class="btn-publish" href="#">
+			<img src="../img/publish-btn-1.png" width="75" height="75" />
+			<span>发布车源</span>
+		</a>
+		<a class="btn-search" href="#">
+			<img src="../img/publish-btn-2.png" width="75" height="75" />
+			<span>发布寻车</span>
+		</a>
+		<span class="icon-plus"></span>
+	</div>
+	<div class="mui-content">
+		<ul class="mui-table-view">
+		    <li class="mui-table-view-cell mui-media">
+		        <a class="mui-navigate-right">
+		            <img class="mui-media-object mui-pull-left" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg">
+		            <div class="mui-media-body">
+		                张圆圆 <span class="mui-h6">13800138000</span>
+		                <!--<p class="mui-ellipsis">13800138000</p>-->
+		                <p class="mui-h5 mui-ellipsis">北京行圆奥迪汽车商贸有限公司</p>
+		            </div>
+		        </a>
+		    </li>
+		</ul>
+	    <ul class="mui-table-view mt10">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                		<span class="mui-badge mui-badge-danger">2</span>
+                    我的消息
+                </a>
+            </li>
+        </ul>
+        
+        <ul class="mui-table-view mt10">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                     我的车源
+                </a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                     我的寻车
+                </a>
+            </li>
+        </ul>
+        
+        <ul class="mui-table-view mt10">
+        		<li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                     我的订单
+                </a>
+            </li>
+        </ul>
+        
+        <ul class="mui-table-view mt10">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                    我的报价
+                </a>
+            </li>
+            
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                     我的收藏
+                </a>
+            </li>
+        </ul>
+        
+        <ul class="mui-table-view mt40">
+        		<li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                     系统设置
+                </a>
+            </li>
+        </ul>
+	</div>
+</body>
+
+</html>

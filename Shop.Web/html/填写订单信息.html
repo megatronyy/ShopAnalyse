@@ -1,0 +1,146 @@
+<!doctype html>
+<html class="feedback">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/app.css"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">填写订单信息</h1>
+	</header>
+	<div class="mui-bar mui-bar-footer ud-footer">
+		<a class="mui-btn mui-btn-block mui-btn-warning">提交订单</a>
+	</div>
+	<div class="mui-content order-detail">
+<!-- 		<ul class="mui-table-view">
+	        <li class="mui-table-view-cell">
+	            <div class="mui-navigate-right arrow-amplification">
+	                <dl class="order-address">
+	                		<dt>收车人：</dt>
+	                		<dd>
+	                			马爱丽   100022********2344
+	                			<br />
+	                			15023456789
+	                		</dd>
+	                		<dt>提车4S店：</dt>
+	                		<dd>北京市海淀区北京行圆汽车信息技术有限公司</dd>
+	                		<dt>收车地区：</dt>
+	                		<dd>北京市海淀区北京行圆汽车信息技术有限公司海淀南路18号</dd>
+	                		<dt>收车地址：</dt>
+	                		<dd>北京市海淀区北京行圆汽车信息技术有限公司海淀南路18号</dd>
+	                </dl>
+	            </div>
+	        </li>
+	    </ul> -->
+	    <div class="address-manage">
+		    <div class="mui-card">
+				<div class="mui-card-content">
+					<ul class="mui-list-unstyled order-address-manage">
+						<li class="order-address-title">收车地址：</li>
+						<li class="person-info add-address">
+							<a href="##">
+								<p class="company">
+									<span class="icon-location"><i class="path1"></i><i class="path2"></i></span>
+									新建收车地址
+									<i class="mui-icon mui-icon-arrowright"></i>
+								</p>
+							</a>
+						</li>
+						<li class="person-info">
+							<a href="##">
+								<span><i class="mui-badge mui-badge-warning mui-badge-xs">默认</i>申俊臣</span>
+								<span class="mui-pull-right">13787564857</span>
+								<p class="company">
+									<span class="icon-location"><i class="path1"></i><i class="path2"></i></span>
+									上海市徐汇区虹漕路29号汇区虹漕路29号汇区虹漕路29号区虹漕路29号汇区虹漕路29号
+									<i class="mui-icon mui-icon-arrowright"></i>
+								</p>
+								
+							</a>
+						</li>
+						<li>
+							<label class="default-address">收车地址即为手续文件收件地址</label>
+							<div class="mui-switch mui-switch-blue mui-switch-mini mui-pull-right">
+							  <div class="mui-switch-handle"></div>
+							</div>
+						</li>
+						<li class="person-info">
+							<a href="##">
+								<p class="company">
+									<span class="icon-location"><i class="path1"></i><i class="path2"></i></span>
+									上海市徐汇区虹漕路29号汇区虹漕路29号汇区虹漕路29号区虹漕路29号汇区虹漕路29号
+									<i class="mui-icon mui-icon-arrowright"></i>
+								</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+	    </div>
+	   	<ul class="mui-table-view order-car-info">
+   	        <li class="mui-table-view-cell">
+   	        		<h4>北京行圆汽车信息技术有限技术公司</h4>
+	            <img class="mui-pull-left" src="../img/rec-car.png" width="120">
+	            <div class="mui-media-body">
+	                <div class="body-title">宝马X5  2016款  1.6L  手自一体智炫-精英型</div>
+	                <p class='f12 mui-ellipsis'>国产合资车 |  红／黑</p>
+	                <div>
+	                		<span class="f14 mui-pull-right">X2</span>
+	                		<span class="f14 text-color-em">12.85万元</span>
+	                </div>
+	            </div>
+		    </li>
+   	    </ul>
+   	    <form class="mui-input-group order-car-note mt10">
+			<div class="mui-input-row">
+				<label class="f14">服务选择：</label>
+				<div class="mui-checkbox mui-left mui-pull-right red-checkbox">
+					<input name="checkbox" value="Item 1" type="checkbox" checked>
+					<label>物流服务</label>
+				</div>
+			</div>
+			<div class="mui-input-row order-car-note navigate-right">
+				<label>提车4S店：</label>
+				<select name="" id="" class="c-aaa" dir="rtl">
+					<option value="">请选择</option>
+				</select>
+				<i class="mui-icon mui-icon-arrowright"></i>
+			</div>
+			<div class="mui-input-row">
+				<label class="f14">配置备注：</label>
+    				<textarea class="f14" placeholder="关于车辆配置等特殊说明"></textarea>
+			</div>
+			<div class="mui-input-row">
+				<label class="f14">订单备注：</label>
+    				<textarea class="f14" placeholder="关于车辆颜色等特殊说明"></textarea>
+			</div>
+			<!-- <div class="mui-input-row">
+				<label class="f14">收件地址：</label>
+    				<textarea class="f14 w-percent49 textarea-custom" placeholder="填写收件地址"></textarea>
+    				<p class="mui-clearfix area-btn-fixed">
+    					<a href="#">使用收件地址</a>
+    				</p>
+			</div> -->
+		</form>
+		<ul class="mui-table-view mt10">
+	        <li class="mui-table-view-cell mui-pull-right">
+	            <div class="f14">运费：3.432元</div>
+	            <div class="f14">经销商优惠：2万</div>
+	            <div class="f14">
+	            		总计：
+	            		<span class="text-price">555.555.00元</span>
+	            </div>
+	        </li>
+	        <li class="clear"></li>
+	    </ul>
+  </div>
+</body>
+</html>

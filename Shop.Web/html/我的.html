@@ -1,0 +1,105 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/zepto.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/app.css"/>
+    <!-- 金色版本 -->
+    <!-- <link rel="stylesheet" href="../css/golden_style.css"> -->
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+      	Zepto(function($){
+      		mui('body').on('tap', '.mui-bar.mui-bar-tab .publish', function(){
+      			$(this).toggleClass('roate');
+      			$('.publish-action-layer').toggleClass('show');
+      		});
+      	});
+    </script>
+</head>
+<body>
+	<header class="my-header">
+        <div class="my-header-1">
+            <img src="../img/my_1.png" alt="">
+            <p>
+                徐春辉
+                <span>北京行圆汽车信息技术有限公司</span>
+            </p>
+        </div>
+        <div class="my-header-2"><img src="../img/my_10.png" alt=""></div>
+        <div class="my-header-3"><i class="icon-new-message f18 new-message"></i></div>
+    </header>
+	<nav class="mui-bar mui-bar-tab">
+        <a class="mui-tab-item">
+          <span class="icon-iconnew-icon1"></span>
+          <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item">
+          <span class="icon-iconnew-icon2"></span>
+          <span class="mui-tab-label">车源</span>
+        </a>
+        <a class="mui-tab-item">
+          <span class="icon-iconnew-icon5 icon-iconnew-carsource icon-iconnew-my"></span>
+          <span class="mui-tab-label"></span>
+        </a>
+        <a class="mui-tab-item">
+            <span class="icon-iconnew-icon3"></span>
+            <span class="mui-tab-label">求购</span>
+        </a>
+        <a class="mui-tab-item">
+            <span class="icon-iconnew-icon4 icon-car-active"></span>
+            <span class="mui-tab-label">我的</span>
+        </a>
+    </nav>
+	<div class="my-nav">
+        <ul class="clearfix">
+            <li><img src="../img/my_2.png" alt="">我的车源</li>
+            <li><img src="../img/my_3.png" alt="">我的求购</li>
+            <li><img src="../img/my_4.png" alt="">我的订单</li>
+            <li><img src="../img/my_5.png" alt="">我的仓储</li>
+        </ul>   
+    </div>
+    <div class="mui-content my-content">
+        <ul class="mui-table-view mt10">
+            <li class="mui-table-view-cell kz-table-view-cell">
+                <a class="mui-navigate-right">
+                    <em class="my-dp"></em>
+                    我的店铺
+                </a>
+            </li>
+            <li class="mui-table-view-cell kz-table-view-cell">
+                <a class="mui-navigate-right">
+                    <span class="mui-badge mui-badge-danger my-badge-danger">5张可用</span>
+                    <em class="my-kj"></em>
+                    我的卡劵
+                </a>
+            </li>
+        </ul>
+        <ul class="mui-table-view mt10">
+            <li class="mui-table-view-cell kz-table-view-cell">
+                <a class="mui-navigate-right">
+                    <em class="my-sbj"></em>
+                    收到的报价
+                </a>
+            </li>
+            <li class="mui-table-view-cell kz-table-view-cell">
+                <a class="mui-navigate-right">
+                    <em class="my-fbj"></em>
+                    发出的报价
+                </a>
+            </li>
+        </ul>
+        <ul class="mui-table-view mt10">
+            <li class="mui-table-view-cell kz-table-view-cell">
+                <a class="mui-navigate-right">
+                    <em class="my-cy"></em>
+                    我的收藏
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

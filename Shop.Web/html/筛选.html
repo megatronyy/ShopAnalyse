@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/nouislider.min.js"></script>
+    <script src="../js/wNumb.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/nouislider.min.css" />
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+    <script type="text/javascript" charset="utf-8">
+    mui.init();
+    </script>
+</head>
+
+<body>
+	<header class="mui-bar mui-bar-nav kz-bar-bg">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left kz-icon1"></a>
+        <h1 class="mui-title">价格筛选</h1>
+    </header>
+    <div class="mui-content kz-content-nosearch">
+        <div class="ud-offcanvas-filter-content">
+            <div class="content-mod no-border">
+                <div class="mod-title filter-title"><em>10-140<span>万</span></em>价格区间 <span>(单位:万)</span></div>
+                <div class="mod-content range">
+                    <!--<input type="range" />-->
+                    <div id="slider" class="filter-slider"></div>
+                    <div class="f14 text-muted filter-tetx-muted">
+                        0
+                        <span class="mui-pull-right">300</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-mod filter-content-mod">
+                <div class="mod-title filter-mod-title">车源规格</div>
+                <div class="mui-input-row filter-car-span issue-car-span1">
+	                <span class="active">国产合资</span><span>国产合资</span><span>国产合资</span>
+	            </div>
+            </div>
+            <footer class="mui-bar mui-bar-footer ud-footer">
+			    <a href="#modal" class="mui-btn mui-btn-grey kz-btn-white">重置</a>
+			    <a href="#" class="mui-btn mui-btn-warning">确定</a>
+			 </footer>
+        </div>
+    </div>
+    <script>
+    var slider = document.getElementById('slider');
+    noUiSlider.create(slider, {
+        start: [10, 30],
+        connect: true,
+        tooltips: true,
+        format: wNumb({
+            decimals: 0
+        }),
+        range: {
+            'min': 0,
+            'max': 100
+        }
+    });
+    </script>
+</body>
+
+</html>

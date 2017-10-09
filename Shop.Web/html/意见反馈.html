@@ -1,0 +1,72 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/zepto.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/app.css"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+      	Zepto(function($){
+      		var subMenu = (function(){
+      			var tplusCls = '.mui-bar.mui-bar-tab .publish',
+      				plus = '.icon-plus',
+      				layerCls = '.publish-action-layer',
+      				$body = mui('body'),
+      				$layer = $(layerCls);
+      			
+      			$body.on('tap', tplusCls + ',' + layerCls, function(){
+//    				$layer.toggleClass('show');
+      				$layer.addClass('show');
+      				$layer.find('a').toggleClass('show');
+      				
+      				$(plus).toggleClass('rotate');
+      				var $btnPublish = $('.btn-publish');
+      				if(!$btnPublish.hasClass('show')) {
+      					console.log('start');
+						setTimeout(function(){
+							$layer.removeClass('show');
+						}, 600);
+      				}
+      			});
+      			
+//    			mui('body').on('tap', plus, function(){
+//    				console.log('remove');
+//    				$layer.find('a').toggleClass('show');
+//    				$(plus).removeClass('rotate');
+//    			});
+      			
+      		}());
+//    		mui('body').on('tap', '.mui-bar.mui-bar-tab .publish', function(){
+//    			$(this).toggleClass('roate');
+//    			$('.publish-action-layer').toggleClass('show');
+//    		});
+//    		mui('body').on('tap', '.publish-action-layer', function(){
+//    			$('.publish-action-layer').toggleClass('show');
+//    		});
+      	});
+    </script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">意见反馈</h1>
+	</header>
+	<div class="mui-content">
+        <form class="mui-input-group">
+            <div class="mui-input-row">
+                <input type="text" placeholder="您的联系方式：手机号">
+            </div>
+            <div class="mui-input-row mui-input-row-textarea">
+                <textarea name="" rows="4" placeholder="写下您的珍贵意见"></textarea>
+            </div>
+        </form>
+        <div class="mui-content-padded">
+        		<button type="button" class="mui-btn mui-btn-primary mui-btn-block">提交</button>
+        </div>
+	</div>
+</body>
+
+</html>

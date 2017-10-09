@@ -1,0 +1,196 @@
+.icon-car-active::before {
+    color: #e3ae61 !important;
+    background-image: -webkit-linear-gradient(30deg, #e5c175 0%, #e3ae61 100%) !important;
+    background-image:      -o-linear-gradient(30deg, #e5c175 0%, #e3ae61 100%) !important;
+    background-image:         linear-gradient(30deg, #e5c175 0%, #e3ae61 100%) !important;
+    -webkit-background-clip: text !important;
+
+    -webkit-text-fill-color: transparent !important;
+}
+.mui-bar.mui-bar-tab .icon-iconnew-icon5, .mui-bar.mui-bar-tab .publish {
+    background-image: -webkit-linear-gradient(top, #bfc3ca 30%, #dfe1e6) !important;
+    background-image:      -o-linear-gradient(top, #bfc3ca 30%, #dfe1e6) !important;
+    background-image:         linear-gradient(to bottom, #bfc3ca 30%, #dfe1e6) !important;
+    -webkit-background-clip: text !important;
+
+    -webkit-text-fill-color: transparent !important;
+    color: #dfe1e6;
+}
+.ud-bar-search-index + .mui-pull-right .icon-new-message::before{
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 19px;
+    background: url('../img/0_03.png') no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.login-content .btn, .mui-btn-blue, .mui-btn-primary, .mui-btn-warning, .mui-btn-yellow, .mui-badge-warning, .shop-btn1-collect, .mui-btn-danger, .mui-btn-negative, .mui-btn-red, .financial-btn .btn-submit, .logistics-form .form-wrap .logistics-form-btn, .btn-primary-em, .badge-triangle {
+    opacity: 1 !important;
+    border: none !important;
+    color: #fff !important;
+    border: none !important;
+    background-image: -webkit-linear-gradient(30deg, #e5c175 0%, #e3ae61 100%) !important;
+    background-image:      -o-linear-gradient(30deg, #e5c175 0%, #e3ae61 100%) !important;
+    background-image:         linear-gradient(30deg, #e5c175 0%, #e3ae61 100%) !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+}
+.badge-triangle:after{
+    border: 4px solid #e3ae61;
+    border-color: transparent transparent transparent #e3ae61;
+}
+.btn-primary-em {
+    background-color: transparent !important;
+}
+.coupon-list .coupon-list-item, .coupon-list .coupon-list-item {
+    background-image: url('../img/golden_img/golden_coupon-bg.png') !important;
+}
+/* .mui-btn.mui-btn-grey {
+    background: #fff;
+    color: #444242;
+} */
+.mui-bar.mui-bar-tab .icon-iconnew-carsource {
+    background-image: -webkit-linear-gradient(bottom, #bfc3ca 30%, #dfe1e6) !important;
+    background-image:      -o-linear-gradient(bottom, #bfc3ca 30%, #dfe1e6) !important;
+    background-image:         linear-gradient(to top, #bfc3ca 30%, #dfe1e6) !important;
+    -webkit-background-clip: text !important;
+
+    -webkit-text-fill-color: transparent !important;
+}
+.coupon-list .coupon-list-item .info .rules-btn {
+    color: #feecc1 !important;
+}
+.ud-tabs li.active {
+    color: #d19b46 !important;
+    border-bottom: none !important;
+}
+.ud-tabs li.active:after, .hct-tab li.active:after {
+    border-color: #e4b366 !important;
+}
+.hct-tab li.active a {
+    color: #d19b46 !important;
+    border-color: #e4b366 !important;
+}
+.mui-btn-outlined.mui-btn-negative, .mui-btn-outlined.mui-btn-red {
+    color: #d19b46 !important;
+}
+.logistics-list .mui-btn-primary.mui-btn-outlined {
+    color: #d19b46;
+}
+.kz-font1, .kz-font2, .kz-font3, .kz-font4 {
+    color: #d19b46 !important;
+    border: none !important;
+    background: none !important;
+}
+.kz-btn-danger {
+    border: none !important;
+    background-image: -webkit-linear-gradient(30deg, #e5c175 0%, #e3ae61 100%) !important;
+    background-image:      -o-linear-gradient(30deg, #e5c175 0%, #e3ae61 100%) !important;
+    background-image:         linear-gradient(30deg, #e5c175 0%, #e3ae61 100%) !important;
+}
+.mui-btn-warning, .mui-btn-yellow {
+    border: none;
+    background-image: -webkit-linear-gradient(30deg, #e5c175 0%, #e3ae61 100%) !important;
+    background-image:      -o-linear-gradient(30deg, #e5c175 0%, #e3ae61 100%) !important;
+    background-image:         linear-gradient(30deg, #e5c175 0%, #e3ae61 100%) !important;
+}
+.input-row-coupon {
+    background-image: url('../img/golden_img/golden_coupon-img.png') !important;
+}
+.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before {
+    color: #e4b366 !important;
+}
+.my-badge-danger {
+    background-color: #e4b366 !important;
+}
+.new-message:after {
+    background: #e4b366 !important;
+}
+.issue-car-span1 span.active, .label-hook.active {
+    border-color: #d19b46 !important;
+}
+.issue-car-span1 span.active::after, .mock-checkbox input:checked + span::after {
+    background-image: url('../img/golden_img/golden_shop_icon2.png') !important;
+}
+.shop-btn-warning {
+    color: #fff !important;
+}
+.shop-upload-square {
+    background-image: url('../img/golden_img/golden_shop_icon3.png') !important;
+}
+.issue-content a {
+    color: #d19b46 !important;
+    border-color: #e4b366 !important;
+}
+.label-hook.active:after {
+    border-color: transparent #d19b46 #d19b46 transparent !important;
+}
+.basic-login-out {
+    border: 1px solid #e5b76e !important;
+}
+.basic-login-out a {
+    color: #d19b46 !important;
+}
+.text-primary, a.text-primary {
+    color: #d19b46 !important;
+}
+.mock-checkbox input:checked + span {
+    border-color: #cea753 !important;
+}
+.noUi-connect {
+    background-color: #e4b366 !important;
+}
+.noUi-horizontal .noUi-handle:after {
+    border-color: #e4b366 !important;
+}
+.filter-title em {
+    color: #444 !important;
+}
+.mui-switch-blue.mui-active {
+    border-color: #e4b366 !important;
+    background-color: #e4b366 !important;
+}
+.agreement .agreement-title span:after, .agreement .agreement-title span:before, .agreement .agreement-main .agreement-main-title:after, .financial-details .financial-body .financial-main .label, .agreement .agreement-title:after {
+    background-color: #e4b366 !important;
+}
+.financial-details .financial-body .financial-main .radio-wrap input[type='radio']:checked + label {
+    background-image: url('../img/golden_img/golden_check.png') !important;
+}
+.list-null .icon-info {
+    color: #e4b366 !important;
+}
+.mui-btn.mui-btn-link.mui-pull-right {
+    background-image: none !important;
+}
+.icon-location .path1:before, .icon-location .path2:before {
+    color: rgb(228, 179, 102) !important;
+}
+.hct-card:after {
+    background-image: linear-gradient(-34deg, #e5c175, #e3ae61) !important;
+}
+.mui-badge-danger, .mui-badge-red {
+    background-color: #e4b366 !important;
+}
+.mui-pull-right.mui-btn.mui-btn-danger.mui-btn-outlined.mui-btn-xs,.mui-pull-right.mui-btn.mui-btn-primary.mui-btn-outlined.mui-btn-xs{
+    background-image: none !important;
+}
+.kz-checked1 input::before, .mui-btn-outlined.mui-btn-danger, .mui-btn-outlined.mui-btn-negative, .mui-btn-outlined.mui-btn-red, .text-warning, a.text-warning {
+    color: #d19b46 !important;
+}
+.text-price > .mui-pull-right span {
+    background: #e4b366 !important;
+}
+.text-price > .mui-pull-right span::before {
+    border-left-color: #e4b366 !important;
+}
+.kz-layer-carsource span{
+    background-image: url('../img/golden_img/golden_img_1.png') !important;
+}
+.kz-layer-buy span{
+    background-image: url('../img/golden_img/golden_img_2.png') !important;
+}
+.issue-content a.issue-default-btn {
+    color: #2b2b2b !important;
+    border-color: #b1b1b1 !important;
+}

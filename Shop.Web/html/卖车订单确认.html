@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="feedback">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/app.css"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a class="mui-btn mui-btn-link mui-pull-right">取消</a>
+	    <h1 class="mui-title">确认订单</h1>
+	</header>
+	<footer class="mui-bar mui-bar-footer ud-footer">
+	    <a href="#modal" class="mui-btn mui-btn-warning">确认订单</a>
+	</footer>
+	<div class="mui-content">
+		<div class="ud-notify warning">
+			<div class="notify-title">订单状态：确认订单</div>
+			<p class="notify-content">请于2天3小时23分内确认订单，过期后订单将自动关闭</p>
+		</div>
+	    <ul class="mui-table-view order-detail order-detail-form">
+	    		<li class="mui-table-view-cell detail-title">
+	    			<h4>订单号：Q201612311227001</h4>
+	    		</li>
+	    		<li class="mui-table-view-cell detail-title-secondary">
+	    			订单信息
+	    		</li>
+	        <li class="mui-table-view-cell">
+	            <div class="mui-table">
+	                <dl class="detail-dl">
+	                		<dt>车型：</dt>
+	                		<dd>北京现代 领动 2016款 1.6L 手自一体 智炫·精英型</dd>
+					          	<dt>经销商报价：</dt>
+	                		<dd>
+	                			<span class="text-danger">15，98万元</span>
+	                		</dd>
+	                		<dt>厂商指导价：</dt>
+	                		<dd>16，98万元</dd>
+	                		<dt>类型：</dt>
+	                		<dd>国产/合资</dd>
+	                		<dt>颜色：</dt>
+	                		<dd>灰色精英型</dd>
+
+	                		<dt>数量：</dt>
+	                		<dd>2</dd>
+	                		<dt>经销商：</dt>
+	                		<dd>
+	                			北京易车互联信息技术有限
+	                			<span class="text-warning">[4S]</span>
+	                		</dd>
+	                </dl>
+	                <dl class="detail-dl">
+	                		<dt>收车人：</dt>
+	                		<dd>张三 | 15012345678</dd>
+	                		<dt>身份证：</dt>
+	                		<dd>2345********45678</dd>
+	                		<dt>收车地址：</dt>
+	                		<dd>北京市之类的确认订单时输入的具体的收车地址的收车地</dd>
+	                		<dt>收车经销商：</dt>
+	                		<dd>提交订单的经销商全称</dd>
+	                </dl>
+	            </div>
+	        </li>
+	  	</ul>
+
+	  	<form class="mui-input-group mt10">
+          <ul class="mui-table-view">
+  	        <li class="mui-table-view-cell">
+  	            <div class="mui-navigate-right arrow-amplification">
+  	                <dl class="order-address">
+  	                		<dt>收车人：</dt>
+  	                		<dd>
+  	                			马爱丽   100022********2344
+  	                			<br>
+  	                			15023456789
+  	                		</dd>
+  	                		<dt>提车4S店：</dt>
+  	                		<dd>北京市海淀区北京行圆汽车信息技术有限公司</dd>
+  	                		<dt>收车地区：</dt>
+  	                		<dd>北京市海淀区北京行圆汽车信息技术有限公司海淀南路18号</dd>
+  	                		<dt>收车地址：</dt>
+  	                		<dd>北京市海淀区北京行圆汽车信息技术有限公司海淀南路18号</dd>
+  	                </dl>
+  	            </div>
+  	        </li>
+  	      </ul>
+	  	    <div class="mui-input-row mui-input-row-textarea">
+	  	        <label>车架号</label>
+	  	        <textarea name="" rows="" cols="" placeholder="请输入正确车架号，多个车架号请用逗号隔开"></textarea>
+	  	    </div>
+	  	    <div class="mui-input-row">
+	  	        <label>手续文件</label>
+	  	        <select name="" id="">
+		  	        <option value="">请选择</option>
+	  	        </select>
+	  	    </div>
+	  	    <div class="mui-input-row">
+	  	        <label>随车附件</label>
+	  	        <select name="" id="">
+		  	        <option value="">请选择</option>
+	  	        </select>
+	  	    </div>
+	  	    <div class="mui-input-row">
+	  	        <label>报价单价</label>
+	  	        <div class="static">18.98 万元</div>
+	  	    </div>
+	  	    <div class="mui-input-row mui-input-row-unit">
+	  	        <label>成交单价</label>
+	  	        <input type="text" />
+	  	        <i class="input-unit">万元</i>
+	  	    </div>
+	  	    <div class="mui-input-row mui-input-row-unit">
+	  	        <label>优惠总计</label>
+	  	        <input type="text" />
+	  	        <i class="input-unit">万元</i>
+	  	    </div>
+	  	    <div class="mui-input-row mui-input-row-unit">
+	  	        <label>订单总计</label>
+	  	        <div class="static text-danger">
+	  	        		322,213 元
+	  	        </div>
+	  	    </div>
+	  	</form>
+
+
+  </div>
+</body>
+</html>

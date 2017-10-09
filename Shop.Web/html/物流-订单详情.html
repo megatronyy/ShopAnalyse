@@ -1,0 +1,173 @@
+<!doctype html>
+<html class="feedback">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title></title>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/zepto.min.js"></script>
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../css/hm_main.css" />
+  <link rel="stylesheet" type="text/css" href="../css/app.css" />
+  <script type="text/javascript" charset="utf-8">
+  mui.init();
+  </script>
+</head>
+
+<body>
+  <header class="mui-bar mui-bar-nav kz-bar-bg">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left kz-icon1"></a>
+    <h1 class="mui-title">订单详情</h1>
+  </header>
+  <footer class="mui-bar mui-bar-footer ud-footer">
+    <a href="#modal" class="mui-btn mui-btn-grey kz-btn-white">取消订单</a>
+    <a href="#" class="mui-btn mui-btn-warning">去支付</a>
+  </footer>
+  <div class="mui-content kz-content-nosearch">
+    <ul class="mui-table-view logistics-list">
+      <li class="mui-table-view-cell">
+        <p class="mui-clearfix logistics-car-info">
+          <span class="mui-pull-left name">已发车</span>
+          <span class="mui-pull-right price">费用总计: <em><i>¥</i>1260<i>元</i></em></span>
+        </p>
+        <p class="f12 c-8"><span>订单号：12536621</span><span class="ml20">物流单号：WL152255</span></p>
+      </li>
+      <li>
+        <ul class="path-list">
+          <li class="path-item">
+            <div class="item-date">2012-03-17</div>
+            <div class="item-detail">
+              上海中心正在分捡
+            </div>
+          </li>
+          <li class="path-item">
+            <div class="item-date">2012-03-17</div>
+            <div class="item-detail">
+              车辆抵达长三角货运中心中转到上海
+            </div>
+          </li>
+          <li class="path-item">
+            <div class="item-date">2012-03-17</div>
+            <div class="item-detail">
+              中转至江苏
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>   
+    <form class="mui-input-group mui-input-group-m mt15">
+      <div class="mui-input-row">
+        <label>发车信息：</label>
+      </div>
+      <div class="hct-card border-none kz-specific-num-list">
+        <p class="c-0a mb5"><span class="f15 mr25">申俊臣</span><span class="mr20">13787564857</span><span class="c-7b">232326198805125236</span></p>
+        <p class="f12 mb5">上海市徐汇区虹漕路29号汇区虹漕路29号汇区虹漕路29号区虹漕路29号汇区虹漕路29号</p>
+        <p class="f12">哈尔滨行圆汽贸有限公司</p>
+      </div>
+    </form>
+    <form class="mui-input-group mui-input-group-m mt15">
+      <div class="mui-input-row">
+        <label>收车信息：</label>
+      </div>
+      <div class="hct-card border-none kz-specific-num-list">
+        <p class="c-0a"><span class="f15 mr25">申俊臣</span><span class="mr20">13787564857</span><span class="c-7b">232326198805125236</span></p>
+        <p class="f12">上海市徐汇区虹漕路29号汇区虹漕路29号汇区虹漕路29号区虹漕路29号汇区虹漕路29号</p>
+        <p class="f12">哈尔滨行圆汽贸有限公司</p>
+      </div>
+    </form>
+    <form class="mui-input-group mui-input-group-m mt15">
+      <div class="mui-input-row">
+        <label>车辆信息：</label>
+      </div>
+      <div class="car-info kz-car-info">
+        <p class="car-info-edit mui-clearfix">
+          <span class="car-name logistics-details-name">奇瑞瑞虎7  2017款 SPORT  1.8TDCT 自动豪华版</span>
+        </p>
+        <p class="car-msg">
+          <span class="car-label car-label-green">国产合资</span>
+          <span class="car-label">5辆</span>
+          <span class="car-price mui-pull-right">成交价: <em>12.60万</em></span>
+          <ul class="specific-num-list bg-none kz-specific-num-list">
+            <li class="specific-num-item mui-clearfix">
+              <p class="title">
+                外观/内饰：<span>水硅矾钙石蓝，青色／红色</span>
+              </p>
+              <span class="car-num">
+                DE256325412586325
+              </span>
+              <span class="car-num">
+                DE256325412586325
+              </span>
+              <span class="car-num">
+                DE256325412586325
+              </span>
+            </li>
+            <li class="specific-num-item mui-clearfix">
+              <p class="title">
+                外观/内饰：<span>水硅矾钙石蓝，青色／红色</span>
+              </p>
+              <span class="car-num">
+                DE256325412586325
+              </span>
+              <span class="car-num">
+                DE256325412586325
+              </span>
+              <span class="car-num">
+                DE256325412586325
+              </span>
+            </li>
+          </ul>
+        </p>
+      </div>
+    </form>
+    <form class="mui-input-group mui-input-group-m mt15">
+      <div class="mui-input-row">
+          <p class="input-row-coupon mui-navigate-right">优惠券<span>500元</span>通用物流优惠券</label>
+      </div>
+    </form>
+  </div>
+  <div id="modal" class="mui-modal cancel-order">
+    <footer class="mui-bar mui-bar-footer ud-footer">
+      <a href="#" class="mui-btn mui-btn-grey">手滑，不取消了</a>
+      <a href="#" class="mui-btn mui-btn-warning">确定取消</a>
+    </footer>
+    <div class="modal-list-wrap">
+      <div class="modal-list-title">取消理由</div>
+      <ul class="modal-list">
+        <li class="modal-list-item mui-radio-new">
+          <input class="mui-icon" type="radio" id="radio1" name="radio1">
+          <label for="radio1">
+          运输需求有变，重新下单
+          </label>
+        </li>
+        <li class="modal-list-item mui-radio-new">
+          <input class="mui-icon" type="radio" id="radio2" name="radio1">
+          <label for="radio2">
+          选择其他物流平台承运
+          </label>
+        </li>
+        <li class="modal-list-item mui-radio-new">
+          <input class="mui-icon" type="radio" id="radio3" name="radio1">
+          <label for="radio3">
+          订单操作失误，取消订单
+          </label>
+        </li>
+        <li class="modal-list-item mui-radio-new">
+          <input class="mui-icon" type="radio" id="radio4" name="radio1">
+          <label for="radio4">
+          其他原因
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+        //     Zepto(function($){
+        //   mui('body').on('tap', '.modal-list-item label', function(e){
+        //     e.stopPropagation()
+        //   });
+        // });
+  </script>
+</body>
+</html>

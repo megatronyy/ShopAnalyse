@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>物流详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/hm_main.css"/>
+		<script>
+			(function(win, doc) {
+	        var h;
+	        win.addEventListener('resize', function() {
+	            clearTimeout(h);
+	            h = setTimeout(setUnitA, 300);
+	        }, false);
+	        win.addEventListener('pageshow', function(e) {
+	            if (e.persisted) {
+	                clearTimeout(h);
+	                h = setTimeout(setUnitA, 300);
+	            }
+	        }, false);
+	        var setUnitA = function() {
+	            doc.documentElement.style.fontSize = doc.documentElement.clientWidth / 37.5 + 'px';
+	        };
+	        setUnitA();
+	    })(window, document);
+		</script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">物流详情</h1>
+		</header>
+		<div class="mui-content offers-logistics">
+			<div class="offers-top mui-text-center">
+				<div class="offers-btn-wrap">
+					<a href="#" class="offers-btn"></a>
+				</div>
+			</div>
+      <div class="offers-body">
+        <dl class="mui-clearfix">
+          <dt class="mui-pull-left"><img src="../img/offer-img1.png" alt=""></dt>
+          <dd class="mui-pull-right mt30">
+            <p class="title">安心</p>
+            <p class="info">更放心，运送车辆的贴身“保镖”</p>
+            <p>全国3万条线路，三四线城市，安全送达</p>
+          </dd>
+        </dl>
+        <dl class="mui-clearfix">
+          <dt class="mui-pull-right ml80"><img src="../img/offer-img2.png" alt=""></dt>
+          <dd class="mui-pull-left mt30 ml10">
+            <p class="title">快捷</p>
+            <p class="info">更快捷，运车不怕被延误</p>
+            <p>京津冀、江浙沪、广州深圳东莞珠海，24小时限时达</p>
+          </dd>
+        </dl>
+        <dl class="mui-clearfix">
+          <dt class="mui-pull-left"><img src="../img/offer-img3.png" alt=""></dt>
+          <dd class="mui-pull-right mt30">
+            <p class="title">低价</p>
+            <p class="info">价更低，免费验车超值物流</p>
+            <p>广州 - 上海 ，XX通物流 : 1700元，慧车通物流 : 1600元</p>
+          </dd>
+        </dl>
+      </div>
+      <div class="offers-footer">
+        <p class="offers-title">优惠券使用流程:</p>
+        <ul class="process">
+          <li class="mui-clearfix">
+	          <img class="mui-pull-left" src="../img/offer-icon1.png" alt="">
+            <div class="txt mui-pull-left">
+	            <p class="title">抢券</p>
+	            <p class="info">到行圆慧车通网页版或 APP端领取物流券</p>
+            </div>
+          </li>
+          <li class="mui-clearfix">
+            <img class="mui-pull-left" src="../img/offer-icon2.png" alt="">
+            <div class="txt mui-pull-left">
+	            <p class="title">购车</p>
+	            <p class="info">在慧车通选购任意一款车辆均可使用物流劵</p>
+            </div>
+          </li>
+          <li class="mui-clearfix pay">
+            <img class="mui-pull-left" src="../img/offer-icon3.png" alt="">
+            <div class="txt mui-pull-left">
+	            <p class="title">支付</p>
+	            <p class="info">支付物流费用或定金，行圆配车，支付尾款。物流费为使用优惠券后实际金额。</p>
+            </div>
+          </li>
+          <li class="mui-clearfix">
+            <img class="mui-pull-left" src="../img/offer-icon4.png" alt="">
+            <div class="txt mui-pull-left">
+	            <p class="title">物流</p>
+	            <p class="info">慧车通物流服务提供送车上门</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+		</div>
+		<div class="v-bg"></div>
+		<!-- 领取成功 -->
+		<div class="v-modal offers-modal">
+			<div class="v-modal-wrap">
+				<div class="v-modal-header">
+					<a href="##" class="v-modal-close">×</a>
+				</div>
+				<div class="v-modal-content mui-text-center">
+					<img src="../img/offer-success.png" alt="">
+					<p class="title">恭喜您，物流券已领到！</p>
+					<p class="info">请到慧车通网页版使用，查看优惠券</p>
+				</div>
+				<div class="v-modal-footer">
+					<a href="##" class="v-btn v-btn-blue">再领一张</a>
+					<a href="##" class="v-btn v-btn-gray">立即使用</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<!-- 领取失败 -->
+	<div class="v-modal offers-modal">
+			<div class="v-modal-wrap">
+				<div class="v-modal-header">
+					<a href="##" class="v-modal-close">×</a>
+				</div>
+				<div class="v-modal-content mui-text-center">
+					<img class="no-signal" src="../img/no-signal.png" alt="">
+					<p class="title">抱歉，网络异常，请重试。</p>
+				</div>
+				<div class="v-modal-footer">
+					<a href="##" class="v-btn v-btn-blue">重新领取</a>
+					<a href="##" class="v-btn v-btn-gray">取消</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<!-- 领取结束 -->
+	<div class="v-modal offers-modal">
+			<div class="v-modal-wrap">
+				<div class="v-modal-header">
+					<a href="##" class="v-modal-close">×</a>
+				</div>
+				<div class="v-modal-content mui-text-center">
+					<img src="../img/offer-fail.png" alt="">
+					<p class="title">抱歉，优惠券已被领完</p>
+					<p class="info">感谢您的参与</p>
+				</div>
+				<div class="v-modal-footer">
+					<a href="##" class="v-btn v-btn-gray">确定</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>物流服务</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/wap_main.css">
+		<script>
+			(function(win, doc) {
+	        var h;
+	        win.addEventListener('resize', function() {
+	            clearTimeout(h);
+	            h = setTimeout(setUnitA, 300);
+	        }, false);
+	        win.addEventListener('pageshow', function(e) {
+	            if (e.persisted) {
+	                clearTimeout(h);
+	                h = setTimeout(setUnitA, 300);
+	            }
+	        }, false);
+	        var setUnitA = function() {
+	            doc.documentElement.style.fontSize = doc.documentElement.clientWidth / 37.5 + 'px';
+	        };
+	        setUnitA();
+	    })(window, document);
+		</script>
+	</head>
+	<body>
+		<div class="offers-logistics logistics-wrap">
+			<div class="offers-top text-center">
+				<div class="logistics-btn-wrap">
+					<a href="#" class="logistics-btn">
+            使用物流
+          </a>
+          <a href="#" class="logistics-btn logistics-btn-opacity">
+            慧车通APP下载
+          </a>
+				</div>
+			</div>
+      <div class="offers-body">
+        <dl class="clearfix">
+          <dt class="pull-left"><img src="../img/logistics-img1.png" alt=""></dt>
+          <dd class="pull-right">
+            <p class="title">安心</p>
+            <p class="info">更放心，运送车辆的贴身“保镖”</p>
+            <p>全国3万条线路，三四线城市，安全送达</p>
+          </dd>
+        </dl>
+        <dl class="clearfix">
+          <dt class="pull-left ml80"><img src="../img/logistics-img2.png" alt=""></dt>
+          <dd class="pull-right ml10">
+            <p class="title">快捷</p>
+            <p class="info">更快捷，运车不怕被延误</p>
+            <p>京津冀、江浙沪、广州深圳东莞珠海，24小时限时达</p>
+          </dd>
+        </dl>
+        <dl class="clearfix">
+          <dt class="pull-left"><img src="../img/logistics-img3.png" alt=""></dt>
+          <dd class="pull-right">
+            <p class="title">低价</p>
+            <p class="info">更低价，免费验车超值物流</p>
+            <p>广州 - 上海   XX通物流 : 1700元，慧车通物流 : 1600元</p>
+          </dd>
+        </dl>
+      </div>
+		</div>
+	</body>
+</html>

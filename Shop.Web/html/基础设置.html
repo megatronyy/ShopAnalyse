@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/zepto.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+    <script type="text/javascript" charset="utf-8">
+    mui.init();
+    Zepto(function($) {
+        var subMenu = (function() {
+            var tplusCls = '.mui-bar.mui-bar-tab .publish',
+                plus = '.icon-plus',
+                layerCls = '.publish-action-layer',
+                $body = mui('body'),
+                $layer = $(layerCls);
+
+            $body.on('tap', tplusCls + ',' + layerCls, function() {
+                //                  $layer.toggleClass('show');
+                $layer.addClass('show');
+                $layer.find('a').toggleClass('show');
+
+                $(plus).toggleClass('rotate');
+                var $btnPublish = $('.btn-publish');
+                if (!$btnPublish.hasClass('show')) {
+                    console.log('start');
+                    setTimeout(function() {
+                        $layer.removeClass('show');
+                    }, 600);
+                }
+            });
+
+            //              mui('body').on('tap', plus, function(){
+            //                  console.log('remove');
+            //                  $layer.find('a').toggleClass('show');
+            //                  $(plus).removeClass('rotate');
+            //              });
+
+        }());
+        //          mui('body').on('tap', '.mui-bar.mui-bar-tab .publish', function(){
+        //              $(this).toggleClass('roate');
+        //              $('.publish-action-layer').toggleClass('show');
+        //          });
+        //          mui('body').on('tap', '.publish-action-layer', function(){
+        //              $('.publish-action-layer').toggleClass('show');
+        //          });
+    });
+    </script>
+</head>
+
+<body>
+    <div class="mui-content basic-set-content">
+        <div class="basic-set-title">基础设置</div>
+        <ul class="mui-table-view basic-set-ul">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                     车源咨询电话
+                </a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                     黑名单设置
+                </a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                     地址管理
+                </a>
+            </li>
+        </ul>
+        <div class="basic-login-out">
+            <a id="exit" class="">退出登录</a>
+        </div>
+        <div class="basic-close"></div>
+    </div>
+</body>
+
+</html>

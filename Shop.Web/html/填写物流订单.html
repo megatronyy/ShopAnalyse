@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="feedback">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title></title>
+  <script src="../js/mui.min.js"></script>
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../css/app.css" />
+  <link rel="stylesheet" type="text/css" href="../css/hm_main.css" />
+  <script type="text/javascript" charset="utf-8">
+  mui.init();
+  </script>
+</head>
+
+<body>
+  <header class="mui-bar mui-bar-nav kz-bar-bg">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left kz-icon1"></a>
+    <h1 class="mui-title">填写物流订单</h1>
+  </header>
+  <footer class="mui-bar mui-bar-footer ud-footer">
+    <a href="#modal" class="mui-btn mui-btn-warning kz-btn-warning">提交订单</a>
+  </footer>
+  <div class="mui-content kz-content-nosearch">   
+    <form class="mui-input-group mui-input-group-m">
+      <div class="mui-input-row">
+        <label>发车信息：</label>
+      </div>
+      <div class="mui-input-row add-btn">
+        <a href="#">
+          <span class="mui-icon mui-icon-plusempty add-icon"></span>
+          <span class="text">新建发车信息</span>
+        </a>
+      </div>
+    </form>
+    <form class="mui-input-group mui-input-group-m mt15">
+      <div class="mui-input-row">
+        <label>收车信息：</label>
+      </div>
+      <div class="mui-input-row add-btn">
+        <a href="#">
+          <span class="mui-icon mui-icon-plusempty add-icon"></span>
+          <span class="text">新建收车地址</span>
+        </a>
+      </div>
+    </form>
+    <form class="mui-input-group mui-input-group-m mt15">
+      <div class="mui-input-row mui-clearfix">
+        <div class="mui-input-row mui-checkbox mui-left red-checkbox logistics-checkbox mui-pull-left kz-icon-pos1">
+            <label>仓储服务</label>
+            <input name="checkbox" type="checkbox" checked="">
+        </div>
+        <a href="#" class="mui-navigate-right mui-pull-right checkbox-choose">
+            选择存储仓库
+        </a>
+      </div>
+    </form>
+    <form class="mui-input-group mui-input-group-m mt15">
+      <div class="mui-input-row">
+        <label>车辆信息：</label>
+      </div>
+      <div class="mui-input-row add-btn">
+        <a href="#">
+          <span class="mui-icon mui-icon-plusempty add-icon"></span>
+          <span class="text">添加运输车辆</span>
+        </a>
+      </div>
+    </form>
+    <form class="mui-input-group mui-input-group-m mt15">
+      <div class="mui-input-row">
+          <p class="input-row-coupon mui-navigate-right">优惠券<span>500元</span>通用物流优惠券</label>
+      </div>
+    </form>
+
+    <div class="mui-input-row mui-checkbox mui-left mt15 kz-checked1">
+      <span class="span-label kz-span-label">我已阅读并同意<a href="#">《车辆运输服务协议通用条款》</a></span>
+      <input name="checkbox" value="Item 1" type="checkbox">
+    </div>
+  </div>
+</body>
+</html>

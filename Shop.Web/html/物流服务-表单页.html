@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>物流服务</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/wap_main.css">
+		<script>
+			(function(win, doc) {
+	        var h;
+	        win.addEventListener('resize', function() {
+	            clearTimeout(h);
+	            h = setTimeout(setUnitA, 300);
+	        }, false);
+	        win.addEventListener('pageshow', function(e) {
+	            if (e.persisted) {
+	                clearTimeout(h);
+	                h = setTimeout(setUnitA, 300);
+	            }
+	        }, false);
+	        var setUnitA = function() {
+	            doc.documentElement.style.fontSize = doc.documentElement.clientWidth / 37.5 + 'px';
+	        };
+	        setUnitA();
+	    })(window, document);
+		</script>
+	</head>
+	<body>
+		<div class="logistics-form">
+			<div class="form-wrap">
+				<span class="cricle1"></span>
+				<span class="cricle2"></span>
+				<span class="cricle3"></span>
+				<ul>
+					<li class="clearfix">
+						<span class="pull-left">收车地址</span>
+						<div class="pull-right select-wrap">
+							<select dir="rtl" name="" id="">
+								<option value="">请选择</option>
+							</select>	
+							<img class="right" src="../img/down.png" alt="">				
+						</div>
+						<div class="pull-right select-wrap">
+							<select dir="rtl" name="" id="">
+								<option value="">请选择</option>
+							</select>	
+							<img class="right" src="../img/down.png" alt="">				
+						</div>
+						<div class="pull-right select-wrap">
+							<select dir="rtl" name="" id="">
+								<option value="">请选择</option>
+							</select>	
+							<img class="right" src="../img/down.png" alt="">				
+						</div>
+					</li>
+					<li class="clearfix">
+						<span class="pull-left">发车地址</span>
+						<div class="pull-right select-wrap">
+							<select dir="rtl" name="" id="">
+								<option value="">请选择</option>
+								<option value="">请选择请选择请选择请选择</option>
+								<option value="">请选择</option>
+								<option value="">请选择</option>
+							</select>	
+							<img class="right" src="../img/down.png" alt="">			
+						</div>
+						<div class="pull-right select-wrap">
+							<select dir="rtl" name="" id="">
+								<option value="">请选择</option>
+								<option value="">请选择请选择请选择请选择</option>
+								<option value="">请选择</option>
+								<option value="">请选择</option>
+							</select>	
+							<img class="right" src="../img/down.png" alt="">			
+						</div>
+						<div class="pull-right select-wrap">
+							<select dir="rtl" name="" id="">
+								<option value="">请选择</option>
+								<option value="">请选择请选择请选择请选择</option>
+								<option value="">请选择</option>
+								<option value="">请选择</option>
+							</select>	
+							<img class="right" src="../img/down.png" alt="">			
+						</div>
+					</li>
+					<li class="clearfix">
+						<span class="pull-left">发车地址</span>
+						<label for="" class="pull-right">
+							<input type="text" class="text-right" placeholder="请输入" >
+							<span>万元</span>
+						</label>
+					</li>
+				</ul>
+					<a href="#" class="logistics-form-btn">提交</a>
+					<p class="tips">订单提交成功后，行圆工作人员会在<span>24小时</span>内与您取得联系。祝您工作愉快！</p>
+				</div>
+		</div>
+	</body>
+</html>

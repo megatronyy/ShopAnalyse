@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>服务详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="../js/zepto.min.js"></script>
+    <link rel="stylesheet" href="../css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+    <link rel="stylesheet" type="text/css" href="../css/hm_main.css" />
+    <script>
+    (function(win, doc) {
+        var h;
+        win.addEventListener('resize', function() {
+            clearTimeout(h);
+            h = setTimeout(setUnitA, 300);
+        }, false);
+        win.addEventListener('pageshow', function(e) {
+            if (e.persisted) {
+                clearTimeout(h);
+                h = setTimeout(setUnitA, 300);
+            }
+        }, false);
+        var setUnitA = function() {
+            doc.documentElement.style.fontSize = doc.documentElement.clientWidth / 37.5 + 'px';
+        };
+        setUnitA();
+    })(window, document);
+    </script>
+</head>
+
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">服务详情</h1>
+    </header>
+    <div class="mui-content financial-details">
+        <div class="financial-top">
+        </div>
+        <div class="financial-body">
+            <div class="clearfix">
+              <div class="financial-main">
+                <p class="title">订单贷</p>
+                <p class="info">你买车，我垫付，单车还，更便捷</p>
+                <ul class="rules">
+                  <li>1、经销商将订单内购买车辆质押给金融方，金融方给经销商垫付相应额度的车辆款项</li>
+                  <li>2、批量购买支持单车还款、日息最低0.04%、最长可贷90天</li>
+                </ul>
+                <p class="clearfix"><span class="label">优势</span></p>
+                <p class="info-text">按日计息，单车还款，利息超低、快速放款、物流跟踪</p>
+                <div class="radio-wrap">
+                  <input type="radio" name="1" id="radio1" checked="">
+                  <label class="check" for="radio1"></label>
+                </div>
+              </div>
+              <div class="pull-right financial-main financial-main-gray">
+                <p class="title">库融贷</p>
+                <p class="info">缺资金，找我贷，有库存，变现快</p>
+                <ul class="rules">
+                  <li>1、经销商将已有的库存车辆质押给金融方，金融方针对库存车辆的估价给经销商放款</li>
+                  <li>2、批量质押支持单车还款、日息最低0.04%、最长可贷90天</li>
+                </ul>
+                <p class="clearfix"><span class="label">优势</span></p>
+                <p class="info-text">低费用高效率、提高资金周转率</p>
+                <div class="radio-wrap">
+                  <input type="radio" name="1" id="radio2">
+                  <label class="check" for="radio2"></label>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="financial-btn">
+        	<a href="tel:95078888" class="financial-tel">
+        		<p class="title">咨询热线：</p>
+        		<p class="tel">9507-8888</p>
+        	</a>
+        	<a class="btn-submit" href="##">提交贷款意向</a>
+        </div>
+        <div class="financial-footer">
+            <p class="financial-title">申请流程:</p>
+            <dl class="process mui-clearfix">
+              <dt class="img"><img src="../img/icon-financial1.png" alt=""></dt>
+              <dd>
+                <p class="title">提交申请 </p>
+                <p class="info">在金融服务推广页面点击“金融服务申请”，行圆工作人员线下联系经销商</p>
+              </dd>
+            </dl>
+            <dl class="process mui-clearfix">
+              <dt class="img"><img src="../img/icon-financial2.png" alt=""></dt>
+              <dd>
+                <p class="title">提交资料</p>
+                <p class="info">销商将授信资料提交行圆工作人员，并进行授信审核</p>
+              </dd>
+            </dl>
+            <dl class="process mui-clearfix">
+              <dt class="img"><img src="../img/icon-financial3.png" alt=""></dt>
+              <dd>
+                <p class="title">使用金融</p>
+                <p class="info">经销商根据订单车辆质押或库存车辆质押，提交金融申请</p>
+              </dd>
+            </dl>
+        </div>
+        <div class="qr-code mui-clearfix">
+        	<div class="img mui-pull-left">
+        		<img src="../img/financial- code.png" alt="">
+        	</div>
+        	<div class="info mui-pull-left">
+        		<p class="title">找车源、找物流、找金融</p>
+        		<p class="info-text">扫一扫关注“慧车通”公众号，咨询小编</p>
+        	</div>
+        </div>
+    </div>
+    <script>
+    	    Zepto(function($){
+						  $(document).on('click','.financial-main',function(){
+						    if ($(this).hasClass('financial-main-gray')) {
+						      $(this).removeClass('financial-main-gray').siblings().addClass('financial-main-gray');
+						      $(this).find('input').prop('checked',true);
+						    }
+						  })
+	        });
+    </script>
+</body>
+
+</html>

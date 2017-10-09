@@ -1,0 +1,304 @@
+@charset "UTF-8";
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
+}
+a{
+  text-decoration: none;
+}
+ul{
+  list-style-type: none;
+}
+select,input{
+  font-size: 14px;
+  height: auto; 
+  margin-top: 1px; 
+  border: 0!important;
+  background-color: #fff;
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+}
+option{
+  font-size: 14px;
+}
+select:focus,input:focus{
+  outline: none;
+}
+.pull-left{
+  float: left;
+}
+.pull-right{
+  float: right;
+}
+.clearfix:after{
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden
+}
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+.offers-logistics .offers-top {
+    background-size: 100%;
+}
+.offers-logistics .offers-body {
+    padding: 4.25rem 1.3rem 0 1.5rem;
+}
+
+.offers-logistics .offers-body dl {
+    margin: 0 0 4rem 0;
+    padding: 0;
+}
+
+.offers-logistics .offers-body dl dt img {
+    width: 14rem;
+}
+
+.offers-logistics .offers-body dl dd {
+    margin: 0;
+    padding: 0;
+    width: 19.3rem;
+}
+
+.offers-logistics .offers-body dl dd p {
+    margin-bottom: 0;
+    color: #888;
+    line-height: 130%;
+    font-size: 1.2rem;
+}
+
+.offers-logistics .offers-body dl dd p.title {
+    font-size: 1.7rem;
+    color: #000;
+    font-weight: bold;
+}
+
+.offers-logistics .offers-body dl dd p.info {
+    color: #000;
+    margin: 3px 0;
+}
+
+.offers-logistics .offers-footer {
+    padding: 0 3.15rem;
+}
+
+.offers-logistics .offers-footer .offers-title {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    color: #0f0e0e;
+}
+
+.offers-logistics .offers-footer ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.offers-logistics .offers-footer ul li {
+    height: 7.5rem;
+    position: relative;
+}
+
+.offers-logistics .offers-footer ul li p {
+    margin-bottom: 0;
+    line-height: 150%;
+}
+
+.offers-logistics .offers-footer ul li .title {
+    font-size: 1.5rem;
+    color: #0f0e0e;
+    font-weight: bold;
+}
+
+.offers-logistics .offers-footer ul li .info {
+    font-size: 1.35rem;
+    color: #0f0e0e;
+    opacity: 0.6;
+}
+
+.offers-logistics .offers-footer ul li img {
+    width: 4.15rem;
+}
+
+.offers-logistics .offers-footer ul li .txt {
+    margin-left: 1rem;
+    width: 26rem;
+}
+
+.offers-logistics .offers-footer ul li:not(:last-of-type):after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    border-left: 2px dashed #df1744;
+}
+
+.offers-logistics .offers-footer ul li.pay .txt {
+    margin-top: -0.8rem;
+}
+
+.logistics-wrap .offers-top {
+  background-image: url("../img/logistics-banner1.jpg");
+  height: 21.5rem; }
+
+.logistics-wrap .logistics-btn-wrap {
+    padding-top: 14.5rem;
+}
+
+.logistics-wrap .logistics-btn-wrap .logistics-btn {
+    display: inline-block;
+    text-align: center;
+    background: #fff;
+    color: #8d56e1;
+    font-size: 1.6rem;
+    width: 15rem;
+    height: 4rem;
+    line-height: 4rem;
+    border-radius: 4rem;
+    margin: 0 0.5rem;
+    border: 1px solid #fff;
+}
+
+.logistics-wrap .logistics-btn-wrap .logistics-btn-opacity {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.logistics-wrap .offers-body {
+    padding-top: 3rem;
+}
+
+.logistics-wrap .offers-body dl {
+    margin-bottom: 0;
+}
+
+.logistics-wrap .offers-body dl dt {
+    margin-top: -0.5rem;
+}
+
+.logistics-wrap .offers-body dl dt img {
+    width: 9.85rem;
+}
+
+.logistics-wrap .offers-body dl dd {
+    width: 23rem;
+    border-bottom: 1px solid #f0eeee;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.logistics-form {
+    position: relative;
+    height: 100%;
+    background: url("../img/logistics-form.jpg") no-repeat;
+    background-size: 100%;
+    padding: 13.75rem 1.5rem 0 1.5rem;
+}
+.logistics-form .cricle1,
+.logistics-form .cricle2,
+.logistics-form .cricle3{
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+}
+.logistics-form .cricle1{
+  width: 2.5rem;
+  height: 0.8rem;
+  background: #f9ad81;
+  transform: rotate(30deg);
+  top: 13.8rem;
+  left: 0.5rem;
+}
+.logistics-form .cricle2{
+  width: 4rem;
+  height: 1rem;
+  background: rgba(23, 148, 230, 0.7);
+  transform: rotate(-45deg);
+  top: 13rem;
+  right: 4.5rem;
+}
+
+.logistics-form .cricle3{
+  width: 3.5rem;
+  height: 1rem;
+  background: -webkit-linear-gradient(to right,#6c46df, #f54169); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(to right,#6c46df, #f54169); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(to right,#6c46df, #f54169); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right,#6c46df, #f54169); /* 标准的语法 */
+  transform: rotate(-40deg);
+  top: 31.5rem;
+  right: 1.5rem;
+}
+
+.logistics-form .form-wrap ul {
+    background: #fff;
+    border-radius: 10px;
+    padding-left: 1.5rem;
+}
+
+.logistics-form .form-wrap ul li {
+    padding: 2rem 1.5rem 2rem 0;
+    font-size: 1.5rem;
+    color: #0a0a0a;
+}
+.logistics-form .form-wrap ul li:not(:last-of-type){
+    border-bottom: 1px solid #e5e5e5;
+}
+.logistics-form .form-wrap .select-wrap {
+  text-align: right;
+  // min-width: 20rem;
+  position: relative;
+  padding-right: 1rem;
+}
+
+.logistics-form .form-wrap .select-wrap select {
+    color: #7b7b7b;
+    width: 7rem;
+    padding: 0 5px;
+}
+
+.logistics-form .form-wrap .select-wrap .right {
+    width: 1.2rem;
+    margin-left: 2px;
+    margin-right: 10px;
+    position: absolute;
+    top: 1.2rem;
+    right: -1.2rem;
+}
+
+.logistics-form .form-wrap .logistics-form-btn {
+    display: block;
+    background: #05c0ff;
+    text-align: center;
+    height: 4rem;
+    line-height: 4rem;
+    color: #fff;
+    font-size: 1.6rem;
+    border-radius: 4rem;
+    margin-top: 1.5rem;
+}
+.logistics-form .form-wrap .logistics-form-btn.logistics-form-btn-gray {
+  background: #ccc;
+}
+.logistics-form .form-wrap .tips {
+    font-size: 1.4rem;
+    color: #5b5b5b;
+    margin-top: 2.35rem;
+}
+
+.logistics-form .form-wrap .tips span {
+    color: #fd4444;
+}

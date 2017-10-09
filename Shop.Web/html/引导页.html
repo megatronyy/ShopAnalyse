@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>活动详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="../js/flexible_css.js"></script>
+    <script src="../js/flexible.js"></script>
+    <style>
+    body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+
+        -webkit-text-size-adjust: none;
+        -webkit-touch-callout: none;
+        -webkit-font-smoothing: antialiased;
+        -webkit-overflow-scrolling: touch;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    a, abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, datalist, dd, del, details, dfn, dl, div, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, i, iframe, img, ins, kbd, keygen, label, legend, li, meter, nav, menu, object, ol, output, p, pre, progress, q, s, samp, section, small, span, source, strong, sub, sup, table, tbody, tfoot, thead, th, tr, td, video, u, ul, var, input, select {
+        margin: 0;
+        padding: 0;
+    }
+    body, button, input, select, textarea {
+        font: .24rem/.24rem microsoft yahei, Arial;
+    }
+    input, button, textarea {
+        border-radius: 0;
+        outline: none;
+    }
+    button {
+        cursor: pointer;
+        border: none;
+    }
+    input[type='button'] {
+        background: none;
+    }
+    input::-webkit-input-placeholder {
+        font-family: microsoft yahei;
+        color: #fff;
+    }
+    input[type='text'], input[type='password'], input[type='button'], textarea {
+        outline: none;
+
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    ul, ol {
+        list-style: none;
+    }
+    img {
+        display: block;
+        width: 100%;
+        vertical-align: middle;
+        border: 0;
+    }
+    em, i {
+        font-style: normal;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+        outline: none;
+    }
+    a:hover {
+        text-decoration: none;
+        color: #000;
+    }
+    .clearfix::after {
+        font-size: 0;
+        display: block;
+        visibility: hidden;
+        clear: both;
+        height: 0;
+        content: '.';
+    }
+    html, body {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+    }
+    .wrap {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../img/guidance_bg.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+    .container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        -webkit-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+    }
+    .content {
+        float: left;
+        position: relative;
+        overflow: hidden;
+        width: 10.0rem;
+        height: 100%;
+        background-color: transparent !important;
+    }
+    .content4 a {
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: 3.026667rem;
+        width: 5.72rem;
+        height: 1.04rem;
+        margin-left: -2.86rem;
+    }
+    .content4 > img{
+        position: absolute;
+        left: 0;
+        top: 12.413333rem;
+        width: 10.0rem;
+        height: 0.933333rem;
+    }
+    .icon {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 0.053333rem;
+        bottom: 1.506667rem;
+        text-align: center;
+    }
+    .icon li {
+        display: inline-block;
+        width: 0.373333rem;
+        height: 0.053333rem;
+        background: #c1c1c1;
+        margin: 0 0.026667rem;
+    }
+    .icon li.active {
+        background: #ea3636;
+    }
+    .log {
+        position: absolute;
+        left: 50%;
+        top: 4.04rem;
+        width: 2.666667rem;
+        height: 2.666667rem;
+        margin-left: -1.333333rem;
+        opacity: 0;
+    }
+    .animate .log {
+        -webkit-animation: animJump .3s both;
+        animation: animJump .3s both;
+    }
+    @-webkit-keyframes animJump {
+        0% {
+            -webkit-transform: translateY(-3.333333rem);
+            -ms-transform: translateY(-3.333333rem);
+            -o-transform: translateY(-3.333333rem);
+            transform: translateY(-3.333333rem);
+        }
+        20% {
+            -webkit-transform: translateY(3.333333rem);
+            -ms-transform: translateY(3.333333rem);
+            -o-transform: translateY(3.333333rem);
+            transform: translateY(3.333333rem);
+            opacity: 1;
+        }
+        30% {
+            -webkit-transform: translateY(-0.8rem);
+            -ms-transform: translateY(-0.8rem);
+            -o-transform: translateY(-0.8rem);
+            transform: translateY(-0.8rem);
+            opacity: 1;
+        }
+        40% {
+            -webkit-transform: translateY(0.8rem);
+            -ms-transform: translateY(0.8rem);
+            -o-transform: translateY(0.8rem);
+            transform: translateY(0.8rem);
+            opacity: 1;
+        }
+        60% {
+            -webkit-transform: translateY(-0.4rem);
+            -ms-transform: translateY(-0.4rem);
+            -o-transform: translateY(-0.4rem);
+            transform: translateY(-0.4rem);
+            opacity: 1;
+        }
+        80% {
+            -webkit-transform: translateY(0.4rem);
+            -ms-transform: translateY(0.4rem);
+            -o-transform: translateY(0.4rem);
+            transform: translateY(0.4rem);
+            opacity: 1;
+        }
+        100% {
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    @keyframes animJump {
+        0% {
+            -webkit-transform: translateY(-3.333333rem);
+            -ms-transform: translateY(-3.333333rem);
+            -o-transform: translateY(-3.333333rem);
+            transform: translateY(-3.333333rem);
+        }
+        20% {
+            -webkit-transform: translateY(3.333333rem);
+            -ms-transform: translateY(3.333333rem);
+            -o-transform: translateY(3.333333rem);
+            transform: translateY(3.333333rem);
+            opacity: 1;
+        }
+        30% {
+            -webkit-transform: translateY(-0.8rem);
+            -ms-transform: translateY(-0.8rem);
+            -o-transform: translateY(-0.8rem);
+            transform: translateY(-0.8rem);
+            opacity: 1;
+        }
+        40% {
+            -webkit-transform: translateY(0.8rem);
+            -ms-transform: translateY(0.8rem);
+            -o-transform: translateY(0.8rem);
+            transform: translateY(0.8rem);
+            opacity: 1;
+        }
+        60% {
+            -webkit-transform: translateY(-0.4rem);
+            -ms-transform: translateY(-0.4rem);
+            -o-transform: translateY(-0.4rem);
+            transform: translateY(-0.4rem);
+            opacity: 1;
+        }
+        80% {
+            -webkit-transform: translateY(0.4rem);
+            -ms-transform: translateY(0.4rem);
+            -o-transform: translateY(0.4rem);
+            transform: translateY(0.4rem);
+            opacity: 1;
+        }
+        100% {
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="content content1"><img src="../img/0-lead1.png" alt=""></div>
+            <div class="content content2"><img src="../img/0-lead2.png" alt=""></div>
+            <div class="content content3"><img src="../img/0-lead3.png" alt=""></div>
+            <div class="content content4">
+                <div class="log"><img src="../img/0-lead4_04.png" alt=""></div>
+                <a href=""><img src="../img/0-lead4_03.png" alt=""></a>
+                <img src="../img/0-lead4.png" alt="">
+            </div>
+        </div>
+        <div class="icon">
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/fx.min.js"></script>
+    <script>
+    $(function() {
+        var container = $('.container');
+        var contents = $('.content');
+        var icon = $('.icon li');
+        var width = contents.width();
+        var length = contents.length;
+        var resizeEvt = 'onorientationchange' in window ? 'orientationchange' : 'resize';
+        window.addEventListener('load', setSize, false);
+        window.addEventListener('resizeEvt', setSize, false);
+
+        function setSize() {
+            container.css('width', width * length);
+        };
+
+        function eventPrevent() {
+            document.addEventListener('touchmove', function(event) {
+                // 判断默认行为是否可以被禁用
+                if (event.cancelable) {
+                    // 判断默认行为是否已经被禁用
+                    if (!event.defaultPrevented) {
+                        event.preventDefault();
+                    }
+                }
+            }, false);
+        };
+
+        function touchmoveHandler() {
+            var iNow1 = 0;
+            var iNow2 = 0;
+            var bIs;
+            eventPrevent();
+
+            var startPos, endPos, deltaX, deltaY, moveLength, tempElem;
+            contents.on('touchstart', function(e) {
+                var touch = e.touches[0];
+                startPos = {
+                    x: touch.pageX,
+                    y: touch.pageY
+                };
+            }).on('touchmove', function(e) {
+                var touch = e.touches[0];
+                endPos = {
+                    x: touch.pageX,
+                    y: touch.pageY
+                };
+                deltaX = endPos.x - startPos.x;
+                deltaY = endPos.y - startPos.y;
+                // moveLength 手指移动的距离
+                moveLength = Math.sqrt(Math.pow(Math.abs(deltaX), 2) + Math.pow(Math.abs(deltaY), 2));
+            }).on('touchend', function() {
+                // 向上滑动
+                if (deltaX < -60) {
+                    if (iNow1 == contents.length - 1) {
+                        return;
+                    } else {
+                        iNow1++;
+                    }
+                    iNow2++;
+                    container.animate({
+                        left: -width * iNow1
+                    }, function() {
+                        // console.log(contents.eq(iNow1).find('.log')[0]);
+                        if (contents.eq(iNow1).find('.log')[0]) {
+                            contents.eq(iNow1).addClass('animate');
+                        }
+                        icon.eq(iNow1).addClass('active').siblings('li').removeClass('active');
+                    })
+                }
+                // 向下滑动
+                else if (deltaX > 60) {
+                    if (iNow1 == 0) {
+                        return
+                    } else {
+                        iNow1--;
+                        iNow2--;
+                    }
+                    container.animate({
+                        left: -width * iNow1
+                    }, function() {
+                        if (!contents.eq(iNow1).find('.log')[0]) {
+                            contents.eq(iNow1 + 1).removeClass('animate');
+                        }
+                        icon.eq(iNow1).addClass('active').siblings('li').removeClass('active');
+                    })
+                }
+                deltaX = 0;
+                deltaY = 0;
+            });
+        };
+        touchmoveHandler();
+    });
+    </script>
+</body>
+
+</html>

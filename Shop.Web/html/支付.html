@@ -1,0 +1,46 @@
+<!doctype html>
+<html class="feedback">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title></title>
+  <script src="../js/mui.min.js"></script>
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../css/app.css" />
+  <link rel="stylesheet" type="text/css" href="../css/hm_main.css" />
+  <script type="text/javascript" charset="utf-8">
+  mui.init();
+  </script>
+</head>
+
+<body>
+  <header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">选择支付方式</h1>
+  </header>
+  <footer class="mui-bar mui-bar-footer ud-footer">
+    <a href="#" class="mui-btn mui-btn-warning">支付1260元</a>
+  </footer>
+  <div class="mui-content">
+    <ul class="mui-table-view mt15 border-none">
+      <li class="mui-table-view-cell">
+        <span class="mui-pull-left c-8 f13">订单号：60124912721</span>
+        <span class="red-price mui-pull-right">
+          <em>¥</em>
+          1260
+          <em>元</em>
+        </span>
+      </li>
+    </ul>
+    <ul class="mui-table-view mt15 border-none pay-wrap">
+      <li class="mui-table-view-cell mui-indexed-list-item mui-radio wechat">
+          <input type="radio">微信支付
+      </li>
+      <li class="mui-table-view-cell mui-indexed-list-item mui-radio alipay">
+          <input type="radio">支付宝支付
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

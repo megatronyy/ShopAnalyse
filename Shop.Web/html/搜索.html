@@ -1,0 +1,74 @@
+<!doctype html>
+<html class="feedback">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/mui.indexedlist.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link href="../css/mui.indexedlist.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/app.css"/>
+    <script>
+        function mockPopover(target, ctx, h, cb){
+          mui('body').on('tap', target, function(){
+            var $elem, $ctx, $attr, $item, $allPopovers = $('.mock-popover');
+            $item = $(this);
+            if(!$(this).hasClass('active')) {
+              $(target, ctx).removeClass('active');
+              $allPopovers.hide();
+            }
+            $('.mock-popover-mask').show();
+            $elem = $($attr = $item.attr('href'));
+            $ctx = ctx === undefined ? $item : $(ctx);
+            $elem.css({
+              'height': h ? h+'px' : '300px',
+              'top': $ctx.offset().top + $ctx.height(),
+              'opacity': 1
+            });
+            $item.toggleClass('active');
+            $elem.toggle();
+            mui('body').on('tap', $attr, function(){
+//              $elem.hide();
+              $item.removeClass('active');
+            });
+            var header = document.querySelector('header.mui-bar');
+        var list = document.getElementById('list');
+        //calc hieght
+        list.style.height = (document.body.offsetHeight - header.offsetHeight) + 'px';
+        //create
+        window.indexedList = new mui.IndexedList(list);
+          });
+
+      cb && cb();
+
+        }
+
+        Zepto(function($){
+          mockPopover('a', '.ud-filter', 400);
+          console.log(mui('.mock-popover-mask'));
+          mui('.mui-content').off('scroll');
+          mui('body').on('tap','.mui-gotop',function(){
+          mui('#pullrefresh').scroll().scrollTo(0,0,300);
+        })
+        });
+    </script>
+</head>
+<body>
+  <header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <a class="mui-icon mui-icon-search mui-pull-right"></a>
+      <h1 class="mui-title">车源市场</h1>
+  </header>
+  <header class="mui-bar mui-bar-nav">
+    <button id="submit" class="mui-btn mui-btn-link mui-pull-right">取消</button>
+    <div class="mui-input-row mui-search">
+      <input type="search" class="mui-input-clear" placeholder="请输入" >
+    </div>
+  </header>
+  <div class="mui-content">
+    
+  </div>
+</body>
+</html>

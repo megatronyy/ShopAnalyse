@@ -1,0 +1,144 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+</head>
+<body>
+    <header class="mui-bar mui-bar-nav kz-bar-line">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left kz-icon1"></a>
+        <h1 class="mui-title">发布车源</h1>
+    </header>
+    <footer class="mui-bar mui-bar-footer ud-footer">
+        <a href="#modal" class="mui-btn mui-btn-warning shop-btn-warning">预览</a>
+    </footer>
+    <div class="mui-content mt18">
+        <form class="mui-input-group">
+            <div class="mui-input-row issue-car-span1">
+                <label>车源类型：</label>
+                <span class="active">国产合资</span><span>国产合资</span><span>国产合资</span>
+            </div>
+            <div class="mui-input-row issue-car-span1">
+                <label>车型车款：</label>
+                <span class="mui-navigate-right mui-inline custom-cut">
+					请选择车型车款
+				</span>
+            </div>
+            <div class="mui-input-row issue-car-span1">
+                <label>车源所在地：</label>
+                <span class="mui-navigate-right mui-inline custom-cut">
+					请选择车源所在地
+				</span>
+            </div>
+            <div class="mui-input-row height-none">
+                <textarea placeholder="详细地址描述"></textarea>
+            </div>
+            <div class="mui-input-row issue-car-span1 height-none">
+                <label class="mui-navigate-right">售卖区域:</label>
+                <div class="label-wrap mui-navigate-right">
+                    <!-- <span class="label label-blue label-close">
+						北京
+						<i class="mui-icon mui-icon-closeempty"></i>
+					</span>
+					<span class="label label-blue label-close">
+						北京
+						<i class="mui-icon mui-icon-closeempty"></i>
+					</span>
+					<span class="label label-blue label-close">
+						北京
+						<i class="mui-icon mui-icon-closeempty"></i>
+					</span>
+					<span class="label label-blue label-close">
+						北京
+						<i class="mui-icon mui-icon-closeempty"></i>
+					</span>
+					<span class="label label-blue label-close">
+						北京
+						<i class="mui-icon mui-icon-closeempty"></i>
+					</span>
+					<span class="label label-blue label-close">
+						北京
+						<i class="mui-icon mui-icon-closeempty"></i>
+					</span> -->
+                    <div class="select-text">
+                        请选择
+                    </div>
+                </div>
+            </div>
+            <div class="mui-input-row issue-car-span1">
+                <label>手续文件：</label>
+                <span class="mui-navigate-right"></span>
+                <select name="" id="" class="shop-select-set">
+                    <option value="">请选择</option>
+                </select>
+            </div>
+            <div class="mui-input-row issue-car-span1">
+                <label>外观：</label>
+                <span class="mui-navigate-right"></span>
+                <select name="" id="">
+                    <option value="">请选择</option>
+                </select>
+            </div>
+            <div class="mui-input-row issue-car-span1">
+                <label>内饰：</label>
+                <span class="mui-navigate-right"></span>
+                <select name="" id="">
+                    <option value="">请选择</option>
+                </select>
+            </div>
+            <div class="mui-input-row issue-car-span1">
+                <label>库存数量：</label>
+                <div class="mui-numbox issues-numbox" data-numbox-step='1' data-numbox-min='0' data-numbox-max='10'>
+                    <button class="mui-btn mui-btn-numbox-minus mui-btn-numbox-minus-bug" type="button">-</button>
+                    <input class="mui-input-numbox" type="number" />
+                    <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                </div>
+            </div>
+            <div class="mui-input-row issue-car-span1">
+                <label>经销商报价：</label>
+                <input class="shop-select-set" type="text" placeholder="请输入"> 万
+            </div>
+            <div class="mui-input-row mui-input-row-textarea shop-car-img">
+                <label>车型图片</label>
+                <div class="upload-img shop-upload">
+                    <div class="shop-upload-square">
+                        <input type="file" />
+                    </div>
+                    点击上传
+                </div>
+            </div>
+            <div class="mui-input-row mui-input-row-textarea shop-car-img">
+                <label>车型图片</label>
+                <div class="upload-img shop-upload">
+                    <div class="shop-upload-img">
+                        <img src="../img/rec-car.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="mui-input-row issue-car-span1">
+                <label>备注说明：</label>
+                <input class="shop-select-set" type="text" placeholder="请输入">
+            </div>
+        </form>
+    </div>
+    <!-- 发布失败 -->
+    <div class="shop-share-hint find-car-hint" style="display: ;">车源发布失败，请重新发布</div>
+    <!-- 发布成功弹窗 -->
+    <div class="shop-layer" style="display: none;">
+    	<p>根据您发布的车源，系统自动为您匹配到相关车源<span>6</span>台</p>
+    	<div class="shop-layer-btn"><img src="../img/shop-layer-btn1.png" alt=""></div>
+    	<div class="shop-layer-close"><img src="../img/shop-layer-close1.png" alt=""></div>
+    </div>
+    <div class="shop-mask" style="display: none;"></div>
+    <script src="../js/zepto.min.js"></script>
+    <script>
+    	$('.shop-mask').css({
+    		width: $(window).width(),
+    		height: $(window).height()
+    	})
+    </script>
+</body>
+</html>

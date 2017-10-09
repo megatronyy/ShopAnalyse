@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>发车源送油卡</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../css/hm_main.css"/> -->
+    <style>
+    .oil-card-wrap ul, .oil-card-wrap li{
+        padding: 0;
+        margin: 0;
+    }
+    .oil-card-wrap li{
+        width: 100%;
+        list-style: none;
+    }
+    .oil-card-wrap li img{
+        display: block;
+        width: 100%;
+    }
+    </style>
+    <script>
+    (function(win, doc) {
+        var h;
+        win.addEventListener('resize', function() {
+            clearTimeout(h);
+            h = setTimeout(setUnitA, 300);
+        }, false);
+        win.addEventListener('pageshow', function(e) {
+            if (e.persisted) {
+                clearTimeout(h);
+                h = setTimeout(setUnitA, 300);
+            }
+        }, false);
+        var setUnitA = function() {
+            doc.documentElement.style.fontSize = doc.documentElement.clientWidth / 37.5 + 'px';
+        };
+        setUnitA();
+    })(window, document);
+    </script>
+</head>
+
+<body class="bg-white">
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">发车源送油卡</h1>
+    </header>
+    <div class="mui-content">
+        <div class="oil-card-wrap">
+            <ul>
+                <li><img src="../img/oil-card-1.jpg" alt=""></li>
+                <li><img src="../img/oil-card-2.jpg" alt=""></li>
+                <li><img src="../img/oil-card-3.jpg" alt=""></li>
+                <li><img src="../img/oil-card-4.jpg" alt=""></li>
+                <li><img src="../img/oil-card-5.jpg" alt=""></li>
+                <li><img src="../img/oil-card-6.jpg" alt=""></li>
+                <li><img src="../img/oil-card-7.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

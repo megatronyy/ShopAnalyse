@@ -1,0 +1,242 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/zepto.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+</head>
+<body>
+    <header class="mui-bar mui-bar-nav">
+    	<div class="shop_share-btn"><img src="../img/share_2.png" alt=""></div>
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">寻车详情</h1>
+    </header>
+    <footer class="mui-bar mui-bar-footer ud-footer">
+        <a class="mui-btn mui-btn-outlined mui-btn-grey">马上联系</a>
+        <a href="#modal" class="mui-btn mui-btn-warning">我要报价</a>
+    </footer>
+    <div class="mui-content">
+        <ul class="mui-table-view car-sourcec-detail">
+            <li class="mui-table-view-cell">
+                <div class="mui-row">
+                    <div class="mui-col-sm-4 mui-col-xs-4">
+                        寻车型
+                    </div>
+                    <div class="mui-col-sm-8 mui-col-xs-8">
+                        北京现代 领动 2016款 1.6L 手自一体 智炫·精英型
+                    </div>
+                </div>
+            </li>
+            <li class="mui-table-view-cell">
+                <div class="mui-row">
+                    <div class="mui-col-sm-4 mui-col-xs-4">
+                        需求有效期
+                    </div>
+                    <div class="mui-col-sm-8 mui-col-xs-8">七天有效</div>
+                </div>
+            </li>
+            <li class="mui-table-view-cell">
+                <div class="mui-row">
+                    <div class="mui-col-sm-4 mui-col-xs-4">车源类型</div>
+                    <div class="mui-col-sm-8 mui-col-xs-8">美规进口</div>
+                </div>
+            </li>
+            <li class="mui-table-view-cell">
+                <div class="mui-row">
+                    <div class="mui-col-sm-4 mui-col-xs-4">厂商指导价</div>
+                    <div class="mui-col-sm-8 mui-col-xs-8">31.98万元</div>
+                </div>
+            </li>
+            <li class="mui-table-view-cell">
+                <div class="mui-row">
+                    <div class="mui-col-sm-4 mui-col-xs-4">外观／内饰</div>
+                    <div class="mui-col-sm-8 mui-col-xs-8">
+                        <span class="mr15">经典黑/雅致灰</span>
+                        <span class="mr15">活力橙/黑</span>
+                    </div>
+                </div>
+            </li>
+            <li class="mui-table-view-cell">
+                <div class="mui-row">
+                    <div class="mui-col-sm-4 mui-col-xs-4">收车地区</div>
+                    <div class="mui-col-sm-8 mui-col-xs-8">
+                        天津市滨海新区保税区3#-201
+                    </div>
+                </div>
+            </li>
+            <li class="mui-table-view-cell">
+                <div class="mui-row">
+                    <div class="mui-col-sm-4 mui-col-xs-4">配置备注</div>
+                    <div class="mui-col-sm-8 mui-col-xs-8">2.3 Eco-boost ,自动挡，标配100A包（倒车映像，HID大灯+LED标识，19轮，无钥匙进入+一键启动，胎压监测，防眩目后视镜)，安全包（中控电子锁，防盗报警系统)</div>
+                </div>
+            </li>
+        </ul>
+        <ul class="mui-table-view mt20">
+            <li class="mui-table-view-cell mui-media">
+                <a href="javascript:;" class="">
+                    <!--<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">-->
+                    <div class="mui-media-body">
+                        <span class="mui-badge mui-badge-warning mui-pull-right">4S</span> 北京易车互联信息技术有限公司
+                        <p class="mui-ellipsis">地址：北京市海淀区西外大街189号4S店</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="modal" class="mui-modal">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-btn mui-btn-link mui-pull-right" href="#modal">取消</a>
+            <h1 class="mui-title">报价</h1>
+        </header>
+        <div class="mui-content">
+            <div class="mui-content-padded">
+                <h5>用已发车源报价</h5>
+            </div>
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell mui-checkbox mui-left">
+                    <input name="radio" type="checkbox"> 北京现代 领动 2016款 1.6L 手自一体 智炫·精英型
+                </li>
+                <li class="mui-table-view-cell mui-checkbox mui-left">
+                    <input name="radio" type="checkbox"> 北京现代 领动 2016款 1.6L 手自一体 智炫·精英型
+                </li>
+            </ul>
+            <ul class="mui-table-view mt20">
+                <li class="mui-table-view-cell">
+                    <a href="#modal2" class="mui-navigate-right">已发车源不匹配，根据需求自定义车源</a>
+                </li>
+            </ul>
+            <div class="mui-content-padded">
+                <a href="#modal2" class="mui-btn mui-btn-blue mui-btn-block">报价预览</a>
+            </div>
+        </div>
+    </div>
+    <div id="modal2" class="mui-modal">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-btn mui-btn-link mui-pull-right" href="#modal2">取消</a>
+            <h1 class="mui-title">填写报价信息</h1>
+        </header>
+        <div class="mui-content">
+            <form class="mui-input-group mt20">
+                <div class="mui-input-row">
+                    <label>车源类型</label>
+                    <select name="" id="">
+                        <option value="">请选择</option>
+                    </select>
+                </div>
+                <div class="mui-input-row">
+                    <label>车型</label>
+                    <select name="" id="">
+                        <option value="">请选择</option>
+                    </select>
+                </div>
+                <div class="mui-input-row">
+                    <label>厂商指导价</label>
+                    <span class="price-span"><input type="text" placeholder="31.98"></span><span class="price-span-txt">万元</span>
+                </div>
+                <div class="mui-input-row">
+                    <label>车源所在地</label>
+                    <select name="" id="">
+                        <option value="">请选择</option>
+                    </select>
+                </div>
+                <div class="mui-input-row">
+                    <label>外观内饰</label>
+                    <select name="" id="">
+                        <option value="">请选择</option>
+                    </select>
+                </div>
+            </form>
+            <div class="mui-content-padded">
+                <h5>手续文件</h5>
+            </div>
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell mui-radio mui-left">
+                    <input name="radio" type="radio"> 货物进口证明说
+                </li>
+                <li class="mui-table-view-cell mui-radio mui-left">
+                    <input name="radio" type="radio"> 随车检验单
+                </li>
+                <li class="mui-table-view-cell mui-radio mui-left">
+                    <input name="radio" type="radio"> 购置税店址证书
+                </li>
+                <li class="mui-table-view-cell mui-radio mui-left">
+                    <input name="radio" type="radio"> 增值税发票
+                </li>
+            </ul>
+            <div class="mui-content-padded">
+                <button type="button" class="mui-btn mui-btn-blue mui-btn-block">报价预览</button>
+            </div>
+        </div>
+    </div>
+    <!-- 分享 -->
+    <div class="share-mask"></div>
+    <div id="share" class="shop-share">
+    <ul class="mui-table-view">
+      <li class="mui-table-view-cell">
+        <a href="##">
+          <i class="mui-icon mui-icon-weixin"></i>
+          <span>微信好友</span>
+        </a>
+      </li>
+      <li class="mui-table-view-cell">
+        <a href="##">
+          <i class="mui-icon mui-icon-pengyouquan"></i>
+          <span>微信朋友圈</span>
+        </a>
+      </li>
+      <li class="mui-table-view-cell">
+        <a href="##">
+          <i class="mui-icon mui-icon-qq"></i>
+          <span>QQ好友</span>
+        </a>
+      </li>
+      <li class="mui-table-view-cell">
+        <a href="##">
+          <i class="mui-icon mui-icon-weibo"></i>
+          <span>新浪微博</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="mui-table-view share-close-btn">
+      <li class="mui-table-view-cell">取消</li>
+    </ul>
+  </div>
+  <!-- 分享成功 -->
+  <div class="shop-share-hint" style="display: none;">分享成功</div>
+  <!-- 分享失败 -->
+  <div class="shop-share-hint" style="display: ;">分享失败</div>
+  <script>
+    $(function(){
+        var btn=$('.shop_share-btn');
+        var close=$('.share-close-btn');
+        var mask=$('.share-mask');
+        var share=$('.shop-share');
+        btn.on('click', function(){
+            mask.css('display', 'block');
+            share.css('zIndex', 10);
+            share.addClass('active');
+        });
+        close.on('click', function(e){
+            e.preventDefault();
+            mask.css('display', 'none');
+            share.removeClass('active');
+            setTimeout(function(){
+                share.css('zIndex', -10);
+            }, 1000);
+        })
+    })
+  </script>
+    <script type="text/javascript" charset="utf-8">
+    var $doc = document;
+    mui.init({
+        swipeBack: true
+    });
+    $doc.querySelectorAll('.mui-btn-blue')[0].addEventListener('tap', function() {
+        mui.alert('138-****-8000');
+    });
+    </script>
+</body>
+</html>
