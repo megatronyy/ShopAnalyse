@@ -1,0 +1,28 @@
+﻿<!doctype html>
+<html class="feedback">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>@ViewBag.Title</title>
+    <script type="text/javascript" src="~/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/mui.min.js"></script>
+    <link href="~/css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/css/app.css" />
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            mui.init();
+        });
+    </script>
+</head>
+<body>
+    <header class="mui-bar mui-bar-nav">
+        @*<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left kz-icon1"></a>*@
+        <h1 class="mui-title">@ViewBag.Title</h1>
+    </header>
+    <footer class="mui-bar mui-bar-footer ud-footer">
+        @*<a href="#modal" class="mui-btn mui-btn-grey kz-btn-white">修改</a>*@
+        <a href="#" class="mui-btn mui-btn-warning">发布</a>
+    </footer>
+    @RenderBody()
+</body>
+</html>

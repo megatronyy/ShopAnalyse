@@ -427,6 +427,7 @@
     <Content Include="js\flexible.js" />
     <Content Include="js\flexible_css.js" />
     <Content Include="js\fx.min.js" />
+    <Content Include="js\jquery.min.js" />
     <Content Include="js\main.js" />
     <Content Include="js\mui.indexedlist.js" />
     <Content Include="js\mui.js" />
@@ -441,6 +442,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\SubscriberController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -456,6 +458,8 @@
     <Content Include="fonts\SourceHanSansCN-Normal.otf" />
     <None Include="packages.config" />
     <Content Include="scss\hm_main.scss" />
+    <Content Include="Views\Shared\_LayoutSecond.cshtml" />
+    <Content Include="Views\Subscriber\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -465,7 +469,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
